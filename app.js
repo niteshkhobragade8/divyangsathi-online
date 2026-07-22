@@ -1,3 +1,4 @@
+alert("app.js loaded");
 const supabaseUrl = "https://nkdzfxanmvmrhehqtrtl.supabase.co";
 
 const supabaseKey =
