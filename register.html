@@ -42,51 +42,65 @@ DivyangSathi
 Create Your Account
 </h1>
 
-<form class="register-form">
+<form class="register-form" id="registerForm">
 
-<input type="text"
+<input
+type="text"
+id="full_name"
 placeholder="Full Name"
 required>
 
-<input type="tel"
+<input
+type="tel"
+id="mobile"
 placeholder="Mobile Number"
 required>
 
-<input type="email"
+<input
+type="email"
+id="email"
 placeholder="Email Address"
 required>
 
-<select required>
+<select
+id="gender"
+required>
 
 <option value="">
 Select Gender
 </option>
 
-<option>
+<option value="Male">
 Male
 </option>
 
-<option>
+<option value="Female">
 Female
 </option>
 
-<option>
+<option value="Other">
 Other
 </option>
 
 </select>
 
-<input type="password"
+<input
+type="password"
+id="password"
 placeholder="Password"
 required>
 
-<input type="password"
+<input
+type="password"
+id="confirm_password"
 placeholder="Confirm Password"
 required>
 
 <label>
 
-<input type="checkbox" required>
+<input
+type="checkbox"
+required>
 
 I Agree To The Terms & Conditions
 
@@ -123,6 +137,9 @@ Login Here
 </p>
 
 </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="app.js"></script>
 
 </body>
 
