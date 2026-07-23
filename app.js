@@ -1,3 +1,5 @@
+alert("APP START");
+
 const supabaseUrl = "https://nkdzfxanmvmrhehqtrtl.supabase.co";
 
 const supabaseKey =
