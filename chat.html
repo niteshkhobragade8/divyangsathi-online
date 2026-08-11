@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>
+Private Chat - DivyangSathi
+</title>
+
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="user-theme.css">
+
+<link rel="stylesheet" href="final-polish.css">
+<link rel="icon" type="image/png" href="icons/icon-192.png">
+</head>
+
+<body class="chat-body">
+
+
+<!-- ===========================
+     HEADER
+=========================== -->
+
+<div id="commonHeader"></div>
+
+
+<!-- ===========================
+     CHAT HERO
+=========================== -->
+
+<section class="chat-hero">
+
+<div class="chat-hero-left">
+
+<span class="chat-label">
+
+PRIVATE CHAT
+
+</span>
+
+<h1>
+
+Messages
+
+</h1>
+
+<p>
+
+Chat is available only after both users are connected through an accepted interest.
+
+</p>
+
+</div>
+
+
+<div class="chat-status-card">
+
+<div class="chat-status-icon">
+
+💬
+
+</div>
+
+<div>
+
+<strong>
+
+Secure Conversation
+
+</strong>
+
+<small>
+
+End-to-End Private Chat
+
+</small>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ===========================
+     CHAT MAIN
+=========================== -->
+
+<main class="chat-main">
+
+
+<section class="chat-container">
+
+<!-- ===========================
+     CHAT SIDEBAR
+=========================== -->
+
+<aside class="chat-sidebar">
+
+<div class="chat-sidebar-heading">
+
+<div>
+
+<span class="chat-section-label">
+CONVERSATIONS
+</span>
+
+<h2>
+Your Chats
+</h2>
+
+</div>
+
+<button
+type="button"
+id="refreshChatUsers"
+class="chat-refresh-button"
+title="Refresh conversations">
+
+↻
+
+</button>
+
+</div>
+
+
+<div
+id="chatUsers"
+class="chat-user-list">
+
+<div class="chat-loading-state">
+
+<div class="admin-loader"></div>
+
+<p>
+Loading conversations...
+</p>
+
+</div>
+
+</div>
+
+</aside>
+
+
+<!-- ===========================
+     ACTIVE CHAT PANEL
+=========================== -->
+
+<section class="chat-panel">
+
+
+<!-- ACTIVE USER HEADER -->
+
+<div class="chat-active-header">
+
+<div class="chat-active-user">
+
+<div
+id="chatUserPhotoPlaceholder"
+class="chat-user-avatar">
+
+👤
+
+</div>
+
+<img
+id="chatUserPhoto"
+src=""
+alt="Chat User Photo"
+class="chat-user-photo"
+style="display:none;">
+
+<div>
+
+<h2 id="chatUserName">
+Select a conversation
+</h2>
+
+<div class="chat-user-status-row">
+
+<span
+id="chatConnectionStatus"
+class="chat-connection-status">
+
+⚪ Not Connected
+
+</span>
+
+<span
+id="chatUserMembership"
+class="chat-user-membership"
+style="display:none;">
+
+Free
+
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="chat-header-actions">
+
+<a
+id="chatViewProfileButton"
+href="search.html"
+class="chat-view-profile-button">
+
+👤 View Profile
+
+</a>
+
+<button
+type="button"
+id="reportChatButton"
+class="chat-report-button"
+disabled>
+
+🚩 Report
+
+</button>
+
+</div>
+
+</div>
+
+
+<!-- CHAT NOTICE -->
+
+<div
+id="chatAccessNotice"
+class="chat-access-notice">
+
+<span>
+🔒
+</span>
+
+<p>
+Accepted interest ke baad hi private chat available hogi.
+</p>
+
+</div>
+
+
+<!-- MESSAGE AREA -->
+
+<div
+id="chatBox"
+class="chat-message-box">
+
+<div class="chat-empty-state">
+
+<div class="chat-empty-icon">
+💬
+</div>
+
+<h3>
+Select a Conversation
+</h3>
+
+<p>
+Accepted connection select karke secure messaging start karein.
+</p>
+
+</div>
+
+</div>
+
+
+<!-- TYPING AREA -->
+
+<div class="chat-compose-area">
+
+<div
+id="chatReplyPreview"
+class="chat-reply-preview"
+style="display:none;">
+
+<div>
+
+<strong>
+Replying to message
+</strong>
+
+<p id="chatReplyText"></p>
+
+</div>
+
+<button
+type="button"
+id="cancelReplyButton">
+
+✕
+
+</button>
+
+</div>
+
+
+<div class="chat-compose-row">
+
+<textarea
+id="messageText"
+placeholder="Type your message..."
+rows="2"
+maxlength="1000"
+disabled></textarea>
+
+<button
+type="button"
+id="sendMessageBtn"
+class="chat-send-button"
+disabled>
+
+➤ Send
+
+</button>
+
+</div>
+
+
+<div class="chat-compose-footer">
+
+<span id="chatCharacterCount">
+0 / 1000
+</span>
+
+<span class="chat-privacy-text">
+
+🔐 Do not share OTP, passwords or banking details.
+
+</span>
+
+</div>
+
+</div>
+
+</section>
+
+</section>
+
+</main>
+<!-- ===========================
+     CHAT SAFETY
+=========================== -->
+
+<section class="chat-safety-section">
+
+<div class="chat-safety-grid">
+
+<div class="chat-safety-card">
+
+<div class="chat-safety-icon">
+🔒
+</div>
+
+<h3>
+Private & Secure
+</h3>
+
+<p>
+Messages are visible only to the two connected users and authorized administrators when required for moderation.
+</p>
+
+</div>
+
+
+<div class="chat-safety-card">
+
+<div class="chat-safety-icon">
+❤️
+</div>
+
+<h3>
+Respect Everyone
+</h3>
+
+<p>
+Communicate politely and respectfully. Harassment, abuse or spam is not allowed.
+</p>
+
+</div>
+
+
+<div class="chat-safety-card">
+
+<div class="chat-safety-icon">
+🚫
+</div>
+
+<h3>
+Stay Safe
+</h3>
+
+<p>
+Never share OTP, passwords, bank details or other sensitive personal information.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ===========================
+     FOOTER
+=========================== -->
+
+<div id="commonFooter"></div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="app.js"></script>
+
+<script src="full-page-i18n.js"></script>
+<script src="languages.js"></script>
+<script src="language.js"></script>
+<script src="layout.js"></script>
+
+<script src="user-theme.js"></script>
+<script src="feature-config.js"></script>
+<script src="final-features.js"></script>
+
+<script src="cms-runtime.js"></script>
+</body>
+
+</html>

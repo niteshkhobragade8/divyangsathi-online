@@ -1,0 +1,174 @@
+
+/* =========================================================
+   DIVYANGSATHI FINAL PROFESSIONAL POLISH
+   User and Admin themes intentionally remain visually distinct.
+   ========================================================= */
+:root{
+  --ds-user-primary:#7c3aed;--ds-user-primary-2:#ec4899;--ds-user-accent:#2563eb;
+  --ds-user-bg:#f6f7fb;--ds-card:#fff;--ds-text:#172033;--ds-muted:#667085;
+  --ds-border:#e5e7eb;--ds-radius:18px;--ds-shadow:0 12px 32px rgba(15,23,42,.08);
+}
+html,body{min-height:100%;}
+body{margin:0;display:flex;flex-direction:column;}
+body>.admin-v3-shell,body>main,.user-dashboard-main,.search-premium-main,.matches-main,.chat-main,.notification-main,.membership-premium-main,.view-profile-main{flex:1 0 auto;}
+#commonFooter{margin-top:auto;width:100%;}
+
+/* ---------- Global professional footer ---------- */
+.ds-final-footer{width:100%;margin-top:auto;border-top:1px solid rgba(148,163,184,.22);}
+.ds-final-footer-inner{max-width:1240px;margin:0 auto;padding:30px 28px 20px;text-align:center;}
+.ds-final-footer-brand{display:flex;align-items:center;justify-content:center;gap:10px;font-size:22px;font-weight:800;letter-spacing:-.02em;}
+.ds-final-footer-tagline{margin:7px auto 16px;max-width:650px;opacity:.78;}
+.ds-final-footer-links{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;margin:12px 0 18px;}
+.ds-final-footer-links a{text-decoration:none;font-weight:700;}
+.ds-final-footer-copy{font-size:13px;opacity:.65;padding-top:15px;border-top:1px solid rgba(148,163,184,.18);}
+body:not(.admin-body) .ds-final-footer{background:linear-gradient(180deg,#fff,#f8f5ff);color:#283044;}
+body:not(.admin-body) .ds-final-footer-links a{color:#6d28d9;}
+body.admin-body .ds-final-footer{background:#0b1220;color:#dbeafe;border-top-color:#24334d;}
+body.admin-body .ds-final-footer-links a{color:#93c5fd;}
+body.dark-mode .ds-final-footer{background:#0d1117;color:#e5e7eb;border-top-color:#293241;}
+
+/* ---------- User pages: coherent, premium matrimony look ---------- */
+body:not(.admin-body):not(.admin-login-body){background:var(--ds-user-bg);color:var(--ds-text);}
+body:not(.admin-body) main{width:min(100%,1280px);margin-left:auto;margin-right:auto;box-sizing:border-box;}
+body:not(.admin-body) section{box-sizing:border-box;}
+.user-dashboard-main{max-width:1280px!important;width:100%!important;padding-left:24px!important;padding-right:24px!important;}
+.user-dashboard-hero,.search-premium-hero,.matches-hero,.favourites-hero,.notification-hero,.membership-premium-hero,.view-profile-hero,.chat-hero{border-radius:0 0 28px 28px;box-shadow:0 16px 36px rgba(91,33,182,.12);}
+
+/* My Profile full-width professional editor */
+#myProfile.premium-profile-section{width:100%!important;max-width:none!important;margin:28px 0!important;padding:30px!important;border-radius:24px!important;background:#fff!important;box-shadow:var(--ds-shadow)!important;border:1px solid var(--ds-border)!important;}
+#profileForm.premium-profile-form{width:100%!important;max-width:none!important;display:grid!important;grid-template-columns:repeat(12,minmax(0,1fr))!important;gap:24px!important;align-items:start!important;}
+#profileForm>.profile-photo-upload-content,#profileForm>.profile-form-group,#profileForm>.profile-form-actions{grid-column:1/-1!important;width:100%!important;max-width:none!important;box-sizing:border-box!important;}
+#profileForm .profile-photo-upload-content,#profileForm .profile-form-group,#profileForm .profile-card,#profileForm .profile-voice-upload-box{background:#fbfcff!important;border:1px solid #e7eaf1!important;border-radius:18px!important;padding:22px!important;box-shadow:none!important;}
+#profileForm .profile-photo-upload-content{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:18px!important;}
+#profileForm .profile-photo-upload-content>.profile-media-upload-row,#profileForm .profile-photo-upload-content>.intro-video-preview,#profileForm .profile-photo-upload-content>.profile-intro-upload-button,#profileForm .profile-photo-upload-content>.profile-voice-upload-box{grid-column:1/-1!important;}
+#profileForm .profile-photo-upload-content>.profile-card{grid-column:span 1!important;min-width:0!important;}
+#profileForm .profile-input-grid{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:16px 18px!important;width:100%!important;}
+#profileForm .profile-input-box{min-width:0!important;width:100%!important;}
+#profileForm label{font-weight:750!important;color:#344054!important;margin-bottom:7px!important;display:block!important;}
+#profileForm input:not([type=file]):not([type=radio]):not([type=checkbox]),#profileForm select,#profileForm textarea{width:100%!important;min-height:48px!important;box-sizing:border-box!important;border:1px solid #cfd6e4!important;border-radius:11px!important;background:#fff!important;padding:11px 13px!important;font:inherit!important;outline:none!important;transition:.2s!important;}
+#profileForm textarea{min-height:110px!important;resize:vertical!important;}
+#profileForm input:focus,#profileForm select:focus,#profileForm textarea:focus{border-color:#7c3aed!important;box-shadow:0 0 0 4px rgba(124,58,237,.10)!important;}
+.profile-dashboard-heading{width:100%!important;display:flex!important;justify-content:space-between!important;gap:20px!important;align-items:center!important;}
+.user-summary-section,.user-quick-actions,.profile-viewers-panel,.profile-completion-panel{width:100%!important;max-width:none!important;}
+.profile-viewers-panel{margin-top:24px!important;}
+.premium-user-header{width:100%!important;max-width:none!important;}
+
+/* Review, map, birthday, OTP, compatibility widgets */
+.ds-feature-panel{background:#fff;border:1px solid #e7eaf1;border-radius:20px;padding:24px;margin:24px 0;box-shadow:var(--ds-shadow);}
+.ds-feature-heading{display:flex;align-items:center;gap:12px;margin-bottom:16px;}.ds-feature-heading h2,.ds-feature-heading h3{margin:0;}
+.ds-rating-stars{display:flex;gap:8px;font-size:28px;}.ds-star{border:0;background:transparent;cursor:pointer;font-size:30px;opacity:.4}.ds-star.active{opacity:1;transform:scale(1.05)}
+.ds-review-form textarea{width:100%;min-height:100px;padding:12px;border:1px solid #d0d5dd;border-radius:12px;box-sizing:border-box;}
+.ds-primary-btn{border:0;border-radius:12px;padding:12px 18px;background:linear-gradient(135deg,#7c3aed,#ec4899);color:#fff;font-weight:800;cursor:pointer;}
+.ds-map-frame{width:100%;height:320px;border:0;border-radius:16px;background:#eef2f7;}
+.ds-otp-box{margin-top:18px;padding-top:18px;border-top:1px solid #e5e7eb}.ds-otp-box input{width:100%;box-sizing:border-box;padding:12px;border:1px solid #d0d5dd;border-radius:11px;margin:8px 0 10px;}
+.ds-birthday-banner{background:linear-gradient(135deg,#fff7ed,#fdf2f8);border:1px solid #fed7aa;border-radius:16px;padding:16px 18px;margin:16px 0;font-weight:700;}
+
+/* ---------- Admin stays a separate product theme ---------- */
+body.admin-body{--admin-accent:#2563eb;--admin-bg:#eef4fb;}
+body.admin-body .admin-v3-workspace{background:linear-gradient(180deg,#f8fbff,#edf3fb);}
+body.admin-body .admin-panel{border:1px solid #dce6f4;box-shadow:0 12px 32px rgba(30,64,175,.07);}
+.admin-v3-sidebar{display:flex!important;flex-direction:column!important;}
+.admin-v3-sidebar-nav{flex:1 1 auto!important;overflow-y:auto!important;}
+.admin-v3-sidebar-footer{margin-top:auto!important;padding:16px!important;border-top:1px solid rgba(255,255,255,.12)!important;display:grid!important;gap:10px!important;}
+.admin-sidebar-logout{width:100%;border:1px solid rgba(248,113,113,.45);background:rgba(127,29,29,.28);color:#fecaca;padding:11px 12px;border-radius:11px;font-weight:800;cursor:pointer;}
+.admin-sidebar-logout:hover{background:#dc2626;color:white;}
+.admin-notification-panel.final-admin-panel{position:absolute;right:12px;top:calc(100% + 10px);width:min(420px,calc(100vw - 24px));max-height:520px;overflow:auto;background:white;border:1px solid #dbe4f0;border-radius:16px;box-shadow:0 18px 60px rgba(15,23,42,.22);z-index:99999;padding:12px;}
+.admin-notification-item{padding:13px;border-radius:12px;margin:7px 0;background:#f8fafc;border:1px solid #e5e7eb;cursor:pointer;}
+.admin-notification-item.unread{background:#eff6ff;border-color:#bfdbfe;}
+.admin-notification-tools{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:6px 4px 10px;position:sticky;top:0;background:#fff;z-index:2;}
+.admin-notification-tools button{border:0;background:#eaf2ff;color:#1d4ed8;border-radius:9px;padding:8px 10px;font-weight:700;cursor:pointer;}
+
+/* Analytics cards */
+.admin-charts-grid{grid-template-columns:repeat(auto-fit,minmax(340px,1fr))!important;}
+.admin-chart-wrapper{min-height:290px!important;position:relative!important;}
+
+@media(max-width:900px){
+ #profileForm .profile-input-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;}
+ #profileForm .profile-photo-upload-content{grid-template-columns:1fr!important;}
+ #profileForm .profile-photo-upload-content>.profile-card{grid-column:1!important;}
+}
+@media(max-width:620px){
+ .user-dashboard-main{padding-left:14px!important;padding-right:14px!important;}
+ #myProfile.premium-profile-section{padding:18px!important;border-radius:17px!important;}
+ #profileForm{gap:16px!important;}
+ #profileForm .profile-input-grid{grid-template-columns:1fr!important;}
+ .profile-dashboard-heading{align-items:flex-start!important;flex-direction:column!important;}
+ .ds-final-footer-inner{padding:24px 16px 16px;}
+ .ds-final-footer-links{gap:12px;}
+ .ds-map-frame{height:260px;}
+}
+
+
+/* =========================================================
+   FINAL CORRECTIONS — 2026-08-07
+   ========================================================= */
+/* User and Admin must feel like two different products. */
+body:not(.admin-body):not(.admin-login-body){
+  --ds-user-primary:#6d28d9;
+  --ds-user-primary-2:#be185d;
+  --ds-user-accent:#b7791f;
+  --ds-user-bg:#faf8fc;
+  background:linear-gradient(180deg,#fbfaff 0%,#f8f6fb 45%,#fff 100%)!important;
+}
+body:not(.admin-body):not(.admin-login-body) .user-dashboard-hero,
+body:not(.admin-body):not(.admin-login-body) .search-premium-hero,
+body:not(.admin-body):not(.admin-login-body) .matches-hero,
+body:not(.admin-body):not(.admin-login-body) .favourites-hero,
+body:not(.admin-body):not(.admin-login-body) .notification-hero,
+body:not(.admin-body):not(.admin-login-body) .membership-premium-hero,
+body:not(.admin-body):not(.admin-login-body) .view-profile-hero,
+body:not(.admin-body):not(.admin-login-body) .chat-hero{
+  background:linear-gradient(135deg,#4c1d95 0%,#7c3aed 48%,#be185d 100%)!important;
+  color:#fff!important;
+}
+body:not(.admin-body):not(.admin-login-body) .user-dashboard-hero *,
+body:not(.admin-body):not(.admin-login-body) .search-premium-hero *,
+body:not(.admin-body):not(.admin-login-body) .matches-hero *,
+body:not(.admin-body):not(.admin-login-body) .favourites-hero *,
+body:not(.admin-body):not(.admin-login-body) .notification-hero *,
+body:not(.admin-body):not(.admin-login-body) .membership-premium-hero *,
+body:not(.admin-body):not(.admin-login-body) .view-profile-hero *,
+body:not(.admin-body):not(.admin-login-body) .chat-hero *{color:inherit;}
+
+
+/* Exactly one footer, centered in the correct content column. */
+#commonFooter{width:100%!important;max-width:none!important;box-sizing:border-box!important;clear:both!important;}
+.ds-final-footer{width:100%!important;margin:0!important;box-sizing:border-box!important;}
+.ds-final-footer-inner{width:min(100% - 32px,1120px)!important;max-width:1120px!important;margin:0 auto!important;padding:32px 18px 22px!important;text-align:center!important;box-sizing:border-box!important;}
+.ds-final-footer-brand{justify-content:center!important;text-align:center!important;}
+.ds-final-footer-tagline,.ds-final-footer-copy{text-align:center!important;margin-left:auto!important;margin-right:auto!important;}
+.ds-final-footer-links{justify-content:center!important;align-items:center!important;text-align:center!important;}
+body:not(.admin-body) .ds-final-footer{background:linear-gradient(180deg,#24123a,#160b28)!important;color:#f8f5ff!important;}
+body:not(.admin-body) .ds-final-footer-links a{color:#f5d0fe!important;}
+
+/* My Profile media uploader — simple, familiar, professional controls. */
+.profile-media-professional-grid{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:18px!important;grid-column:1/-1!important;}
+.profile-media-professional-card{background:#fff!important;border:1px solid #e4e7ec!important;border-radius:16px!important;padding:20px!important;box-shadow:0 8px 24px rgba(16,24,40,.05)!important;min-width:0!important;}
+.profile-media-professional-card h3{margin:0 0 6px!important;color:#1f2937!important;font-size:18px!important;}
+.profile-media-professional-card p{margin:0 0 14px!important;color:#667085!important;font-size:13px!important;}
+.profile-media-actions{display:flex!important;gap:10px!important;flex-wrap:wrap!important;align-items:center!important;}
+.profile-media-action-btn{appearance:none;border:1px solid #d0d5dd;background:#fff;color:#344054;padding:10px 14px;border-radius:10px;font-weight:750;cursor:pointer;display:inline-flex;align-items:center;gap:7px;}
+.profile-media-action-btn.primary{background:#6d28d9;color:#fff;border-color:#6d28d9;}
+.profile-media-action-btn.video{background:#1d4ed8;color:#fff;border-color:#1d4ed8;}
+.profile-media-action-btn:hover{filter:brightness(.98);box-shadow:0 4px 12px rgba(16,24,40,.08);}
+.profile-media-file-name{display:block;margin-top:10px;color:#667085;font-size:12px;word-break:break-word;}
+.profile-media-preview{margin-top:14px;width:100%;max-height:260px;object-fit:cover;border-radius:12px;border:1px solid #e4e7ec;background:#f8fafc;display:none;}
+#introVideoPreview.profile-media-preview{display:none;}
+#introVideoPreview.profile-media-preview.has-media{display:block;}
+#profilePhotoProfessionalPreview.has-media{display:block;}
+.profile-intro-upload-button{margin-top:12px!important;width:auto!important;min-width:190px!important;border-radius:10px!important;}
+
+/* Dark modes stay visually distinct. */
+body.dark-mode:not(.admin-body){background:#120b18!important;color:#f5f3f7!important;}
+body.dark-mode:not(.admin-body) .profile-media-professional-card,
+body.dark-mode:not(.admin-body) #myProfile.premium-profile-section,
+body.dark-mode:not(.admin-body) #profileForm .profile-form-group,
+body.dark-mode:not(.admin-body) #profileForm .profile-card{background:#1d1426!important;border-color:#3b2b49!important;color:#f5f3f7!important;}
+
+@media(max-width:760px){
+  .profile-media-professional-grid{grid-template-columns:1fr!important;}
+  .profile-media-actions{align-items:stretch!important;}
+  .profile-media-action-btn{justify-content:center!important;flex:1 1 140px!important;}
+}
+
+

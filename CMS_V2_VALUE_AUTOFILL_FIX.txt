@@ -1,0 +1,14 @@
+DivyangSathi CMS V2 - Value Autofill Fix
+
+Fixed:
+- Pages Manager Editable Element dropdown remains automatic.
+- Selecting an editable element now loads its existing value automatically.
+- Changing Property reloads the current matching value.
+- Text/HTML/link destination/placeholder/show-hide/style/image current values are supported.
+- Existing image is previewed automatically.
+- Existing Website/Admin layout was not redesigned by this fix.
+
+Checks:
+- cms.js syntax: PASS
+- CMS page element scanner: present
+- current-value autofill handler: present

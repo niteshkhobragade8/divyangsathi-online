@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>
+Admin Dashboard - DivyangSathi
+</title>
+<link href="style.css" rel="stylesheet"/>
+<link rel="stylesheet" href="final-polish.css">
+<link rel="icon" type="image/png" href="icons/icon-192.png">
+</head>
+<body class="admin-body admin-v3-body">
+<div id="commonHeader"></div>
+<!-- =====================================
+     ADMIN DASHBOARD V3 SHELL
+===================================== -->
+<div class="admin-v3-shell">
+<aside aria-label="Admin navigation" class="admin-v3-sidebar" id="adminV3Sidebar">
+<div class="admin-v3-sidebar-brand">
+<div class="admin-v3-sidebar-logo">DS</div>
+<div>
+<h2>DivyangSathi</h2>
+<p>Administrator Panel</p>
+</div>
+</div>
+<nav class="admin-v3-sidebar-nav">
+<a href="admin.html#dashboard">📊 <span>Dashboard</span></a>
+<a href="admin-cms.html">🌐 <span>Website CMS</span></a>
+<a href="admin-dashboard-cms.html">🛠️ <span>Admin CMS</span></a>
+
+
+
+
+<a class="" href="admin.html#analytics">📈 <span>Analytics</span></a>
+<a class="" href="admin.html#analyticsCharts">📉 <span>Charts</span></a>
+<a class="" href="admin-profiles.html#profiles">👥 <span>User Profiles</span></a>
+<a class="" href="admin-memberships.html#membership">💎 <span>Memberships</span></a>
+<a class="active" href="admin-requests.html#interests">❤️ <span>Interests</span></a>
+<a class="" href="admin-requests.html#voiceRequests">🎙️ <span>Voice Requests</span></a>
+<a class="" href="admin-requests.html#aadhaarRequests">🪪 <span>Aadhaar Requests</span></a>
+<a class="" href="admin-requests.html#faceVerificationRequests">😊 <span>Face Verification</span></a>
+<a class="" href="admin-moderation.html#reports">🚩 <span>User Reports</span></a>
+<a class="" href="admin-support.html#messages">📩 <span>Contact Messages</span></a>
+<a class="" href="admin-support.html#successStories">💖 <span>Success Stories</span></a>
+<a class="" href="admin-support.html#broadcast">📢 <span>Broadcast</span></a>
+<a class="" href="index.html">🏠 <span>Website Home</span></a>
+</nav>
+<div class="admin-v3-sidebar-footer">
+<button type="button" id="adminSidebarLogoutBtn" class="admin-sidebar-logout">🔓 Admin Logout</button>
+<small>© 2026 DivyangSathi</small>
+</div>
+</aside>
+<button aria-label="Close navigation" class="admin-v3-sidebar-backdrop" id="adminV3SidebarBackdrop" type="button"></button>
+<div class="admin-v3-workspace">
+<!-- =====================================
+     ADMIN HERO
+===================================== -->
+<section class="admin-hero">
+<div class="admin-hero-content">
+<div>
+<p class="admin-welcome-text">
+Welcome Back, Administrator
+</p>
+<h1>
+DivyangSathi Admin Dashboard
+</h1>
+<p>
+Manage members, profiles, membership payments, interests and support messages from one secure dashboard.
+</p>
+</div>
+<div class="admin-hero-badge">
+<span>
+👑
+</span>
+<div>
+<strong>
+Super Admin
+</strong>
+<small>
+Full Dashboard Access
+</small>
+</div>
+</div>
+</div>
+</section>
+<!-- =====================================
+     MAIN ADMIN CONTENT
+===================================== -->
+<main class="admin-main">
+<!-- =====================================
+     DASHBOARD OVERVIEW
+===================================== -->
+
+<!-- =====================================
+     ADMIN ANALYTICS DASHBOARD
+===================================== -->
+
+<!-- =====================================
+     ADVANCED LIVE ANALYTICS
+===================================== -->
+
+<!-- =====================================
+     ADMIN ANALYTICS CHARTS
+===================================== -->
+
+<!-- =====================================
+     MEMBERSHIP MANAGEMENT
+===================================== -->
+
+<!-- =====================================
+     MEMBERSHIP REQUESTS
+===================================== -->
+
+<!-- =====================================
+     INTEREST MANAGEMENT
+===================================== -->
+<section class="admin-panel admin-interest-panel admin-navigation-section" id="interests">
+<div class="admin-panel-header">
+<div class="admin-panel-title">
+<div class="admin-panel-icon panel-icon-pink">
+❤️
+</div>
+<div>
+<h2>
+Interest Management
+</h2>
+<p>
+Review matrimonial interests sent between users.
+</p>
+</div>
+</div>
+<div class="admin-panel-status">
+Live Interests
+</div>
+</div>
+<div class="admin-filter-buttons">
+<button class="admin-filter-button filter-pending" onclick="loadAdminInterests('pending')" type="button">
+<span>
+🟡
+</span>
+
+Pending
+
+</button>
+<button class="admin-filter-button filter-approved" onclick="loadAdminInterests('accepted')" type="button">
+<span>
+🟢
+</span>
+
+Accepted
+
+</button>
+<button class="admin-filter-button filter-rejected" onclick="loadAdminInterests('rejected')" type="button">
+<span>
+🔴
+</span>
+
+Rejected
+
+</button>
+<button class="admin-filter-button" onclick="loadAdminInterests('all')" type="button">
+<span>
+📋
+</span>
+
+All
+
+</button>
+</div>
+<div class="admin-content-list" id="adminInterestList">
+<div class="admin-loading-card">
+<div class="admin-loader"></div>
+<p>
+Loading Interest Requests...
+</p>
+</div>
+</div>
+</section>
+<!-- =====================================
+     ALL USER PROFILES
+===================================== -->
+
+<!-- =====================================
+     AADHAAR VERIFICATION REQUESTS
+===================================== -->
+<section class="admin-panel admin-navigation-section" id="aadhaarRequests">
+<div class="admin-panel-header">
+<div class="admin-panel-title">
+<div class="admin-panel-icon panel-icon-purple">
+🪪
+</div>
+<div>
+<h2>
+Aadhaar Verification Requests
+</h2>
+<p>
+Review, approve, reject or delete uploaded Aadhaar documents.
+</p>
+</div>
+</div>
+<div class="admin-panel-status">
+<span id="adminAadhaarPendingBadge">
+0 Pending
+</span>
+</div>
+</div>
+<div class="admin-aadhaar-stats-grid">
+<div class="admin-aadhaar-stat-card">
+<strong id="adminAadhaarTotalCount">
+0
+</strong>
+<span>
+Total
+</span>
+</div>
+<div class="admin-aadhaar-stat-card">
+<strong id="adminAadhaarPendingCount">
+0
+</strong>
+<span>
+Pending
+</span>
+</div>
+<div class="admin-aadhaar-stat-card">
+<strong id="adminAadhaarApprovedCount">
+0
+</strong>
+<span>
+Approved
+</span>
+</div>
+<div class="admin-aadhaar-stat-card">
+<strong id="adminAadhaarRejectedCount">
+0
+</strong>
+<span>
+Rejected
+</span>
+</div>
+</div>
+<div class="admin-aadhaar-toolbar">
+<input id="adminAadhaarSearch" placeholder="Search by name, email or mobile..." type="search"/>
+<button id="refreshAdminAadhaarBtn" type="button">
+
+🔄 Refresh
+
+</button>
+</div>
+<div class="admin-aadhaar-grid" id="adminAadhaarRequests">
+<div class="admin-loading-card">
+<div class="admin-loader"></div>
+<p>
+Loading Aadhaar Requests...
+</p>
+</div>
+</div>
+</section>
+<!-- =====================================
+     FACE VERIFICATION REQUESTS
+===================================== -->
+<section class="admin-panel admin-navigation-section" id="faceVerificationRequests">
+<div class="admin-panel-header">
+<div class="admin-panel-title">
+<div class="admin-panel-icon panel-icon-purple">
+😊
+</div>
+<div>
+<h2>
+Face Verification Requests
+</h2>
+<p>
+Review, approve, reject or delete member selfie verification requests.
+</p>
+</div>
+</div>
+<div class="admin-panel-status">
+<span id="adminFacePendingBadge">
+0 Pending
+</span>
+</div>
+</div>
+<div class="admin-face-stats-grid">
+<div class="admin-face-stat-card">
+<strong id="adminFaceTotalCount">
+0
+</strong>
+<span>
+Total
+</span>
+</div>
+<div class="admin-face-stat-card">
+<strong id="adminFacePendingCount">
+0
+</strong>
+<span>
+Pending
+</span>
+</div>
+<div class="admin-face-stat-card">
+<strong id="adminFaceApprovedCount">
+0
+</strong>
+<span>
+Approved
+</span>
+</div>
+<div class="admin-face-stat-card">
+<strong id="adminFaceRejectedCount">
+0
+</strong>
+<span>
+Rejected
+</span>
+</div>
+</div>
+<div class="admin-face-toolbar">
+<input id="adminFaceSearch" placeholder="Search by name, email or mobile..." type="search"/>
+<button id="refreshAdminFaceBtn" type="button">
+
+🔄 Refresh
+
+</button>
+</div>
+<div class="admin-face-grid" id="adminFaceRequests">
+<div class="admin-loading-card">
+<div class="admin-loader"></div>
+<p>
+Loading Face Verification Requests...
+</p>
+</div>
+</div>
+</section>
+<!-- =====================================
+     CONTACT MANAGEMENT
+===================================== -->
+
+<!-- =====================================
+     VOICE INTRO REQUESTS
+===================================== -->
+<section class="admin-panel admin-navigation-section" id="voiceRequests">
+<div class="admin-panel-header">
+<div class="admin-panel-title">
+<div class="admin-panel-icon panel-icon-purple">
+🎙️
+</div>
+<div>
+<h2>
+Voice Intro Requests
+</h2>
+<p>
+Listen, approve, reject or delete member voice introductions.
+</p>
+</div>
+</div>
+<div class="admin-panel-status">
+<span id="adminVoicePendingBadge">
+0 Pending
+</span>
+</div>
+</div>
+<div class="admin-voice-stats-grid">
+<div class="admin-voice-stat-card">
+<strong id="adminVoiceTotalCount">
+0
+</strong>
+<span>
+Total
+</span>
+</div>
+<div class="admin-voice-stat-card">
+<strong id="adminVoicePendingCount">
+0
+</strong>
+<span>
+Pending
+</span>
+</div>
+<div class="admin-voice-stat-card">
+<strong id="adminVoiceApprovedCount">
+0
+</strong>
+<span>
+Approved
+</span>
+</div>
+<div class="admin-voice-stat-card">
+<strong id="adminVoiceRejectedCount">
+0
+</strong>
+<span>
+Rejected
+</span>
+</div>
+</div>
+<div class="admin-voice-toolbar">
+<input id="adminVoiceSearch" placeholder="Search by name, email or mobile..." type="search"/>
+<button id="refreshAdminVoiceBtn" type="button">
+
+🔄 Refresh
+
+</button>
+</div>
+<div class="admin-voice-grid" id="adminVoiceRequests">
+<div class="admin-loading-card">
+<div class="admin-loader"></div>
+<p>
+Loading Voice Requests...
+</p>
+</div>
+</div>
+</section>
+<!-- =====================================
+     SUCCESS STORIES
+===================================== -->
+
+<!-- =====================================
+     BROADCAST MESSAGE
+===================================== -->
+
+<!-- =====================================
+     USER REPORTS MANAGEMENT
+===================================== -->
+
+<!-- =====================================
+     ADMIN CONTROLS
+===================================== -->
+
+</main>
+<!-- =====================================
+     ADMIN FOOTER
+===================================== -->
+<footer class="admin-footer">
+<div>
+<strong>
+DivyangSathi Admin Panel
+</strong>
+<p>
+Professional Matrimony Platform for Divyang Community
+</p>
+</div>
+<p>
+© 2026 DivyangSathi. All Rights Reserved.
+</p>
+</footer>
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="app.js"></script>
+<script>
+
+// ======================================
+// SMOOTH ADMIN NAVIGATION
+// ======================================
+
+document
+  .querySelectorAll(
+    '.admin-navigation a[href^="#"], .admin-v3-sidebar-nav a[href^="#"]'
+  )
+  .forEach(link => {
+
+    link.addEventListener(
+      "click",
+      function (event) {
+
+        event.preventDefault();
+
+        const targetSelector =
+          this.getAttribute("href");
+
+        const targetSection =
+          document.querySelector(
+            targetSelector
+          );
+
+        if (targetSection) {
+
+          targetSection.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+          });
+
+        }
+
+        document
+          .querySelectorAll(
+            ".admin-navigation a, .admin-v3-sidebar-nav a"
+          )
+          .forEach(item => {
+
+            item.classList.remove(
+              "active"
+            );
+
+          });
+
+        this.classList.add(
+          "active"
+        );
+
+      }
+    );
+
+  });
+
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script src="layout.js"></script>
+<script src="feature-config.js"></script>
+<script src="full-page-i18n.js"></script>
+<script src="final-features.js"></script>
+
+<script src="admin-cms-runtime.js"></script>
+</body>
+</html>

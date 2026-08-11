@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Membership Plans - DivyangSathi</title>
+
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="user-theme.css">
+
+<link rel="stylesheet" href="final-polish.css">
+<link rel="icon" type="image/png" href="icons/icon-192.png">
+</head>
+
+
+<body class="user-dashboard-body membership-premium-body">
+
+
+<!-- =====================================
+     USER DASHBOARD HEADER
+===================================== -->
+
+<div id="commonHeader"></div>
+
+
+<!-- =====================================
+     MEMBERSHIP HERO
+===================================== -->
+
+<section class="membership-premium-hero">
+
+<div class="membership-premium-hero-content">
+
+<div>
+
+<span class="membership-hero-label">
+DIVYANGSATHI MEMBERSHIP
+</span>
+
+<h1>
+Choose the Right Membership Plan
+</h1>
+
+<p>
+Select a membership plan and connect with suitable matrimonial profiles.
+</p>
+
+</div>
+
+
+<div class="membership-hero-security">
+
+<span>
+🔐
+</span>
+
+<div>
+
+<strong>
+Secure Membership
+</strong>
+
+<small>
+Payment approval by DivyangSathi Admin
+</small>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================
+     MEMBERSHIP MAIN
+===================================== -->
+
+<main class="membership-premium-main">
+
+
+<!-- CURRENT MEMBERSHIP STATUS -->
+
+<section class="membership-current-status">
+
+<div>
+
+<span class="profile-section-label">
+CURRENT MEMBERSHIP
+</span>
+
+<h2>
+Your Membership Status
+</h2>
+
+<p>
+Your active plan and available profile views will appear here.
+</p>
+
+</div>
+
+
+<div class="membership-status-card">
+
+<div class="membership-status-icon">
+💎
+</div>
+
+<div>
+
+<span>
+Current Plan
+</span>
+
+<strong id="currentMembershipPlan">
+Free
+</strong>
+
+<p id="currentMembershipViews">
+0 Profile Views Available
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================
+     MEMBERSHIP PLANS
+===================================== -->
+
+<section class="membership-plans-section">
+
+<div class="membership-section-heading">
+
+<span class="profile-section-label">
+MEMBERSHIP PLANS
+</span>
+
+<h2>
+Select Your Plan
+</h2>
+
+<p>
+Choose a plan according to your matrimonial search requirements.
+</p>
+
+</div>
+
+
+<div class="membership-plan-grid">
+
+
+<!-- FREE PLAN -->
+
+<div
+class="membership-plan-card membership-free-card"
+data-plan="Free"
+data-amount="0">
+
+<div class="membership-plan-icon">
+🆓
+</div>
+
+<h2>
+Free
+</h2>
+
+<h3>
+₹0
+</h3>
+
+<p class="membership-plan-duration">
+Basic Account
+</p>
+
+<ul>
+
+<li>✅ Login Access</li>
+
+<li>✅ User Dashboard</li>
+
+<li>✅ Complete Your Profile</li>
+
+<li>❌ Search Profile Access</li>
+
+<li>❌ View Profile Access</li>
+
+<li>❌ Chat Access</li>
+
+</ul>
+
+<button
+type="button"
+class="membership-select-button"
+onclick="selectMembershipPlan('Free', 0)">
+
+Select Free
+
+</button>
+
+</div>
+
+
+<!-- SILVER PLAN -->
+
+<div
+class="membership-plan-card membership-silver-card"
+data-plan="Silver"
+data-amount="49">
+
+<div class="membership-plan-icon">
+🥈
+</div>
+
+<h2>
+Silver
+</h2>
+
+<h3>
+₹49
+</h3>
+
+<p class="membership-plan-duration">
+Starter Membership
+</p>
+
+<ul>
+
+<li>✅ Dashboard Access</li>
+
+<li>✅ Search Profiles</li>
+
+<li>✅ 25 Profile Views</li>
+
+<li>✅ Send Interests</li>
+
+<li>✅ Chat Access</li>
+
+<li>✅ Silver Member Badge</li>
+
+</ul>
+
+<button
+type="button"
+class="membership-select-button"
+onclick="selectMembershipPlan('Silver', 49)">
+
+Choose Silver
+
+</button>
+
+</div>
+
+
+<!-- GOLD PLAN -->
+
+<div
+class="membership-plan-card membership-gold-card membership-popular"
+data-plan="Gold"
+data-amount="99">
+
+<div class="membership-popular-badge">
+⭐ MOST POPULAR
+</div>
+
+<div class="membership-plan-icon">
+🥇
+</div>
+
+<h2>
+Gold
+</h2>
+
+<h3>
+₹99
+</h3>
+
+<p class="membership-plan-duration">
+Premium Membership
+</p>
+
+<ul>
+
+<li>✅ Dashboard Access</li>
+
+<li>✅ Advanced Profile Search</li>
+
+<li>✅ 100 Profile Views</li>
+
+<li>✅ Send Interests</li>
+
+<li>✅ Chat Access</li>
+
+<li>✅ Gold Member Badge</li>
+
+</ul>
+
+<button
+type="button"
+class="membership-select-button"
+onclick="selectMembershipPlan('Gold', 99)">
+
+Choose Gold
+
+</button>
+
+</div>
+
+
+<!-- PLATINUM PLAN -->
+
+<div
+class="membership-plan-card membership-platinum-card"
+data-plan="Platinum"
+data-amount="199">
+
+<div class="membership-plan-icon">
+💎
+</div>
+
+<h2>
+Platinum
+</h2>
+
+<h3>
+₹199
+</h3>
+
+<p class="membership-plan-duration">
+Ultimate Membership
+</p>
+
+<ul>
+
+<li>✅ Dashboard Access</li>
+
+<li>✅ Advanced Profile Search</li>
+
+<li>✅ Unlimited Profile Views</li>
+
+<li>✅ Send Interests</li>
+
+<li>✅ Chat Access</li>
+
+<li>✅ Platinum Member Badge</li>
+
+</ul>
+
+<button
+type="button"
+class="membership-select-button"
+onclick="selectMembershipPlan('Platinum', 199)">
+
+Choose Platinum
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================
+     PAYMENT SECTION
+===================================== -->
+
+<section
+id="membershipPaymentSection"
+class="membership-payment-section">
+
+<div class="membership-payment-heading">
+
+<div class="membership-payment-icon">
+💳
+</div>
+
+<div>
+
+<span class="profile-section-label">
+SECURE PAYMENT
+</span>
+
+<h2>
+Membership Payment
+</h2>
+
+<p>
+Select a paid plan, scan the QR code and submit your UTR number.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="membership-payment-layout">
+
+
+<!-- SELECTED PLAN -->
+
+<div class="membership-selected-plan">
+
+<h3>
+Selected Membership
+</h3>
+
+<div class="membership-selected-row">
+
+<span>
+Plan
+</span>
+
+<strong id="selectedPlanText">
+No Plan Selected
+</strong>
+
+</div>
+
+<div class="membership-selected-row">
+
+<span>
+Amount
+</span>
+
+<strong id="selectedAmountText">
+₹0
+</strong>
+
+</div>
+
+
+<input
+type="hidden"
+id="membershipPlan"
+value="">
+
+<input
+type="hidden"
+id="membershipAmount"
+value="0">
+
+</div>
+
+
+<!-- QR CODE -->
+
+<div
+id="qrPaymentArea"
+class="membership-qr-box"
+style="display:none;">
+
+<h3>
+Scan and Pay
+</h3>
+
+<img
+src="images/upi-qr.png"
+alt="DivyangSathi UPI QR Code"
+class="membership-qr-image">
+
+<p>
+Pay the exact selected membership amount using this QR code.
+</p>
+
+<div class="membership-payment-warning">
+
+⚠️ Payment karne ke baad UTR number zaroor enter karein.
+
+</div>
+
+</div>
+
+
+<!-- PAYMENT FORM -->
+
+<div class="membership-payment-form">
+
+<h3>
+Submit Payment Details
+</h3>
+
+<label for="utrNumber">
+UTR / Transaction Number
+</label>
+
+<input
+type="text"
+id="utrNumber"
+placeholder="Enter payment UTR number"
+autocomplete="off">
+
+<button
+type="button"
+id="submitMembership"
+disabled>
+
+✅ Submit Membership Request
+
+</button>
+
+<p id="paymentStatus"></p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================
+     MEMBERSHIP RULES
+===================================== -->
+
+<section class="membership-rules-section">
+
+<div class="membership-section-heading">
+
+<span class="profile-section-label">
+MEMBERSHIP RULES
+</span>
+
+<h2>
+Important Information
+</h2>
+
+</div>
+
+
+<div class="membership-rules-grid">
+
+<div class="membership-rule-card">
+
+<span>
+💳
+</span>
+
+<h3>
+Correct Payment</h3>
+
+<p>
+Selected plan ke according exact amount payment karein.
+</p>
+
+</div>
+
+
+<div class="membership-rule-card">
+
+<span>
+🔢
+</span>
+
+<h3>
+Valid UTR Number</h3>
+
+<p>
+Galat ya duplicate UTR number accept nahi kiya jayega.
+</p>
+
+</div>
+
+
+<div class="membership-rule-card">
+
+<span>
+✅
+</span>
+
+<h3>
+Admin Approval</h3>
+
+<p>
+Membership admin verification ke baad activate hogi.
+</p>
+
+</div>
+
+
+<div class="membership-rule-card">
+
+<span>
+🚫
+</span>
+
+<h3>
+Non-Refundable</h3>
+
+<p>
+Approved membership payment non-refundable rahega.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+
+<!-- =====================================
+     FOOTER
+===================================== -->
+
+<div id="commonFooter"></div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="app.js"></script>
+
+
+<script>
+
+// ======================================
+// MEMBERSHIP PLAN SELECTION
+// ======================================
+
+function selectMembershipPlan(plan, amount) {
+
+  const planInput =
+    document.getElementById("membershipPlan");
+
+  const amountInput =
+    document.getElementById("membershipAmount");
+
+  const selectedPlanText =
+    document.getElementById("selectedPlanText");
+
+  const selectedAmountText =
+    document.getElementById("selectedAmountText");
+
+  const qrPaymentArea =
+    document.getElementById("qrPaymentArea");
+
+  const submitButton =
+    document.getElementById("submitMembership");
+
+  const utrNumber =
+    document.getElementById("utrNumber");
+
+
+  planInput.value = plan;
+
+  amountInput.value = amount;
+
+  selectedPlanText.textContent = plan;
+
+  selectedAmountText.textContent =
+    "₹" + amount;
+
+
+  document
+    .querySelectorAll(".membership-plan-card")
+    .forEach(function (card) {
+
+      card.classList.remove(
+        "membership-plan-selected"
+      );
+
+    });
+
+
+  const selectedCard =
+    document.querySelector(
+      `.membership-plan-card[data-plan="${plan}"]`
+    );
+
+  if (selectedCard) {
+
+    selectedCard.classList.add(
+      "membership-plan-selected"
+    );
+
+  }
+
+
+  if (plan === "Free") {
+
+    qrPaymentArea.style.display = "none";
+
+    utrNumber.value = "";
+
+    utrNumber.disabled = true;
+
+    submitButton.disabled = true;
+
+    alert(
+      "Free plan automatically available hai. Paid profiles dekhne ke liye Silver, Gold ya Platinum select karein."
+    );
+
+    return;
+
+  }
+
+
+  qrPaymentArea.style.display = "block";
+
+  utrNumber.disabled = false;
+
+  submitButton.disabled = false;
+
+
+  document
+    .getElementById("membershipPaymentSection")
+    .scrollIntoView({
+      behavior: "smooth"
+    });
+
+}
+
+
+// ======================================
+// MEMBERSHIP PAGE LOGOUT
+// ======================================
+
+document
+  .getElementById("membershipLogoutBtn")
+  ?.addEventListener(
+    "click",
+    async function () {
+
+      const confirmLogout = confirm(
+        "Kya aap logout karna chahte hain?"
+      );
+
+      if (!confirmLogout) return;
+
+      const { error } =
+        await client.auth.signOut();
+
+      if (error) {
+
+        alert(error.message);
+
+        return;
+
+      }
+
+      window.location.replace(
+        "login.html"
+      );
+
+    }
+  );
+
+</script>
+
+<script src="full-page-i18n.js"></script>
+<script src="languages.js"></script>
+<script src="language.js"></script>
+<script src="layout.js"></script>
+
+<script src="user-theme.js"></script>
+<script src="feature-config.js"></script>
+<script src="final-features.js"></script>
+
+<script src="cms-runtime.js"></script>
+</body>
+
+</html>

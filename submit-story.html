@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>
+Submit Success Story
+</title>
+
+<link
+rel="stylesheet"
+href="style.css">
+<link rel="stylesheet" href="user-theme.css">
+
+<link rel="stylesheet" href="final-polish.css">
+<link rel="icon" type="image/png" href="icons/icon-192.png">
+</head>
+
+<body>
+
+<div id="commonHeader"></div>
+
+<main class="story-container">
+
+<form
+id="successStoryForm"
+class="story-form">
+
+<div class="form-group">
+
+<label>
+Partner Name
+</label>
+
+<input
+type="text"
+id="storyPartnerName"
+required>
+
+</div>
+
+<div class="form-group">
+
+<label>
+Story Title
+</label>
+
+<input
+type="text"
+id="storyTitle"
+required>
+
+</div>
+
+<div class="form-group">
+
+<label>
+Marriage Date
+</label>
+
+<input
+type="date"
+id="storyMarriageDate">
+
+</div>
+
+<div class="form-group">
+
+<label>
+State
+</label>
+
+<input
+type="text"
+id="storyState">
+
+</div>
+
+<div class="form-group">
+
+<label>
+City
+</label>
+
+<input
+type="text"
+id="storyCity">
+
+</div>
+
+<div class="form-group">
+
+<label>
+Couple Photo
+</label>
+
+<input
+type="file"
+id="storyPhoto"
+accept="image/*">
+
+</div>
+
+<div class="form-group">
+
+<label>
+Your Success Story
+</label>
+
+<textarea
+id="storyText"
+rows="8"
+required></textarea>
+
+</div>
+
+<button
+type="submit"
+class="primary-btn">
+
+💖 Submit Story
+
+</button>
+
+</form>
+
+</main>
+
+<div id="commonFooter"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="app.js"></script>
+
+<script src="full-page-i18n.js"></script>
+<script src="languages.js"></script>
+<script src="language.js"></script>
+<script src="layout.js"></script>
+<script src="user-theme.js"></script>
+<script src="feature-config.js"></script>
+<script src="final-features.js"></script>
+
+<script src="cms-runtime.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,2796 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>My Profile - DivyangSathi</title>
+
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="user-theme.css">
+
+<link rel="stylesheet" href="final-polish.css">
+<link rel="icon" type="image/png" href="icons/icon-192.png">
+</head>
+
+<body class="user-dashboard-body">
+
+<div id="commonHeader"></div>
+
+
+
+
+
+<main class="user-dashboard-main">
+
+
+<!-- =====================================
+     BROADCAST MESSAGE
+===================================== -->
+
+<div
+id="broadcastBox"
+class="broadcast-box"
+style="display:none;">
+
+<h3 id="broadcastHeading">
+📢 Announcement
+</h3>
+
+<h4 id="broadcastTitleText"></h4>
+
+<p id="broadcastMessageText"></p>
+
+</div>
+
+
+<!-- =====================================
+     USER DASHBOARD HERO
+===================================== -->
+
+<section class="user-dashboard-hero">
+
+<div class="user-dashboard-hero-content">
+
+<div>
+
+<p class="user-dashboard-welcome">
+WELCOME TO YOUR DASHBOARD
+</p>
+
+<h1>
+Hello, <span id="dashboardUserName">DivyangSathi Member</span> 👋
+</h1>
+
+<p>
+Complete your profile and find a compatible life partner.
+</p>
+
+</div>
+
+
+<div class="user-dashboard-security">
+
+<span>
+🔐
+</span>
+
+<div>
+
+<strong>
+Secure Profile
+</strong>
+
+<small>
+Your information is protected
+</small>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =====================================
+     PREMIUM PROFILE HEADER
+===================================== -->
+
+<section class="premium-user-header">
+
+<div class="premium-user-left">
+
+<div class="premium-user-photo">
+
+<img
+id="dashboardProfilePhoto"
+src=""
+style="display:none;">
+
+<div id="dashboardPhotoPlaceholder">
+👤
+</div>
+
+<span class="online-dot"></span>
+
+<label
+for="introVideoInput"
+class="video-upload-fab"
+title="Upload 30 sec Intro Video">
+
+🎥
+
+</label>
+
+
+
+</div>
+
+<div>
+
+<h2 id="dashboardFullName">
+DivyangSathi Member
+</h2>
+
+<p id="dashboardMemberId">
+Member ID : DS000001
+</p>
+
+<div class="premium-user-badges">
+
+<span id="dashboardMembershipBadge"
+class="badge-membership">
+
+🆓 Free
+
+</span>
+
+<span id="dashboardVerifyBadge"
+class="badge-verified">
+
+⏳ Pending
+
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="premium-user-right">
+
+<div class="premium-stat-card">
+
+<h3 id="profileViews">
+0
+</h3>
+
+<p>👁️ Profile Views</p>
+
+</div>
+
+<div class="premium-stat-card">
+
+<h3 id="interestCount">
+0
+</h3>
+
+<p>❤️ Interests</p>
+
+</div>
+
+<div class="premium-stat-card">
+
+<h3 id="favoriteCount">
+0
+</h3>
+
+<p>⭐ Favourite</p>
+
+</div>
+
+<div class="premium-stat-card">
+
+<h3 id="lastUpdated">
+Today
+</h3>
+
+<p>📅 Updated</p>
+
+</div>
+
+<div class="profile-pdf-action">
+
+</div>
+
+</section>
+
+
+<!-- =====================================
+     USER DASHBOARD MAIN
+===================================== -->
+
+
+
+
+<!-- =====================================
+     PROFILE SUMMARY
+===================================== -->
+
+<section class="user-summary-section">
+
+<div class="user-summary-card user-summary-blue">
+
+<div class="user-summary-icon">
+👤
+</div>
+
+<div>
+
+<span>
+Profile Status
+</span>
+
+<strong id="profileStatusText">
+Incomplete
+</strong>
+
+</div>
+
+</div>
+
+
+<div class="user-summary-card user-summary-pink">
+
+<div class="user-summary-icon">
+💎
+</div>
+
+<div>
+
+<span>
+Membership
+</span>
+
+<strong id="dashboardMembershipStatus">
+Free Member
+</strong>
+
+</div>
+
+</div>
+
+
+<div class="user-summary-card user-summary-green">
+
+<div class="user-summary-icon">
+✅
+</div>
+
+<div>
+
+<span>
+Verification
+</span>
+
+<strong id="dashboardVerificationStatus">
+Pending
+</strong>
+
+</div>
+
+</div>
+
+
+<div class="user-summary-card user-summary-yellow">
+
+<div class="user-summary-icon">
+📊
+</div>
+
+<div>
+
+<span>
+Profile Completion
+</span>
+
+<strong id="profileCompletionText">
+0%
+</strong>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================
+     PROFILE COMPLETION
+===================================== -->
+
+<section class="profile-completion-panel">
+
+<div class="profile-completion-heading">
+
+<div>
+
+<span class="profile-section-label">
+PROFILE PROGRESS
+</span>
+
+<h2>
+Complete Your Matrimony Profile
+</h2>
+
+<p>
+A complete profile receives better responses and suitable matches.
+</p>
+
+</div>
+
+<strong id="profileCompletionNumber">
+0%
+</strong>
+
+</div>
+
+
+<div class="profile-progress-track">
+
+<div
+id="profileProgressBar"
+class="profile-progress-bar">
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================
+     QUICK ACTIONS
+===================================== -->
+
+<section class="user-quick-actions">
+
+<a href="search.html" class="user-action-card action-blue">
+
+<span>
+🔍
+</span>
+
+<div>
+
+<strong>
+Search Profiles
+</strong>
+
+<small>
+Find suitable matches
+</small>
+
+</div>
+
+</a>
+
+
+<a href="membership.html" class="user-action-card action-pink">
+
+<span>
+💎
+</span>
+
+<div>
+
+<strong>
+Membership
+</strong>
+
+<small>
+Check premium status
+</small>
+
+</div>
+
+</a>
+
+
+<a href="#myProfile" class="user-action-card action-green">
+
+<span>
+✏️
+</span>
+
+<div>
+
+<strong>
+Edit Profile
+</strong>
+
+<small>
+Update your details
+</small>
+
+</div>
+
+</a>
+
+
+<a href="contact.html" class="user-action-card action-yellow">
+
+<span>
+📩
+</span>
+
+<div>
+
+<strong>
+Get Support
+</strong>
+
+<small>
+Contact DivyangSathi
+</small>
+
+</div>
+
+</a>
+
+</section>
+
+
+<!-- =====================================
+     WHO VIEWED MY PROFILE
+===================================== -->
+
+<section class="profile-viewers-panel">
+
+<div class="profile-viewers-header">
+
+<div>
+
+<span class="profile-section-label">
+PROFILE VISITORS
+</span>
+
+<h2>
+👀 Who Viewed My Profile
+</h2>
+
+<p>
+See members who recently viewed your matrimony profile.
+</p>
+
+</div>
+
+<div class="profile-viewers-count-card">
+
+<strong id="uniqueViewerCount">
+0
+</strong>
+
+<span>
+Unique Viewers
+</span>
+
+</div>
+
+</div>
+
+
+<div
+id="profileViewersList"
+class="profile-viewers-grid">
+
+<div class="profile-viewers-loading">
+
+<div class="admin-loader"></div>
+
+<p>
+Loading profile visitors...
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================
+     PROFILE FORM SECTION
+===================================== -->
+
+<section
+id="myProfile"
+class="profile-section premium-profile-section">
+
+<div class="profile-dashboard-heading">
+
+<div>
+
+<span class="profile-section-label">
+MY MATRIMONY PROFILE
+</span>
+
+<h1>
+Profile Information
+</h1>
+
+<p>
+Keep your information complete, correct and updated.
+</p>
+
+</div>
+
+
+<div
+id="premiumBadge"
+class="premium-badge premium-dashboard-badge"
+style="display:none;">
+
+💎 Premium Member
+
+<br>
+
+<small id="premiumExpiry"></small>
+
+</div>
+
+</div>
+
+
+<form id="profileForm" class="profile-form premium-profile-form">
+
+
+<!-- =====================================
+     PROFILE PHOTO
+===================================== -->
+
+<div class="profile-photo-upload-content">
+
+<div class="profile-media-professional-grid">
+
+<section class="profile-media-professional-card" aria-labelledby="profilePhotoHeading">
+<h3 id="profilePhotoHeading">📷 Profile Photo</h3>
+<p>Upload a clear profile photo. On mobile you can choose a file or use the camera.</p>
+<div class="profile-media-actions">
+<label for="profilePhoto" class="profile-media-action-btn primary">📁 Choose File</label>
+<button type="button" id="takeProfilePhotoBtn" class="profile-media-action-btn">📷 Camera</button>
+</div>
+<input type="file" id="profilePhoto" accept="image/jpeg,image/png,image/webp" hidden>
+<input type="file" id="profilePhotoCamera" accept="image/*" capture="user" hidden>
+<span id="profilePhotoFileName" class="profile-media-file-name">JPG, PNG or WEBP</span>
+<img id="profilePhotoProfessionalPreview" class="profile-media-preview" alt="Selected profile photo preview">
+</section>
+
+<section class="profile-media-professional-card" aria-labelledby="introVideoHeading">
+<h3 id="introVideoHeading">🎥 30 Sec Intro Video</h3>
+<p>Record a short introduction with your camera or upload an existing video.</p>
+<div class="profile-media-actions">
+<button type="button" id="recordIntroVideoBtn" class="profile-media-action-btn video">🎬 Record Video</button>
+<label for="introVideoInput" class="profile-media-action-btn">📁 Upload Video</label>
+</div>
+<input type="file" id="introVideoInput" accept="video/*" hidden>
+<input type="file" id="introVideoCameraInput" accept="video/*" capture="user" hidden>
+<span id="introVideoFileName" class="profile-media-file-name">Recommended: up to 30 seconds</span>
+<video id="introVideoPreview" controls playsinline class="profile-media-preview"></video>
+<button type="button" id="uploadIntroVideoBtn" class="profile-intro-upload-button">⬆️ Save Intro Video</button>
+</section>
+
+</div>
+
+<!-- =====================================
+     AADHAAR VERIFICATION
+===================================== -->
+
+<section class="profile-card">
+
+<h2>
+🪪 Aadhaar Verification
+</h2>
+
+<p>
+Upload clear Front and Back Aadhaar images for verification.
+</p>
+
+<div class="profile-media-upload-row">
+
+<div class="profile-media-upload-item">
+
+<label
+for="aadhaarFront">
+
+📷 Aadhaar Front
+
+</label>
+
+<input
+type="file"
+id="aadhaarFront"
+accept="image/*">
+
+<img
+id="aadhaarFrontPreview"
+style="
+display:none;
+width:100%;
+margin-top:10px;
+border-radius:10px;">
+
+</div>
+
+<div class="profile-media-upload-item">
+
+<label
+for="aadhaarBack">
+
+📷 Aadhaar Back
+
+</label>
+
+<input
+type="file"
+id="aadhaarBack"
+accept="image/*">
+
+<img
+id="aadhaarBackPreview"
+style="
+display:none;
+width:100%;
+margin-top:10px;
+border-radius:10px;">
+
+</div>
+
+</div>
+
+<p>
+
+Status:
+
+<strong id="aadhaarStatus">
+
+Not Uploaded
+
+</strong>
+
+</p>
+
+</section>
+
+<!-- =====================================
+     FACE VERIFICATION
+===================================== -->
+
+<section class="profile-card">
+
+<h2>
+😊 Face Verification
+</h2>
+
+<p>
+Upload a clear selfie for identity verification.
+</p>
+
+<div class="profile-media-upload-row">
+
+<div class="profile-media-upload-item">
+
+<label
+for="faceVerificationPhoto">
+
+🤳 Upload Selfie
+
+</label>
+
+<input
+type="file"
+id="faceVerificationPhoto"
+accept="image/*">
+
+<img
+id="faceVerificationPreview"
+style="
+display:none;
+width:100%;
+margin-top:12px;
+border-radius:12px;">
+
+</div>
+
+</div>
+
+<p>
+
+Status:
+
+<strong id="faceVerificationStatus">
+
+Not Uploaded
+
+</strong>
+
+</p>
+
+</section>
+
+<!-- =====================================
+     VOICE INTRO
+===================================== -->
+
+<div class="profile-voice-upload-box">
+
+<h3>🎙️ 30 Second Voice Intro</h3>
+
+<div class="profile-voice-buttons">
+
+<button
+type="button"
+id="recordVoiceBtn">
+
+🎙️ Record
+
+</button>
+
+<button
+type="button"
+id="stopVoiceBtn"
+disabled>
+
+⏹️ Stop
+
+</button>
+
+<button
+type="button"
+id="playVoiceBtn"
+disabled>
+
+▶️ Play
+
+</button>
+
+<button
+type="button"
+id="uploadVoiceBtn"
+disabled>
+
+☁️ Upload
+
+</button>
+
+<button
+type="button"
+id="deleteVoiceBtn"
+disabled>
+
+🗑️ Delete
+
+</button>
+
+</div>
+
+<audio
+id="voicePreview"
+controls
+style="display:none;width:100%;margin-top:15px;">
+</audio>
+
+<p id="voiceStatus">
+
+No voice recorded.
+
+</p>
+
+</div>
+
+</div>
+
+<!-- =====================================
+     GALLERY
+===================================== -->
+
+<div class="profile-form-group">
+
+<div class="profile-form-heading">
+
+<span>
+🖼️
+</span>
+
+<div>
+
+<h2>
+Gallery Photos
+</h2>
+
+<p>
+Add additional photos to make your profile more attractive.
+</p>
+
+</div>
+
+</div>
+
+
+<label
+for="galleryPhoto"
+class="profile-upload-label">
+
+➕ Add Gallery Photos
+
+</label>
+
+<input
+type="file"
+id="galleryPhoto"
+accept="image/*"
+multiple>
+
+<div id="galleryPreview" class="profile-gallery-preview"></div>
+
+</div>
+
+
+<!-- =====================================
+     BASIC INFORMATION
+===================================== -->
+
+<div class="profile-form-group">
+
+<div class="profile-form-heading">
+
+<span>
+👤
+</span>
+
+<div>
+
+<h2>
+Basic Information
+</h2>
+
+<p>
+Enter your basic account and identity details.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="profile-input-grid">
+
+<div class="profile-input-box">
+
+<label for="profileName">
+Full Name
+</label>
+
+<input
+type="text"
+id="profileName"
+placeholder="Enter your full name"
+required>
+
+</div>
+
+
+<div class="profile-input-box">
+
+<label for="profileMobile">
+Mobile Number
+</label>
+
+<input
+type="text"
+id="profileMobile"
+readonly>
+
+</div>
+
+
+<div class="profile-input-box">
+
+<label for="profileEmail">
+Email Address
+</label>
+
+<input
+type="email"
+id="profileEmail"
+readonly>
+
+</div>
+
+
+<div class="profile-input-box">
+
+<label for="profileGender">
+Gender
+</label>
+
+<select id="profileGender">
+
+<option value="">
+Select Gender
+</option>
+
+<option value="Male">
+Male
+</option>
+
+<option value="Female">
+Female
+</option>
+
+<option value="Other">
+Other
+</option>
+
+</select>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- =====================================
+     PERSONAL INFORMATION
+===================================== -->
+
+<div class="profile-form-group">
+
+<div class="profile-form-heading">
+
+<span>
+❤️
+</span>
+
+<div>
+
+<h2>
+Personal Information
+</h2>
+
+<p>
+Provide accurate personal and disability-related information.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="profile-input-grid">
+
+<div class="profile-input-box">
+
+<label for="dateOfBirth">
+Date of Birth
+</label>
+
+<input
+type="date"
+id="dateOfBirth">
+
+</div>
+
+
+<div class="profile-input-box">
+
+<label for="age">
+Age
+</label>
+
+<input
+type="number"
+id="age"
+placeholder="Enter age">
+
+</div>
+
+
+
+<div class="profile-input-box">
+
+<label for="disabilityType">
+Disability Type
+</label>
+
+<input
+type="text"
+id="disabilityType"
+placeholder="Enter disability type">
+
+</div>
+
+
+<div class="profile-input-box">
+
+<label for="disabilityPercentage">
+Disability Percentage
+</label>
+
+<input
+type="text"
+id="disabilityPercentage"
+placeholder="For example: 40%">
+
+</div>
+
+
+<div class="profile-input-box">
+
+<label for="religion">
+Religion
+</label>
+
+<input
+type="text"
+id="religion"
+placeholder="Enter religion">
+
+</div>
+
+
+<div class="profile-input-box">
+
+<label for="caste">
+Caste
+</label>
+
+<input
+type="text"
+id="caste"
+placeholder="Optional">
+
+</div>
+
+
+<div class="profile-input-box">
+
+<label for="maritalStatus">
+Marital Status
+</label>
+
+<select id="maritalStatus">
+
+<option value="">
+Select
+</option>
+
+<option>
+Never Married
+</option>
+
+<option>
+Divorced
+</option>
+
+<option>
+Widowed
+</option>
+
+</select>
+
+</div>
+
+
+<div class="profile-input-box">
+
+<label for="height">
+Height
+</label>
+
+<input
+type="text"
+id="height"
+placeholder="For example: 5 feet 7 inches">
+
+</div>
+
+
+<div class="profile-input-box">
+
+<label for="weight">
+Weight
+</label>
+
+<input
+type="text"
+id="weight"
+placeholder="Enter weight">
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- =====================================
+     EDUCATION AND CAREER
+===================================== -->
+
+<div class="profile-form-group">
+
+<div class="profile-form-heading">
+
+<span>
+🎓
+</span>
+
+<div>
+
+<h2>
+Education & Career
+</h2>
+
+<p>
+Add your educational and professional details.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="profile-input-grid">
+
+<div class="profile-input-box">
+
+<label for="education">
+Education
+</label>
+
+<input
+type="text"
+id="education"
+placeholder="Highest qualification">
+
+</div>
+
+
+<div class="profile-input-box">
+
+<label for="occupation">
+Occupation
+</label>
+
+<input
+type="text"
+id="occupation"
+placeholder="Current occupation">
+
+</div>
+
+
+<div class="profile-input-box">
+
+<label for="income">
+Annual Income
+</label>
+
+<input
+type="text"
+id="income"
+placeholder="Annual income">
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- =====================================
+     LOCATION
+===================================== -->
+
+<div class="profile-form-group">
+
+<div class="profile-form-heading">
+
+<span>
+📍
+</span>
+
+<div>
+
+<h2>
+Location
+</h2>
+
+<p>
+Enter your current residential location.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="profile-input-grid">
+
+<div class="profile-input-box">
+
+<label for="state">
+State
+</label>
+
+<input
+type="text"
+id="state"
+placeholder="Enter state">
+
+</div>
+
+
+<div class="profile-input-box">
+
+<label for="district">
+District
+</label>
+
+<input
+type="text"
+id="district"
+placeholder="Enter district">
+
+</div>
+
+
+<div class="profile-input-box">
+
+<label for="city">
+City
+</label>
+
+<input
+type="text"
+id="city"
+placeholder="Enter city">
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- =====================================
+     ABOUT ME
+===================================== -->
+
+<div class="profile-form-group">
+
+<div class="profile-form-heading">
+
+<span>
+✍️
+</span>
+
+<div>
+
+<h2>
+About Me
+</h2>
+
+<p>
+Introduce yourself in a respectful and meaningful way.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="profile-input-box profile-full-width">
+
+<label for="aboutMe">
+About Yourself
+</label>
+
+<textarea
+id="aboutMe"
+rows="5"
+placeholder="Write something about yourself"></textarea>
+
+</div>
+
+</div>
+
+
+<!-- =====================================
+     PARTNER PREFERENCE
+===================================== -->
+
+<div class="profile-form-group">
+
+<div class="profile-form-heading">
+
+<span>
+💞
+</span>
+
+<div>
+
+<h2>
+Partner Preference
+</h2>
+
+<p>
+Describe the qualities you are looking for in a life partner.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="profile-input-grid">
+
+<div class="profile-input-box">
+
+<label for="preferredAge">
+Preferred Age
+</label>
+
+<input
+type="text"
+id="preferredAge"
+placeholder="For example: 25 to 32">
+
+</div>
+
+
+<div class="profile-input-box">
+
+<label for="preferredState">
+Preferred State
+</label>
+
+<input
+type="text"
+id="preferredState"
+placeholder="Preferred state">
+
+</div>
+
+
+<div class="profile-input-box">
+
+<label for="preferredDisability">
+Preferred Disability
+</label>
+
+<input
+type="text"
+id="preferredDisability"
+placeholder="Optional preference">
+
+</div>
+
+</div>
+
+
+<div class="profile-input-box profile-full-width">
+
+<label for="partnerPreference">
+Additional Partner Preference
+</label>
+
+<textarea
+id="partnerPreference"
+rows="5"
+placeholder="Write your partner preference"></textarea>
+
+</div>
+
+</div>
+
+
+<!-- =====================================
+     FORM ACTIONS
+===================================== -->
+
+<div class="profile-form-actions">
+
+<button
+type="submit"
+class="profile-save-button">
+
+💾 Save Profile
+
+</button>
+
+
+<button
+type="button"
+id="logoutBtn"
+class="profile-logout-button">
+
+🚪 Logout
+
+</button>
+
+<button
+type="button"
+id="deactivateAccountBtn">
+
+⏸ Deactivate Account
+
+</button>
+
+<button
+type="button"
+id="deleteAccountBtn">
+
+🗑 Request Account Deletion
+
+</button>
+
+</div>
+
+</form>
+
+</section>
+
+</main>
+
+
+<!-- =====================================
+     FOOTER
+===================================== -->
+
+
+
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="app.js"></script>
+
+
+<script>
+
+// ======================================
+// USER DASHBOARD DISPLAY
+// ======================================
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const profileForm =
+        document.getElementById("profileForm");
+
+    const profileName =
+        document.getElementById("profileName");
+
+    const dashboardUserName =
+        document.getElementById("dashboardUserName");
+
+    const premiumBadge =
+        document.getElementById("premiumBadge");
+
+    const membershipStatus =
+        document.getElementById("dashboardMembershipStatus");
+
+    const photoPreview =
+        document.getElementById("photoPreview");
+
+    const photoPlaceholder =
+        document.getElementById("profilePhotoPlaceholder");
+
+    const headerLogoutBtn =
+        document.getElementById("headerLogoutBtn");
+
+    const logoutBtn =
+        document.getElementById("logoutBtn");
+
+
+    function updateDashboardName() {
+
+        const name = profileName.value.trim();
+
+        dashboardUserName.textContent =
+            name || "DivyangSathi Member";
+
+    }
+
+
+    function updateProfilePhotoDisplay() {
+
+    if (!photoPlaceholder) {
+        return;
+    }
+
+    if (
+        photoPreview &&
+        photoPreview.src &&
+        photoPreview.style.display !== "none"
+    ) {
+
+        photoPlaceholder.style.display = "none";
+
+    } else {
+
+        photoPlaceholder.style.display = "flex";
+
+    }
+
+}
+
+
+    function updateMembershipDisplay() {
+
+        if (
+            premiumBadge &&
+            premiumBadge.style.display !== "none"
+        ) {
+
+            membershipStatus.textContent =
+                "Premium Member";
+
+        } else {
+
+            membershipStatus.textContent =
+                "Free Member";
+
+        }
+
+    }
+
+
+    function calculateProfileCompletion() {
+
+        const importantFieldIds = [
+
+            "profileName",
+            "profileGender",
+            "dateOfBirth",
+            "age",
+            "disabilityType",
+            "disabilityPercentage",
+            "religion",
+            "maritalStatus",
+            "education",
+            "occupation",
+            "state",
+            "district",
+            "city",
+            "aboutMe",
+            "preferredAge",
+            "preferredState",
+            "partnerPreference"
+
+        ];
+
+        let completedFields = 0;
+
+        importantFieldIds.forEach(function (fieldId) {
+
+            const field =
+                document.getElementById(fieldId);
+
+            if (
+                field &&
+                field.value &&
+                field.value.trim() !== ""
+            ) {
+
+                completedFields++;
+
+            }
+
+        });
+
+
+        if (
+            photoPreview &&
+            photoPreview.src &&
+            photoPreview.style.display !== "none"
+        ) {
+
+            completedFields++;
+
+        }
+
+
+        const totalFields =
+            importantFieldIds.length + 1;
+
+        const completionPercentage =
+            Math.round(
+                completedFields /
+                totalFields *
+                100
+            );
+
+
+        document.getElementById(
+            "profileCompletionText"
+        ).textContent =
+            completionPercentage + "%";
+
+
+        document.getElementById(
+            "profileCompletionNumber"
+        ).textContent =
+            completionPercentage + "%";
+
+
+        document.getElementById(
+            "profileProgressBar"
+        ).style.width =
+            completionPercentage + "%";
+
+
+        const statusText =
+            document.getElementById(
+                "profileStatusText"
+            );
+
+
+        if (completionPercentage === 100) {
+
+            statusText.textContent =
+                "Complete";
+
+        } else if (completionPercentage >= 60) {
+
+            statusText.textContent =
+                "Good Progress";
+
+        } else {
+
+            statusText.textContent =
+                "Incomplete";
+
+        }
+
+    }
+
+
+    profileForm.addEventListener(
+        "input",
+        function () {
+
+            updateDashboardName();
+
+            calculateProfileCompletion();
+
+        }
+    );
+
+
+    profileForm.addEventListener(
+        "change",
+        function () {
+
+            setTimeout(function () {
+
+                updateProfilePhotoDisplay();
+
+                calculateProfileCompletion();
+
+            }, 300);
+
+        }
+    );
+
+
+    if (headerLogoutBtn) {
+
+headerLogoutBtn.addEventListener(
+
+"click",
+
+function () {
+
+logoutBtn.click();
+
+}
+
+);
+
+}
+
+
+    function refreshProfileSummary() {
+
+        updateDashboardName();
+
+        updateMembershipDisplay();
+
+        updateProfilePhotoDisplay();
+
+        calculateProfileCompletion();
+
+    }
+
+    setTimeout(
+        refreshProfileSummary,
+        1500
+    );
+
+    // app.js fires this after the Supabase profile row has loaded.
+    document.addEventListener(
+        "divyangsathi:profile-loaded",
+        function () {
+            setTimeout(
+                refreshProfileSummary,
+                50
+            );
+        }
+    );
+
+});
+
+</script>
+
+<script>
+
+// ======================================
+// PREMIUM PROFILE HEADER DISPLAY
+// ======================================
+
+document.addEventListener("DOMContentLoaded", async function () {
+
+  const dashboardFullName =
+    document.getElementById("dashboardFullName");
+
+  const dashboardMemberId =
+    document.getElementById("dashboardMemberId");
+
+  const dashboardProfilePhoto =
+    document.getElementById("dashboardProfilePhoto");
+
+  const dashboardPhotoPlaceholder =
+    document.getElementById("dashboardPhotoPlaceholder");
+
+  const dashboardMembershipBadge =
+    document.getElementById("dashboardMembershipBadge");
+
+  const dashboardVerifyBadge =
+    document.getElementById("dashboardVerifyBadge");
+
+  const lastUpdated =
+    document.getElementById("lastUpdated");
+
+
+  // Existing profile elements
+
+  const profileName =
+    document.getElementById("profileName");
+
+  const photoPreview =
+    document.getElementById("photoPreview");
+
+  const premiumBadge =
+    document.getElementById("premiumBadge");
+
+  const verificationStatus =
+    document.getElementById("dashboardVerificationStatus");
+
+
+  // ======================================
+  // MEMBER ID
+  // ======================================
+
+  try {
+
+    const {
+      data: { user }
+    } = await client.auth.getUser();
+
+    if (user && dashboardMemberId) {
+
+      const shortId =
+        user.id
+          .replaceAll("-", "")
+          .substring(0, 8)
+          .toUpperCase();
+
+      dashboardMemberId.textContent =
+        "Member ID: DS" + shortId;
+
+    }
+
+  } catch (error) {
+
+    console.log(
+      "Member ID load error:",
+      error
+    );
+
+  }
+
+
+  // ======================================
+  // UPDATE PREMIUM HEADER
+  // ======================================
+
+  function updatePremiumProfileHeader() {
+
+    // User name
+
+    if (
+      dashboardFullName &&
+      profileName
+    ) {
+
+      dashboardFullName.textContent =
+        profileName.value.trim() ||
+        "DivyangSathi Member";
+
+    }
+
+
+    // Profile photo
+
+    if (
+      photoPreview &&
+      photoPreview.src &&
+      photoPreview.style.display !== "none"
+    ) {
+
+      dashboardProfilePhoto.src =
+        photoPreview.src;
+
+      dashboardProfilePhoto.style.display =
+        "block";
+
+      dashboardPhotoPlaceholder.style.display =
+        "none";
+
+    } else {
+
+      dashboardProfilePhoto.style.display =
+        "none";
+
+      dashboardPhotoPlaceholder.style.display =
+        "flex";
+
+    }
+
+
+    // Membership badge
+
+    if (
+      premiumBadge &&
+      premiumBadge.style.display !== "none"
+    ) {
+
+      dashboardMembershipBadge.textContent =
+        "💎 Premium Member";
+
+      dashboardMembershipBadge.className =
+        "badge-membership premium-active";
+
+    } else {
+
+      dashboardMembershipBadge.textContent =
+        "🆓 Free Member";
+
+      dashboardMembershipBadge.className =
+        "badge-membership";
+
+    }
+
+
+    // Verification badge
+
+    const verificationText =
+      verificationStatus
+        ? verificationStatus.textContent.trim()
+        : "Pending";
+
+    if (
+      verificationText.toLowerCase() ===
+      "verified"
+    ) {
+
+      dashboardVerifyBadge.textContent =
+        "✅ Verified";
+
+      dashboardVerifyBadge.className =
+        "badge-verified verified-active";
+
+    } else {
+
+      dashboardVerifyBadge.textContent =
+        "⏳ Verification Pending";
+
+      dashboardVerifyBadge.className =
+        "badge-verified verification-pending";
+
+    }
+
+
+    // Last updated
+
+    if (lastUpdated) {
+
+      lastUpdated.textContent =
+        new Date().toLocaleDateString(
+          "en-IN",
+          {
+            day: "2-digit",
+            month: "short"
+          }
+        );
+
+    }
+
+  }
+
+
+  // Initial profile data load hone ke baad
+
+  setTimeout(
+    updatePremiumProfileHeader,
+    1800
+  );
+
+
+  // Name change
+
+  if (profileName) {
+
+    profileName.addEventListener(
+      "input",
+      updatePremiumProfileHeader
+    );
+
+  }
+
+
+  // Photo change
+
+  const profilePhotoInput =
+    document.getElementById("profilePhoto");
+
+  if (profilePhotoInput) {
+
+    profilePhotoInput.addEventListener(
+      "change",
+      function () {
+
+        setTimeout(
+          updatePremiumProfileHeader,
+          500
+        );
+
+      }
+    );
+
+  }
+
+
+  // Existing values change hone par sync
+
+  const headerObserver =
+    new MutationObserver(
+      updatePremiumProfileHeader
+    );
+
+  if (premiumBadge) {
+
+    headerObserver.observe(
+      premiumBadge,
+      {
+        attributes: true,
+        childList: true,
+        subtree: true
+      }
+    );
+
+  }
+
+  if (verificationStatus) {
+
+    headerObserver.observe(
+      verificationStatus,
+      {
+        childList: true,
+        subtree: true
+      }
+    );
+
+  }
+
+});
+
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+<script src="layout.js"></script>
+
+<script src="languages.js"></script>
+<script src="language.js"></script>
+
+<script src="user-theme.js"></script>
+<script src="feature-config.js"></script>
+<script src="full-page-i18n.js"></script>
+<script src="final-features.js"></script>
+<script src="cms-runtime.js"></script>
+
+<!-- ===== FINAL PROFILE COMPLETION 0% FIX ===== -->
+<script>
+(function () {
+    "use strict";
+
+    function hasValue(v) {
+        if (v === null || v === undefined) return false;
+        v = String(v).trim();
+        return v !== "" &&
+               v !== "null" &&
+               v !== "undefined" &&
+               v !== "0";
+    }
+
+    function getValue(ids) {
+        for (const id of ids) {
+            const el = document.getElementById(id);
+            if (!el) continue;
+
+            const value =
+                el.value !== undefined
+                    ? el.value
+                    : el.textContent;
+
+            if (hasValue(value)) return value;
+        }
+
+        return "";
+    }
+
+    function calculateFinalProfileCompletion() {
+
+        const fields = [
+            ["fullName", "full_name"],
+            ["gender"],
+            ["age"],
+            ["mobile", "phone"],
+            ["state"],
+            ["district"],
+            ["religion"],
+            ["maritalStatus", "marital_status"],
+            ["education"],
+            ["occupation"],
+            ["disabilityType", "disability_type"],
+            ["about", "aboutMe"],
+            ["partnerPreference", "partner_preference"]
+        ];
+
+        let completed = 0;
+
+        fields.forEach(function (ids) {
+            if (hasValue(getValue(ids))) {
+                completed++;
+            }
+        });
+
+        const percent = Math.round(
+            (completed / fields.length) * 100
+        );
+
+        /* Find existing percentage text */
+        const percentElements = [
+            document.getElementById("profileCompletionPercent"),
+            document.getElementById("profileCompletionText"),
+            document.getElementById("completionPercent"),
+            document.getElementById("completionPercentage")
+        ].filter(Boolean);
+
+        percentElements.forEach(function (el) {
+            el.textContent = percent + "%";
+        });
+
+        /* Also find text containing current 0% */
+        document.querySelectorAll(
+            ".profile-completion-percent," +
+            ".profile-completion-value," +
+            ".completion-percent," +
+            ".completion-percentage"
+        ).forEach(function (el) {
+            el.textContent = percent + "%";
+        });
+
+        /* Progress bar */
+        [
+            document.getElementById("profileCompletionBar"),
+            document.getElementById("completionBar")
+        ].filter(Boolean).forEach(function (bar) {
+            bar.style.width = percent + "%";
+            bar.setAttribute(
+                "aria-valuenow",
+                String(percent)
+            );
+        });
+
+        return percent;
+    }
+
+    function refresh() {
+        calculateFinalProfileCompletion();
+    }
+
+    document.addEventListener(
+        "DOMContentLoaded",
+        function () {
+            setTimeout(refresh, 300);
+            setTimeout(refresh, 800);
+            setTimeout(refresh, 1500);
+            setTimeout(refresh, 2500);
+        }
+    );
+
+    document.addEventListener(
+        "divyangsathi:profile-loaded",
+        function () {
+            setTimeout(refresh, 50);
+            setTimeout(refresh, 500);
+        }
+    );
+
+    window.addEventListener(
+        "load",
+        function () {
+            setTimeout(refresh, 1000);
+            setTimeout(refresh, 2000);
+        }
+    );
+
+    /* Recalculate after profile fields change */
+    document.addEventListener(
+        "input",
+        function (e) {
+            if (
+                e.target &&
+                e.target.closest &&
+                e.target.closest("form")
+            ) {
+                setTimeout(refresh, 50);
+            }
+        }
+    );
+
+    document.addEventListener(
+        "change",
+        function (e) {
+            if (
+                e.target &&
+                e.target.closest &&
+                e.target.closest("form")
+            ) {
+                setTimeout(refresh, 50);
+            }
+        }
+    );
+
+})();
+</script>
+<!-- ===== END PROFILE COMPLETION FIX ===== -->
+ <!-- ===== PROFILE PROGRESS DISPLAY SYNC FIX ===== -->
+<script>
+(function () {
+    "use strict";
+
+    function syncProfileProgress() {
+
+        /* Upar wale correct percentage ko read karo */
+        const sources = [
+            document.getElementById("profileCompletionPercent"),
+            document.getElementById("profileCompletionText"),
+            document.getElementById("completionPercent"),
+            document.getElementById("completionPercentage")
+        ];
+
+        let percent = 0;
+
+        for (const el of sources) {
+            if (!el) continue;
+
+            const n = parseInt(el.textContent, 10);
+
+            if (!isNaN(n)) {
+                percent = n;
+                break;
+            }
+        }
+
+        /* Neeche percentage update */
+        const number =
+            document.getElementById("profileCompletionNumber");
+
+        if (number) {
+            number.textContent = percent + "%";
+        }
+
+        /* Neeche progress bar update */
+        const bar =
+            document.getElementById("profileProgressBar");
+
+        if (bar) {
+            bar.style.width = percent + "%";
+            bar.setAttribute("aria-valuenow", percent);
+        }
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+        setTimeout(syncProfileProgress, 500);
+        setTimeout(syncProfileProgress, 1200);
+        setTimeout(syncProfileProgress, 2000);
+        setTimeout(syncProfileProgress, 3000);
+    });
+
+    document.addEventListener(
+        "divyangsathi:profile-loaded",
+        function () {
+            setTimeout(syncProfileProgress, 100);
+            setTimeout(syncProfileProgress, 600);
+        }
+    );
+
+    window.addEventListener("load", function () {
+        setTimeout(syncProfileProgress, 1500);
+    });
+
+})();
+</script>
+<!-- ===== END PROFILE PROGRESS DISPLAY SYNC FIX ===== -->
+
+<!-- ===== FINAL USER PROFILE PDF DOWNLOAD FIX ===== -->
+<script>
+(function () {
+    "use strict";
+
+    function val(id) {
+        const el = document.getElementById(id);
+        if (!el) return "-";
+
+        const v =
+            el.value !== undefined
+                ? el.value
+                : el.textContent;
+
+        return String(v || "").trim() || "-";
+    }
+
+    function text(id) {
+        const el = document.getElementById(id);
+        return el
+            ? String(el.textContent || "").trim() || "-"
+            : "-";
+    }
+
+    function getProfilePhoto() {
+        const ids = [
+            "profilePhotoProfessionalPreview",
+            "dashboardProfilePhoto"
+        ];
+
+        for (const id of ids) {
+            const img = document.getElementById(id);
+
+            if (
+                img &&
+                img.src &&
+                !img.src.startsWith("data:image/svg")
+            ) {
+                return img.src;
+            }
+        }
+
+        return "";
+    }
+
+    function createPdfButton() {
+
+        let holder =
+            document.querySelector(".profile-pdf-action");
+
+        if (!holder) return;
+
+        if (
+            document.getElementById(
+                "finalUserProfilePdfBtn"
+            )
+        ) {
+            return;
+        }
+
+        const btn =
+            document.createElement("button");
+
+        btn.id =
+            "finalUserProfilePdfBtn";
+
+        btn.type =
+            "button";
+
+        btn.textContent =
+            "📄 Download Profile PDF";
+
+        btn.style.cssText =
+            "padding:12px 20px;" +
+            "border:none;" +
+            "border-radius:10px;" +
+            "background:#2563eb;" +
+            "color:#fff;" +
+            "font-weight:800;" +
+            "cursor:pointer;" +
+            "font-size:15px;";
+
+        holder.appendChild(btn);
+
+        btn.addEventListener(
+            "click",
+            downloadFullUserProfilePdf
+        );
+    }
+
+    async function downloadFullUserProfilePdf() {
+
+        if (
+            typeof html2pdf === "undefined"
+        ) {
+            alert(
+                "PDF library load nahi hui. Page refresh karke dobara try kare."
+            );
+            return;
+        }
+
+        const photo =
+            getProfilePhoto();
+
+        const name =
+            val("profileName");
+
+        const pdf =
+            document.createElement("div");
+
+        pdf.style.cssText =
+            "width:760px;" +
+            "padding:34px;" +
+            "background:#ffffff;" +
+            "color:#111827;" +
+            "font-family:Arial,sans-serif;" +
+            "line-height:1.5;";
+
+        function row(label, value) {
+            return `
+                <tr>
+                    <td style="
+                        width:220px;
+                        padding:9px 10px;
+                        border-bottom:1px solid #e5e7eb;
+                        font-weight:700;
+                        color:#374151;
+                    ">
+                        ${label}
+                    </td>
+
+                    <td style="
+                        padding:9px 10px;
+                        border-bottom:1px solid #e5e7eb;
+                        color:#111827;
+                    ">
+                        ${value || "-"}
+                    </td>
+                </tr>
+            `;
+        }
+
+        pdf.innerHTML = `
+
+            <div style="
+                text-align:center;
+                border-bottom:3px solid #2563eb;
+                padding-bottom:18px;
+                margin-bottom:24px;
+            ">
+
+                <h1 style="
+                    margin:0;
+                    color:#1d4ed8;
+                    font-size:28px;
+                ">
+                    DivyangSathi
+                </h1>
+
+                <p style="
+                    margin:5px 0 0;
+                    color:#64748b;
+                ">
+                    Matrimony Profile
+                </p>
+
+            </div>
+
+
+            <div style="
+                display:flex;
+                gap:22px;
+                align-items:center;
+                margin-bottom:24px;
+            ">
+
+                ${
+                    photo
+                    ?
+                    `
+                    <img
+                        src="${photo}"
+                        style="
+                            width:120px;
+                            height:120px;
+                            border-radius:14px;
+                            object-fit:cover;
+                            border:2px solid #dbeafe;
+                        "
+                    >
+                    `
+                    :
+                    `
+                    <div style="
+                        width:120px;
+                        height:120px;
+                        border-radius:14px;
+                        background:#eff6ff;
+                        display:flex;
+                        align-items:center;
+                        justify-content:center;
+                        font-size:42px;
+                    ">
+                        👤
+                    </div>
+                    `
+                }
+
+                <div>
+
+                    <h2 style="
+                        margin:0 0 8px;
+                        font-size:24px;
+                    ">
+                        ${name}
+                    </h2>
+
+                    <div style="
+                        margin-bottom:5px;
+                    ">
+                        <strong>
+                            Profile Status:
+                        </strong>
+                        ${text("profileStatusText")}
+                    </div>
+
+                    <div style="
+                        margin-bottom:5px;
+                    ">
+                        <strong>
+                            Membership:
+                        </strong>
+                        ${text("dashboardMembershipStatus")}
+                    </div>
+
+                    <div>
+                        <strong>
+                            Verification:
+                        </strong>
+                        ${text("dashboardVerificationStatus")}
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <h3 style="
+                color:#1d4ed8;
+                border-bottom:2px solid #dbeafe;
+                padding-bottom:7px;
+            ">
+                Personal Information
+            </h3>
+
+            <table style="
+                width:100%;
+                border-collapse:collapse;
+                margin-bottom:22px;
+            ">
+
+                ${row("Full Name", val("profileName"))}
+                ${row("Mobile", val("profileMobile"))}
+                ${row("Email", val("profileEmail"))}
+                ${row("Gender", val("profileGender"))}
+                ${row("Date of Birth", val("dateOfBirth"))}
+                ${row("Age", val("age"))}
+                ${row("Religion", val("religion"))}
+                ${row("Caste", val("caste"))}
+                ${row("Marital Status", val("maritalStatus"))}
+                ${row("Height", val("height"))}
+                ${row("Weight", val("weight"))}
+
+            </table>
+
+
+            <h3 style="
+                color:#1d4ed8;
+                border-bottom:2px solid #dbeafe;
+                padding-bottom:7px;
+            ">
+                Disability Details
+            </h3>
+
+            <table style="
+                width:100%;
+                border-collapse:collapse;
+                margin-bottom:22px;
+            ">
+
+                ${row("Disability Type", val("disabilityType"))}
+                ${row("Disability Percentage", val("disabilityPercentage"))}
+
+            </table>
+
+
+            <h3 style="
+                color:#1d4ed8;
+                border-bottom:2px solid #dbeafe;
+                padding-bottom:7px;
+            ">
+                Education & Career
+            </h3>
+
+            <table style="
+                width:100%;
+                border-collapse:collapse;
+                margin-bottom:22px;
+            ">
+
+                ${row("Education", val("education"))}
+                ${row("Occupation", val("occupation"))}
+                ${row("Income", val("income"))}
+
+            </table>
+
+
+            <h3 style="
+                color:#1d4ed8;
+                border-bottom:2px solid #dbeafe;
+                padding-bottom:7px;
+            ">
+                Location
+            </h3>
+
+            <table style="
+                width:100%;
+                border-collapse:collapse;
+                margin-bottom:22px;
+            ">
+
+                ${row("State", val("state"))}
+                ${row("District", val("district"))}
+                ${row("City", val("city"))}
+
+            </table>
+
+
+            <h3 style="
+                color:#1d4ed8;
+                border-bottom:2px solid #dbeafe;
+                padding-bottom:7px;
+            ">
+                About Me
+            </h3>
+
+            <div style="
+                padding:12px;
+                background:#f8fafc;
+                border-radius:10px;
+                margin-bottom:22px;
+                white-space:pre-wrap;
+            ">
+                ${val("aboutMe")}
+            </div>
+
+
+            <h3 style="
+                color:#1d4ed8;
+                border-bottom:2px solid #dbeafe;
+                padding-bottom:7px;
+            ">
+                Partner Preference
+            </h3>
+
+            <table style="
+                width:100%;
+                border-collapse:collapse;
+                margin-bottom:18px;
+            ">
+
+                ${row("Preferred Age", val("preferredAge"))}
+                ${row("Preferred State", val("preferredState"))}
+                ${row("Preferred Disability", val("preferredDisability"))}
+
+            </table>
+
+            <div style="
+                padding:12px;
+                background:#f8fafc;
+                border-radius:10px;
+                white-space:pre-wrap;
+            ">
+                ${val("partnerPreference")}
+            </div>
+
+
+            <h3 style="
+                color:#1d4ed8;
+                border-bottom:2px solid #dbeafe;
+                padding-bottom:7px;
+                margin-top:24px;
+            ">
+                Verification Details
+            </h3>
+
+            <table style="
+                width:100%;
+                border-collapse:collapse;
+            ">
+
+                ${row("Profile Verification", text("dashboardVerificationStatus"))}
+                ${row("Aadhaar Verification", text("aadhaarStatus"))}
+                ${row("Face Verification", text("faceVerificationStatus"))}
+                ${row("Membership", text("dashboardMembershipStatus"))}
+
+            </table>
+
+
+            <div style="
+                margin-top:28px;
+                border-top:1px solid #e5e7eb;
+                padding-top:12px;
+                text-align:center;
+                color:#64748b;
+                font-size:12px;
+            ">
+                Generated from DivyangSathi
+            </div>
+        `;
+
+
+        document.body.appendChild(pdf);
+
+
+        try {
+
+            await html2pdf()
+
+                .set({
+
+                    margin: [
+                        0.35,
+                        0.35,
+                        0.35,
+                        0.35
+                    ],
+
+                    filename:
+                        "DivyangSathi_"
+                        +
+                        (
+                            name
+                                .replace(
+                                    /[^a-z0-9]/gi,
+                                    "_"
+                                )
+                            ||
+                            "Profile"
+                        )
+                        +
+                        ".pdf",
+
+                    image: {
+                        type: "jpeg",
+                        quality: 0.98
+                    },
+
+                    html2canvas: {
+                        scale: 2,
+                        useCORS: true,
+                        backgroundColor: "#ffffff",
+                        logging: false
+                    },
+
+                    jsPDF: {
+                        unit: "mm",
+                        format: "a4",
+                        orientation: "portrait"
+                    },
+
+                    pagebreak: {
+                        mode: [
+                            "avoid-all",
+                            "css",
+                            "legacy"
+                        ]
+                    }
+
+                })
+
+                .from(pdf)
+
+                .save();
+
+        }
+
+        catch (error) {
+
+            console.error(
+                "User Profile PDF Error:",
+                error
+            );
+
+            alert(
+                "Profile PDF download nahi hua. Console check kare."
+            );
+
+        }
+
+        finally {
+
+            pdf.remove();
+
+        }
+    }
+
+
+    if (
+        document.readyState ===
+        "loading"
+    ) {
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            function () {
+                setTimeout(
+                    createPdfButton,
+                    300
+                );
+            }
+        );
+
+    }
+
+    else {
+
+        setTimeout(
+            createPdfButton,
+            300
+        );
+
+    }
+
+})();
+</script>
+<!-- ===== END USER PROFILE PDF FIX ===== -->
+ 
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Admin Login - DivyangSathi</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="stylesheet" href="final-polish.css">
+<link rel="icon" type="image/png" href="icons/icon-192.png">
+</head>
+
+<body class="admin-login-page admin-login-body">
+
+<section class="admin-login-section">
+
+<div class="admin-login-card">
+
+<h1>🔐 Admin Login</h1>
+
+<p>DivyangSathi Administration Panel</p>
+
+<form id="adminLoginForm">
+
+<label>Admin Email</label>
+
+<input
+type="email"
+id="adminEmail"
+placeholder="Enter admin email"
+required>
+
+<label>Admin Password</label>
+
+<input
+type="password"
+id="adminPassword"
+placeholder="Enter admin password"
+required>
+
+<button type="submit">
+Login as Admin
+</button>
+
+</form>
+
+<p
+id="adminLoginMessage"
+style="margin-top:15px;">
+</p>
+
+
+</div>
+
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="app.js"></script>
+
+<script src="feature-config.js"></script>
+<script src="full-page-i18n.js"></script>
+<script src="final-features.js"></script>
+
+</body>
+
+</html>

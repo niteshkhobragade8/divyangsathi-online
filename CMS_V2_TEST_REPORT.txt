@@ -1,0 +1,13 @@
+DIVYANGSATHI CMS V2 STATIC TEST REPORT
+
+PASS: all JavaScript files parse with node --check.
+PASS: no missing local src/href file references in HTML.
+PASS: no duplicate static HTML IDs found.
+PASS: cms-runtime.js is included on every user-facing HTML page.
+PASS: Pages Manager uses automatic page scanning and selector dropdowns.
+PASS: direct file inputs exist for page images, theme background, SEO OG image, notification logo/banner, media, services, documents, logo and favicon.
+PASS: dropdown controls are used for fixed-choice CMS fields.
+PASS: existing Admin Dashboard files and core app.js were not rewritten by CMS V2 work.
+
+LIVE TEST REQUIRED AFTER DATABASE MIGRATION:
+Supabase Storage upload/RLS, authenticated admin CRUD, publish-to-live behavior and analytics event inserts depend on the connected live Supabase project and must be tested after running CMS_V2_UPGRADE.sql.

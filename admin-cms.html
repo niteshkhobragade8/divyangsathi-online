@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Website CMS - DivyangSathi</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="final-polish.css">
+  <link rel="stylesheet" href="admin-color-only.css">
+  <link rel="stylesheet" href="cms.css">
+  <link rel="icon" href="icons/icon-192.png">
+</head>
+<body class="admin-body admin-v3-body">
+<div id="commonHeader"></div>
+<div class="admin-v3-shell">
+  <aside class="admin-v3-sidebar" id="adminV3Sidebar">
+    <div class="admin-v3-sidebar-brand"><div class="admin-v3-sidebar-logo">DS</div><div><h2>DivyangSathi</h2><p>Administrator Panel</p></div></div>
+    <nav class="admin-v3-sidebar-nav">
+<a href="admin.html#dashboard">📊 <span>Dashboard</span></a>
+<a class="active" href="admin-cms.html">🌐 <span>Website CMS</span></a>
+<a href="admin-dashboard-cms.html">🛠️ <span>Admin CMS</span></a>
+
+      
+      <a href="admin.html#analytics">📈 <span>Analytics</span></a><a href="admin-profiles.html#profiles">👥 <span>User Profiles</span></a><a href="admin-memberships.html#membership">💎 <span>Memberships</span></a><a href="admin-requests.html#interests">❤️ <span>Interests</span></a><a href="admin-moderation.html#reports">🚩 <span>User Reports</span></a><a href="admin-support.html#messages">📩 <span>Support</span></a><a href="index.html">🏠 <span>Website Home</span></a>
+    </nav>
+    <div class="admin-v3-sidebar-footer"><button type="button" id="adminSidebarLogoutBtn" class="admin-sidebar-logout">🔓 Admin Logout</button><small>© 2026 DivyangSathi</small></div>
+  </aside>
+  <button class="admin-v3-sidebar-backdrop" id="adminV3SidebarBackdrop" type="button"></button>
+  <div class="admin-v3-workspace">
+  <main class="cms-main">
+    <section class="cms-hero"><div><div class="cms-kicker">DIVYANGSATHI CONTROL CENTER</div><h1>🌐 Full Website CMS</h1><p>Pages, menus, design, media, SEO, popups, services, documents, analytics, recycle bin and live publishing.</p></div><div class="cms-hero-actions"><a class="cms-btn ghost" href="index.html" target="_blank">↗ Preview Website</a><span class="cms-badge">● LIVE CONTROL</span></div></section>
+    <div id="cmsSetupWarning" class="cms-danger" style="display:none"></div>
+    <nav class="cms-tabs" id="cmsTabs">
+      <button class="cms-tab active" data-tab="overview">Dashboard</button><button class="cms-tab" data-tab="page-manager">Add / Manage Pages</button><button class="cms-tab" data-tab="pages">Page Content</button><button class="cms-tab" data-tab="menus">Menus</button><button class="cms-tab" data-tab="theme">Theme</button><button class="cms-tab" data-tab="seo">SEO</button><button class="cms-tab" data-tab="notifications">Notifications</button><button class="cms-tab" data-tab="media">Media</button><button class="cms-tab" data-tab="services">Services</button><button class="cms-tab" data-tab="documents">Documents</button><button class="cms-tab" data-tab="analytics">Analytics</button><button class="cms-tab" data-tab="trash">Recycle Bin</button><button class="cms-tab" data-tab="revisions">Revisions</button><button class="cms-tab" data-tab="settings">Settings</button>
+    </nav>
+
+    <section class="cms-panel active" data-panel="overview">
+      <div class="cms-grid"><div class="cms-card blue">Pages<strong id="ovPages">—</strong></div><div class="cms-card green">Published<strong id="ovOverrides">—</strong></div><div class="cms-card gold">Notifications<strong id="ovNotifications">—</strong></div><div class="cms-card red">Recycle Bin<strong id="ovTrash">—</strong></div></div>
+      <div class="cms-box"><h2>Professional Website Management</h2><div class="cms-feature-grid"><div>✅ Automatic page element dropdowns</div><div>✅ Direct image/file uploads</div><div>✅ Draft / Publish workflow</div><div>✅ Full-page photo popup notifications</div><div>✅ Soft delete + Restore</div><div>✅ Live website preview</div></div><p class="cms-note">Core auth, profile, chat, membership and Supabase security code is protected from visual CMS editing.</p></div>
+    </section>
+
+    <section class="cms-panel" data-panel="page-manager"><div class="cms-box"><h2>Website Page Manager</h2><p>Create, edit, rename slug, clone, draft/publish, hide/show, add to menu, delete and restore custom website pages.</p><form id="websitePageForm" class="cms-form"><input type="hidden" id="websitePageId"><label>Page Title<input id="websitePageTitle" required></label><label>Slug<input id="websitePageSlug" placeholder="about-us" required></label><label>Status<select id="websitePageStatus"><option value="draft">Draft</option><option value="published">Published</option></select></label><label>Visible<select id="websitePageVisible"><option value="true">Yes</option><option value="false">No</option></select></label><label>Add to Header Menu<select id="websitePageMenu"><option value="false">No</option><option value="true">Yes</option></select></label><label>Menu Label<input id="websitePageMenuLabel"></label><label>Menu Icon<input id="websitePageIcon" placeholder="📄 or icon text"></label><label>Order<input id="websitePageSort" type="number" value="0"></label><label class="full">Page Content (HTML allowed)<textarea id="websitePageContent" rows="12"></textarea></label><div class="full cms-actions"><button class="cms-btn green">Save / Update Page</button><button type="button" class="cms-btn gray" id="websitePageClear">Clear</button></div></form><div id="websitePageRows"></div></div><div class="cms-box"><h2>Deleted Custom Pages</h2><div id="websitePageTrash"></div></div></section>
+
+    <section class="cms-panel" data-panel="pages">
+      <div class="cms-box"><div class="cms-title-row"><div><h2>Pages Manager</h2><p>Select a page, then choose an editable element automatically. No CSS selector typing required.</p></div><a id="pagePreviewLink" class="cms-btn gray" href="index.html" target="_blank">Preview Page ↗</a></div>
+      <form id="pageForm" class="cms-form"><input type="hidden" id="pageId">
+        <label>Page<select id="pageSlug"></select></label>
+        <label>Editable Element<select id="pageSelector" required><option value="">Select page first…</option></select></label>
+        <label>Property<select id="pageProperty"></select></label>
+        <label>Status<select id="pageStatus"><option value="draft">Draft</option><option value="published" selected>Published / Live</option></select></label>
+        <label class="full" id="pageValueWrap">Value<textarea id="pageValue"></textarea></label>
+        <label class="full cms-upload-field" id="pageImageWrap" hidden>Choose Image<input type="file" id="pageImageFile" accept="image/*"><div id="pageImagePreview" class="cms-file-preview"></div></label>
+        <label>Sort Order<input id="pageSort" type="number" value="0"></label>
+        <div class="full cms-actions"><button class="cms-btn green">Save / Publish</button><button type="button" class="cms-btn gray" id="pageReset">Clear</button></div>
+      </form>
+      <div class="cms-table-wrap"><table class="cms-table"><thead><tr><th>Page</th><th>Element</th><th>Property</th><th>Value</th><th>Status</th><th>Actions</th></tr></thead><tbody id="pageRows"></tbody></table></div></div>
+    </section>
+
+    <section class="cms-panel" data-panel="menus"><div class="cms-box"><h2>Menu Manager</h2><form id="menuForm" class="cms-form"><input type="hidden" id="menuId">
+      <label>Location<select id="menuLocation"><option value="header">Header</option><option value="footer">Footer</option></select></label><label>Label<input id="menuLabel" required></label>
+      <label>Destination Page<select id="menuUrl"></select></label><label>Icon<select id="menuIcon"><option value="">No Icon</option><option>🏠</option><option>📝</option><option>🔐</option><option>🔍</option><option>💎</option><option>📩</option><option>💖</option><option>👤</option><option>⭐</option></select></label>
+      <label>Order<input id="menuSort" type="number" value="0"></label><label>Visible<select id="menuVisible"><option value="true">Yes</option><option value="false">No</option></select></label>
+      <div class="full cms-actions"><button class="cms-btn green">Save Menu Item</button><button type="button" class="cms-btn gray" id="menuReset">Clear</button></div></form><div id="menuRows" class="cms-table-wrap"></div></div></section>
+
+    <section class="cms-panel" data-panel="theme"><div class="cms-box"><div class="cms-title-row"><div><h2>🎨 Full Theme Manager</h2><p>Save, edit, apply, delete and restore website themes safely.</p></div><span id="themeActiveBadge" class="cms-status">Active: loading…</span></div>
+<form id="themeForm" class="cms-form"><input type="hidden" id="themeEditId">
+<label>Theme Name<input id="themeName" placeholder="My Website Theme"></label>
+<label>Theme Preset<select id="themePreset"><option value="custom">Custom</option><option value="classic">Classic Blue</option><option value="emerald">Emerald Green</option><option value="royal">Royal Purple</option><option value="rose">Rose Pink</option><option value="midnight">Midnight</option></select></label>
+<label>Primary Color<div class="cms-color-pair"><input id="themePrimary" value="#2563eb"><input type="color" id="themePrimaryColor" value="#2563eb"></div></label>
+<label>Secondary Color<div class="cms-color-pair"><input id="themeSecondary" value="#16a34a"><input type="color" id="themeSecondaryColor" value="#16a34a"></div></label>
+<label>Accent Color<div class="cms-color-pair"><input id="themeAccent" value="#f59e0b"><input type="color" id="themeAccentColor" value="#f59e0b"></div></label>
+<label>Background Color<div class="cms-color-pair"><input id="themeBg" value="#ffffff"><input type="color" id="themeBgColor" value="#ffffff"></div></label>
+<label>Font<select id="themeFont"><option value="system-ui,sans-serif">System</option><option value="Arial,sans-serif">Arial</option><option value="Georgia,serif">Georgia</option><option value="'Trebuchet MS',sans-serif">Trebuchet</option></select></label>
+<label>Card / Border Radius<select id="themeRadius"><option value="0px">Square</option><option value="8px">8px</option><option value="12px">12px</option><option value="16px" selected>16px</option><option value="24px">24px</option></select></label>
+<label>Button Style<select id="themeButton"><option value="solid">Solid</option><option value="gradient">Gradient</option><option value="outline">Outline</option></select></label>
+<label>Light / Dark Preference<select id="themeMode"><option value="system">System</option><option value="light">Light</option><option value="dark">Dark</option></select></label>
+<label class="cms-upload-field full">Background Image<input type="file" id="themeBackgroundFile" accept="image/*"><div id="themeBackgroundPreview" class="cms-file-preview"></div></label>
+<label class="full">Advanced Custom CSS<textarea id="themeCss" placeholder="Optional advanced CSS"></textarea></label>
+<div class="full cms-actions"><button type="button" class="cms-btn green" id="themeSaveNew">Save New Theme</button><button type="button" class="cms-btn gray" id="themeUpdate">Update Theme</button><button type="button" class="cms-btn gold" id="themePreview">Preview Current Values</button><button type="submit" class="cms-btn green">Publish Theme Live</button><button type="button" class="cms-btn gray" id="themeReset">Reset Preview</button><button type="button" class="cms-btn gold" id="cmsRestorePreviousThemeBtn">↩ Restore Previous Theme</button><button type="button" class="cms-btn gray" id="themeRestoreDefault">Restore Default Theme</button></div>
+</form></div>
+<div class="cms-box"><div class="cms-title-row"><div><h2>💾 Saved Themes</h2><p>Apply, edit or delete saved themes.</p></div><button type="button" class="cms-btn gray" id="themeRefreshSaved">Refresh</button></div><div id="themeSavedRows"></div></div>
+<div class="cms-box"><div class="cms-title-row"><div><h2>🕘 Theme History</h2><p>Restore or delete previous theme snapshots.</p></div><button type="button" class="cms-btn gray" id="cmsThemeHistoryBtn">Open Full History</button></div><div id="themeHistoryRows"></div></div></section>
+
+    <section class="cms-panel" data-panel="seo"><div class="cms-box"><h2>SEO Manager</h2><form id="seoForm" class="cms-form"><label>Page<select id="seoPage"></select></label><label>Indexing<select id="seoIndex"><option value="index,follow">Index, Follow</option><option value="noindex,follow">No Index, Follow</option><option value="noindex,nofollow">No Index, No Follow</option></select></label><label>SEO Title<input id="seoTitle" maxlength="70"></label><label>Keywords<input id="seoKeywords"></label><label class="full">Meta Description<textarea id="seoDescription" maxlength="180"></textarea></label><label>Canonical Page<select id="seoCanonicalPage"></select></label><label>Canonical Override (optional)<input id="seoCanonical" placeholder="Leave blank to use selected page"></label><label class="full cms-upload-field">OG / Social Image<input type="file" id="seoOgFile" accept="image/*"><input type="hidden" id="seoOg"><div id="seoOgPreview" class="cms-file-preview"></div></label><div class="full cms-actions"><button class="cms-btn green">Save SEO</button></div></form><div id="seoRows"></div></div></section>
+
+    <section class="cms-panel" data-panel="notifications"><div class="cms-box"><div class="cms-title-row"><div><h2>Notification & Popup Manager</h2><p>Create banner, popup or full-page notifications with direct logo/photo upload.</p></div><button type="button" id="notificationPreviewBtn" class="cms-btn gold">Preview Popup</button></div>
+      <form id="notificationForm" class="cms-form"><input type="hidden" id="notificationId"><input type="hidden" id="notificationImage"><input type="hidden" id="notificationLogo">
+        <label>Notification Type<select id="notificationType"><option value="normal">Normal Notice</option><option value="banner">Top Banner</option><option value="popup" selected>Popup</option><option value="fullpage">Full Page Popup</option></select></label><label>Status<select id="notificationStatus"><option value="draft">Draft</option><option value="published" selected>Published / Live</option></select></label>
+        <label>Show On<select id="notificationPage"><option value="all">All Website Pages</option></select></label><label>Audience<select id="notificationTarget"><option value="all">All Visitors</option><option value="guest">Logged-out / Guest</option><option value="logged_in">Logged-in Users</option></select></label>
+        <label class="full">Title<input id="notificationTitle" required></label><label class="full">Message<textarea id="notificationMessage" required></textarea></label>
+        <label class="cms-upload-field">Logo / Small Image<input type="file" id="notificationLogoFile" accept="image/*"><div id="notificationLogoPreview" class="cms-file-preview"></div></label><label class="cms-upload-field">Banner / Main Photo<input type="file" id="notificationImageFile" accept="image/*"><div id="notificationImagePreview" class="cms-file-preview"></div></label>
+        <label>Button Text<input id="notificationButtonText" placeholder="Learn More"></label><label>Button Destination<select id="notificationButtonPage"><option value="">No Button</option></select></label>
+        <label>Custom Button Link (optional)<input id="notificationButtonUrl" placeholder="Use only for external/custom link"></label><label>Priority<select id="notificationPriority"><option value="0">Normal</option><option value="10">Important</option><option value="50">High</option><option value="100">Urgent</option></select></label>
+        <label>Starts At<input id="notificationStart" type="datetime-local"></label><label>Ends At<input id="notificationEnd" type="datetime-local"></label>
+        <div class="full cms-actions"><button class="cms-btn green">Save / Publish Notification</button><button type="button" class="cms-btn gray" id="notificationReset">Clear</button></div>
+      </form><div id="notificationRows" class="cms-table-wrap"></div></div></section>
+
+    <section class="cms-panel" data-panel="media"><div class="cms-box"><h2>Media Library</h2><form id="mediaForm" class="cms-form"><input type="hidden" id="mediaId"><input type="hidden" id="mediaUrl"><label>Name<input id="mediaName" required></label><label>Type<select id="mediaType"><option value="image">Image</option><option value="video">Video</option><option value="icon">Icon</option><option value="other">Other</option></select></label><label>Category<select id="mediaCategory"><option value="general">General</option><option value="logo">Logo</option><option value="banner">Banner</option><option value="profile">Profile Asset</option><option value="service">Service</option><option value="seo">SEO</option><option value="notification">Notification</option></select></label><label>Alt Text<input id="mediaAlt"></label><label class="full cms-upload-field">Choose File<input type="file" id="mediaFile" required><div id="mediaPreview" class="cms-file-preview"></div></label><div class="full cms-actions"><button class="cms-btn green">Upload & Save</button><button type="button" class="cms-btn gray" id="mediaReset">Clear</button></div></form><div id="mediaRows"></div></div></section>
+
+    <section class="cms-panel" data-panel="services"><div class="cms-box"><h2>Services & Categories</h2><form id="serviceForm" class="cms-form"><input type="hidden" id="serviceId"><input type="hidden" id="serviceImage"><label>Type<select id="serviceType"><option value="service">Service</option><option value="category">Category</option></select></label><label>Name<input id="serviceName" required></label><label class="full">Description<textarea id="serviceDescription"></textarea></label><label>Order<input id="serviceSort" type="number" value="0"></label><label>Active<select id="serviceActive"><option value="true">Yes</option><option value="false">No</option></select></label><label class="full cms-upload-field">Image<input type="file" id="serviceImageFile" accept="image/*"><div id="serviceImagePreview" class="cms-file-preview"></div></label><div class="full cms-actions"><button class="cms-btn green">Save</button><button type="button" class="cms-btn gray" id="serviceReset">Clear</button></div></form><div id="serviceRows"></div></div></section>
+
+    <section class="cms-panel" data-panel="documents"><div class="cms-box"><h2>Document Manager</h2><form id="documentForm" class="cms-form"><input type="hidden" id="documentId"><input type="hidden" id="documentUrl"><label>Title<input id="documentTitle" required></label><label>Category<select id="documentCategory"><option value="general">General</option><option value="policy">Policy</option><option value="guide">Guide</option><option value="form">Form</option><option value="legal">Legal</option></select></label><label>Status<select id="documentStatus"><option value="draft">Draft</option><option value="published" selected>Published</option></select></label><label class="full cms-upload-field">Choose Document<input type="file" id="documentFile" accept=".pdf,.doc,.docx,.xls,.xlsx,.txt"><div id="documentPreview" class="cms-file-preview"></div></label><div class="full cms-actions"><button class="cms-btn green">Upload & Save Document</button><button type="button" class="cms-btn gray" id="documentReset">Clear</button></div></form><div id="documentRows"></div></div></section>
+
+    <section class="cms-panel" data-panel="analytics"><div class="cms-box"><h2>CMS Analytics</h2><div class="cms-filter-row"><label>View<select id="analyticsType"><option value="all">All Content</option><option value="pages">Pages</option><option value="notifications">Notifications</option><option value="media">Media</option></select></label><button type="button" class="cms-btn gray" id="analyticsRefresh">Refresh</button></div><div class="cms-grid"><div class="cms-card blue">Published Content<strong id="anPublished">—</strong></div><div class="cms-card gold">Draft Content<strong id="anDraft">—</strong></div><div class="cms-card pink">Active Popups<strong id="anPopups">—</strong></div><div class="cms-card green">Media Assets<strong id="anMedia">—</strong></div></div><div id="analyticsDetails" class="cms-table-wrap"></div></div></section>
+
+    <section class="cms-panel" data-panel="trash"><div class="cms-box"><div class="cms-title-row"><div><h2>♻️ Recycle Bin</h2><p>Restore deleted CMS content or permanently delete it.</p></div><label>Filter<select id="trashFilter"><option value="all">All Items</option><option value="cms_page_overrides">Pages</option><option value="cms_menu_items">Menus</option><option value="cms_notifications">Notifications</option><option value="cms_media">Media</option><option value="cms_services">Services</option><option value="cms_documents">Documents</option><option value="cms_seo">SEO</option></select></label></div><div id="trashRows"></div></div></section>
+
+    <section class="cms-panel" data-panel="revisions"><div class="cms-box"><div class="cms-title-row"><div><h2>🕘 Revision History</h2><p>Automatic snapshots are created before CMS updates. Restore a previous version safely.</p></div><button type="button" id="revisionRefresh" class="cms-btn gray">Refresh</button></div><div id="revisionRows"></div></div></section>
+
+    <section class="cms-panel" data-panel="settings"><div class="cms-box"><h2>Global Settings</h2><form id="settingsForm" class="cms-form"><input type="hidden" id="setLogo"><input type="hidden" id="setFavicon"><label>Website Name<input id="setName" value="DivyangSathi"></label><label>Support Email<input id="setEmail" type="email"></label><label>Support Phone<input id="setPhone"></label><label>Maintenance Mode<select id="setMaintenance"><option value="false">Off</option><option value="true">On</option></select></label><label class="full">Global Announcement<input id="setAnnouncement"></label><label class="cms-upload-field">Website Logo<input type="file" id="setLogoFile" accept="image/*"><div id="setLogoPreview" class="cms-file-preview"></div></label><label class="cms-upload-field">Favicon / App Icon<input type="file" id="setFaviconFile" accept="image/*"><div id="setFaviconPreview" class="cms-file-preview"></div></label><div class="full cms-actions"><button class="cms-btn green">Save Global Settings</button></div></form></div></section>
+  </main>
+  <div id="commonFooter"></div></div>
+</div>
+<div class="cms-toast" id="cmsToast"></div>
+<div id="cmsPreviewModal" class="cms-modal" hidden><div class="cms-modal-card"><button type="button" class="cms-modal-close" id="cmsPreviewClose">×</button><div id="cmsPreviewBody"></div></div></div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="app.js"></script><script src="layout.js"></script><script src="cms.js"></script>
+<script src="cms-page-manager.js"></script>
+</body></html>

@@ -1,0 +1,963 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Admin CMS - DivyangSathi</title>
+
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="final-polish.css">
+<link rel="stylesheet" href="admin-color-only.css">
+<link rel="stylesheet" href="cms.css">
+</head>
+
+<body class="admin-body admin-v3-body">
+
+<div class="admin-v3-shell">
+
+<aside class="admin-v3-sidebar" id="adminV3Sidebar">
+
+<div class="admin-v3-sidebar-brand">
+<div class="admin-v3-sidebar-logo">DS</div>
+<div>
+<h2>DivyangSathi</h2>
+<p>Administrator Panel</p>
+</div>
+</div>
+
+<nav class="admin-v3-sidebar-nav">
+
+<a href="admin.html#dashboard">
+📊 <span>Dashboard</span>
+</a>
+
+<a href="admin-cms.html">
+🌐 <span>Website CMS</span>
+</a>
+
+<a class="active" href="admin-dashboard-cms.html">
+🛠️ <span>Admin CMS</span>
+</a>
+
+<a href="admin.html#analytics">
+📈 <span>Analytics</span>
+</a>
+
+<a href="admin.html#analyticsCharts">
+📉 <span>Charts</span>
+</a>
+
+<a href="admin-profiles.html#profiles">
+👥 <span>User Profiles</span>
+</a>
+
+<a href="admin-memberships.html#membership">
+💎 <span>Memberships</span>
+</a>
+
+<a href="admin-requests.html#interests">
+❤️ <span>Interests</span>
+</a>
+
+<a href="admin-moderation.html#reports">
+🚩 <span>User Reports</span>
+</a>
+
+<a href="admin-support.html#messages">
+📩 <span>Support</span>
+</a>
+
+</nav>
+
+</aside>
+
+
+<div class="admin-v3-workspace">
+
+<main class="cms-main">
+
+<div class="cms-hero">
+
+<div>
+
+<span class="cms-kicker">
+ADMIN DASHBOARD CONTROL CENTER
+</span>
+
+<h1>Admin CMS</h1>
+
+<p>
+Edit, update, hide, delete, restore and theme the Admin Dashboard independently from the public website.
+</p>
+
+</div>
+
+</div>
+
+
+<nav class="cms-tabs" id="acTabs">
+
+<button
+class="cms-tab active"
+data-a="elements">
+Dashboard Elements
+</button>
+
+<button
+class="cms-tab"
+data-a="menu">
+Admin Menu
+</button>
+
+<button
+class="cms-tab"
+data-a="pages">
+Admin Pages
+</button>
+
+<button
+class="cms-tab"
+data-a="stats">
+Statistics & Cards
+</button>
+
+<button
+class="cms-tab"
+data-a="analytics">
+Analytics & Charts
+</button>
+
+<button
+class="cms-tab"
+data-a="theme">
+Admin Theme
+</button>
+
+<button
+class="cms-tab"
+data-a="trash">
+Recycle Bin
+</button>
+
+</nav>
+
+
+<!-- ======================================================
+ADMIN PAGE MANAGER
+====================================================== -->
+<section class="cms-panel" data-ap="pages">
+<div class="cms-box">
+<h2>Admin Page Manager</h2>
+<p>Create, edit/update, clone, draft/publish, hide/show, add to Admin Menu, delete and restore Admin CMS pages.</p>
+<form id="adminPageForm" class="cms-form">
+<input type="hidden" id="adminPageId">
+<label>Page Title<input id="adminPageTitle" required></label>
+<label>Slug<input id="adminPageSlug" placeholder="settings" required></label>
+<label>Status<select id="adminPageStatus"><option value="draft">Draft</option><option value="published">Published</option></select></label>
+<label>Visible<select id="adminPageVisible"><option value="true">Yes</option><option value="false">No</option></select></label>
+<label>Add to Admin Menu<select id="adminPageMenu"><option value="false">No</option><option value="true">Yes</option></select></label>
+<label>Menu Label<input id="adminPageMenuLabel"></label>
+<label>Menu Icon<input id="adminPageIcon" placeholder="📄 or icon text"></label>
+<label>Order<input id="adminPageSort" type="number" value="0"></label>
+<label class="full">Page Content (HTML allowed)<textarea id="adminPageContent" rows="12"></textarea></label>
+<div class="full cms-actions"><button class="cms-btn green">Save / Update Page</button><button type="button" class="cms-btn gray" id="adminPageClear">Clear</button></div>
+</form>
+<div id="adminPageRows"></div>
+</div>
+<div class="cms-box"><h2>Deleted Admin Pages</h2><div id="adminPageTrash"></div></div>
+</section>
+
+<!-- ======================================================
+DASHBOARD ELEMENTS
+====================================================== -->
+
+<section
+class="cms-panel active"
+data-ap="elements">
+
+<div class="cms-box">
+
+<h2>Total Admin Dashboard Editor</h2>
+
+<form
+id="acElementForm"
+class="cms-form">
+
+<input
+type="hidden"
+id="acId">
+
+
+<label>
+Admin Page
+
+<select id="acPage">
+
+<option>
+admin.html
+</option>
+
+<option>
+admin-profiles.html
+</option>
+
+<option>
+admin-memberships.html
+</option>
+
+<option>
+admin-requests.html
+</option>
+
+<option>
+admin-moderation.html
+</option>
+
+<option>
+admin-support.html
+</option>
+
+</select>
+
+</label>
+
+
+<label>
+Editable Element
+
+<select id="acSelector">
+</select>
+
+</label>
+
+
+<label>
+Property
+
+<select id="acProperty">
+</select>
+
+</label>
+
+
+<label class="full">
+
+Value
+
+<textarea id="acValue">
+</textarea>
+
+</label>
+
+
+<label>
+
+Sort Order
+
+<input
+id="acSort"
+type="number"
+value="0">
+
+</label>
+
+
+<label>
+
+Status
+
+<select id="acStatus">
+
+<option value="published">
+Published
+</option>
+
+<option value="draft">
+Draft
+</option>
+
+</select>
+
+</label>
+
+
+<div class="full cms-actions">
+
+<button class="cms-btn green">
+
+Save / Update Live
+
+</button>
+
+
+<button
+type="button"
+class="cms-btn gold"
+id="acRestoreOriginal">
+
+Restore Original
+
+</button>
+
+
+<button
+type="button"
+class="cms-btn gray"
+id="acClear">
+
+Clear
+
+</button>
+
+</div>
+
+</form>
+
+
+<div id="acRows">
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ======================================================
+ADMIN MENU
+====================================================== -->
+
+<section
+class="cms-panel"
+data-ap="menu">
+
+<div class="cms-box">
+
+<h2>
+Admin Sidebar / Menu Manager
+</h2>
+
+
+<form
+id="acMenuForm"
+class="cms-form">
+
+<input
+type="hidden"
+id="acMenuId">
+
+
+<label>
+
+Label
+
+<input
+id="acMenuLabel"
+required>
+
+</label>
+
+
+<label>
+
+Icon
+
+<input
+id="acMenuIcon"
+placeholder="dashboard / users / analytics / emoji">
+
+</label>
+
+
+<label>
+
+Destination
+
+<input
+id="acMenuUrl"
+required>
+
+</label>
+
+
+<label>
+
+Order
+
+<input
+id="acMenuSort"
+type="number"
+value="0">
+
+</label>
+
+
+<label>
+
+Visible
+
+<select id="acMenuVisible">
+
+<option value="true">
+Yes
+</option>
+
+<option value="false">
+No
+</option>
+
+</select>
+
+</label>
+
+
+<div class="full cms-actions">
+
+<button class="cms-btn green">
+
+Save / Update Menu
+
+</button>
+
+</div>
+
+</form>
+
+
+<div id="acMenuRows">
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ======================================================
+STATISTICS + CARDS
+====================================================== -->
+
+<section
+class="cms-panel"
+data-ap="stats">
+
+<div class="cms-box">
+
+<h2>
+Dashboard Statistics & Cards
+</h2>
+
+<p>
+Manage every detected Dashboard statistic/card.
+Edit/update content and design, change colours,
+hide/show, reorder, delete from the live dashboard,
+or restore the original card.
+</p>
+
+
+<!-- STAT CARD COLOR EDITOR -->
+
+<div
+id="acStatColorEditor"
+class="cms-box"
+style="display:none;margin-top:18px;">
+
+<h3>
+🎨 Statistic / Card Colour Editor
+</h3>
+
+
+<form
+id="acStatColorForm"
+class="cms-form">
+
+
+<input
+type="hidden"
+id="acStatColorSelector">
+
+
+<label class="full">
+
+Selected Card
+
+<input
+id="acStatColorItem"
+readonly>
+
+</label>
+
+
+<label>
+
+Background Color
+
+<input
+id="acStatBgColor"
+type="color"
+value="#ffffff">
+
+</label>
+
+
+<label>
+
+Text Color
+
+<input
+id="acStatTextColor"
+type="color"
+value="#0f172a">
+
+</label>
+
+
+<label>
+
+Border / Accent Color
+
+<input
+id="acStatBorderColor"
+type="color"
+value="#e2e8f0">
+
+</label>
+
+
+<label>
+
+Icon Color
+
+<input
+id="acStatIconColor"
+type="color"
+value="#4f46e5">
+
+</label>
+
+
+<div class="full cms-actions">
+
+<button
+class="cms-btn green"
+type="submit">
+
+Update Colours Live
+
+</button>
+
+
+<button
+class="cms-btn gold"
+type="button"
+id="acStatColorRestore">
+
+Restore Colours
+
+</button>
+
+
+<button
+class="cms-btn gray"
+type="button"
+id="acStatColorClose">
+
+Close
+
+</button>
+
+</div>
+
+</form>
+
+</div>
+
+
+<div id="acStatRows">
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ======================================================
+ANALYTICS + CHARTS
+====================================================== -->
+
+<section
+class="cms-panel"
+data-ap="analytics">
+
+<div class="cms-box">
+
+<h2>
+Analytics Dashboard /
+Advanced Live Analytics /
+Charts
+</h2>
+
+<p>
+Manage Analytics Dashboard,
+Advanced Live Analytics and every detected chart/card/section.
+Edit/update, hide/show, recolor, reorder,
+delete or restore original elements.
+</p>
+
+
+<!-- ANALYTICS COLOR EDITOR -->
+
+<div
+id="acAnalyticsColorEditor"
+class="cms-box"
+style="display:none;margin-top:18px;">
+
+<h3>
+🎨 Analytics / Chart Card Colour Editor
+</h3>
+
+
+<form
+id="acAnalyticsColorForm"
+class="cms-form">
+
+
+<input
+type="hidden"
+id="acAnalyticsColorSelector">
+
+
+<label class="full">
+
+Selected Item
+
+<input
+id="acAnalyticsColorItem"
+readonly>
+
+</label>
+
+
+<label>
+
+Background Color
+
+<input
+id="acAnalyticsBgColor"
+type="color"
+value="#ffffff">
+
+</label>
+
+
+<label>
+
+Text Color
+
+<input
+id="acAnalyticsTextColor"
+type="color"
+value="#0f172a">
+
+</label>
+
+
+<label>
+
+Border / Accent Color
+
+<input
+id="acAnalyticsBorderColor"
+type="color"
+value="#e2e8f0">
+
+</label>
+
+
+<label>
+
+Icon / Heading Color
+
+<input
+id="acAnalyticsIconColor"
+type="color"
+value="#4f46e5">
+
+</label>
+
+
+<div class="full cms-actions">
+
+<button
+class="cms-btn green"
+type="submit">
+
+Update Colours Live
+
+</button>
+
+
+<button
+class="cms-btn gold"
+type="button"
+id="acAnalyticsColorRestore">
+
+Restore Colours
+
+</button>
+
+
+<button
+class="cms-btn gray"
+type="button"
+id="acAnalyticsColorClose">
+
+Close
+
+</button>
+
+</div>
+
+</form>
+
+</div>
+
+
+<div id="acAnalyticsRows">
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ======================================================
+ADMIN THEME
+UNCHANGED
+====================================================== -->
+
+<section
+class="cms-panel"
+data-ap="theme">
+
+<div class="cms-box">
+
+<h2>
+Admin Dashboard Theme Manager
+</h2>
+
+
+<form
+id="acThemeForm"
+class="cms-form">
+
+
+<input
+type="hidden"
+id="acThemeId">
+
+
+<label>
+
+Theme Name
+
+<input
+id="acThemeName"
+value="Admin Theme">
+
+</label>
+
+
+<label>
+
+Primary
+
+<input
+id="acThemePrimary"
+type="color"
+value="#4f46e5">
+
+</label>
+
+
+<label>
+
+Secondary
+
+<input
+id="acThemeSecondary"
+type="color"
+value="#7c3aed">
+
+</label>
+
+
+<label>
+
+Background
+
+<input
+id="acThemeBg"
+type="color"
+value="#f8fafc">
+
+</label>
+
+
+<label>
+
+Card Background
+
+<input
+id="acThemeCard"
+type="color"
+value="#ffffff">
+
+</label>
+
+
+<label>
+
+Text
+
+<input
+id="acThemeText"
+type="color"
+value="#0f172a">
+
+</label>
+
+
+<label>
+
+Radius
+
+<select id="acThemeRadius">
+
+<option>
+8px
+</option>
+
+<option>
+12px
+</option>
+
+<option selected>
+16px
+</option>
+
+<option>
+24px
+</option>
+
+</select>
+
+</label>
+
+
+<label class="full">
+
+Custom CSS
+
+<textarea id="acThemeCss">
+</textarea>
+
+</label>
+
+
+<div class="full cms-actions">
+
+<button
+type="button"
+id="acThemeSave"
+class="cms-btn green">
+
+Save New
+
+</button>
+
+
+<button
+type="button"
+id="acThemeUpdate"
+class="cms-btn gray">
+
+Update
+
+</button>
+
+
+<button
+type="submit"
+class="cms-btn green">
+
+Apply Live
+
+</button>
+
+
+<button
+type="button"
+id="acThemeDefault"
+class="cms-btn gold">
+
+Restore Default
+
+</button>
+
+</div>
+
+</form>
+
+
+<div id="acThemeRows">
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ======================================================
+RECYCLE BIN
+====================================================== -->
+
+<section
+class="cms-panel"
+data-ap="trash">
+
+<div class="cms-box">
+
+<h2>
+Admin CMS Recycle Bin
+</h2>
+
+<div id="acTrashRows">
+</div>
+
+</div>
+
+</section>
+
+
+</main>
+
+</div>
+
+</div>
+
+
+<div
+class="cms-toast"
+id="cmsToast">
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="app.js"></script>
+
+<script src="admin-cms.js"></script>
+<script src="admin-page-manager.js"></script>
+
+</body>
+
+</html>

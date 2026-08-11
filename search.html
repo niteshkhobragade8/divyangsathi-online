@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Search Profiles - DivyangSathi</title>
+
+<link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/png" href="icons/icon-192.png">
+<link rel="stylesheet" href="user-theme.css">
+
+<link rel="stylesheet" href="final-polish.css">
+</head>
+
+
+<body class="user-dashboard-body search-premium-body">
+
+
+<!-- =====================================
+     USER HEADER
+===================================== -->
+
+<div id="commonHeader"></div>
+
+
+<!-- =====================================
+     SEARCH HERO
+===================================== -->
+
+<section class="search-premium-hero">
+
+<div class="search-premium-hero-content">
+
+<div>
+
+<span class="search-premium-label">
+DIVYANGSATHI MATRIMONY
+</span>
+
+<h1>
+Find Your Compatible Life Partner
+</h1>
+
+<p>
+Search verified profiles using age, location, religion, disability and marital-status filters.
+</p>
+
+</div>
+
+
+<div class="search-premium-hero-badge">
+
+<span>💞</span>
+
+<div>
+
+<strong>Meaningful Matches</strong>
+
+<small>
+Safe and respectful matrimonial search
+</small>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================
+     SEARCH MAIN
+===================================== -->
+
+<main class="search-premium-main">
+
+
+<!-- SEARCH FILTER -->
+
+<section class="search-premium-panel search-section">
+
+<div class="search-premium-heading">
+
+<div class="search-premium-heading-icon">
+🔍
+</div>
+
+<div>
+
+<span class="profile-section-label">
+SMART SEARCH
+</span>
+
+<h2>
+Search Profile Filters
+</h2>
+
+<p>
+Enter your preferences to find suitable profiles.
+</p>
+
+</div>
+
+</div>
+
+
+<form class="search-form search-premium-form">
+
+<div class="search-filter-grid">
+
+
+<div class="search-filter-box">
+
+<label for="searchGender">
+Gender
+</label>
+
+<select id="searchGender">
+
+<option value="">
+Select Gender
+</option>
+
+<option value="Male">
+Male
+</option>
+
+<option value="Female">
+Female
+</option>
+
+<option value="Other">
+Other
+</option>
+
+</select>
+
+</div>
+
+
+<div class="search-filter-box">
+
+<label for="minAge">
+Minimum Age
+</label>
+
+<input
+type="number"
+id="minAge"
+placeholder="For example: 25">
+
+</div>
+
+
+<div class="search-filter-box">
+
+<label for="maxAge">
+Maximum Age
+</label>
+
+<input
+type="number"
+id="maxAge"
+placeholder="For example: 35">
+
+</div>
+
+
+<div class="search-filter-box">
+
+<label for="searchReligion">
+Religion
+</label>
+
+<input
+type="text"
+id="searchReligion"
+placeholder="Enter religion">
+
+</div>
+
+
+<div class="search-filter-box">
+
+<label for="searchState">
+State
+</label>
+
+<input
+type="text"
+id="searchState"
+placeholder="Enter state">
+
+</div>
+
+
+<div class="search-filter-box">
+
+<label for="searchDistrict">
+District
+</label>
+
+<input
+type="text"
+id="searchDistrict"
+placeholder="Enter district">
+
+</div>
+
+
+<div class="search-filter-box">
+
+<label for="searchDisability">
+Disability Type
+</label>
+
+<input
+type="text"
+id="searchDisability"
+placeholder="Enter disability type">
+
+</div>
+
+
+<div class="search-filter-box">
+
+<label for="maritalStatus">
+Marital Status
+</label>
+
+<select id="maritalStatus">
+
+<option value="">
+Select Marital Status
+</option>
+
+<option value="Never Married">
+Never Married
+</option>
+
+<option value="Divorced">
+Divorced
+</option>
+
+<option value="Widowed">
+Widowed
+</option>
+
+</select>
+
+</div>
+
+</div>
+
+
+<div class="search-filter-actions">
+
+
+
+
+<button
+type="submit"
+class="search-premium-button">
+
+🔍 Search Profiles
+
+</button>
+
+<button
+type="reset"
+class="search-reset-button">
+
+↻ Reset Filters
+
+</button>
+
+</div>
+
+</form>
+
+</section>
+
+
+<!-- SEARCH RESULTS -->
+
+<section class="search-premium-results-panel">
+
+<div class="search-results-heading">
+
+<div>
+
+<span class="profile-section-label">
+PROFILE RESULTS
+</span>
+
+<h2>
+Suitable Matrimony Profiles
+</h2>
+
+<p>
+Profiles matching your preferences will appear below.
+</p>
+
+</div>
+
+<div class="search-result-status">
+🟢 Live Profiles
+</div>
+
+</div>
+
+
+<section
+class="search-results search-profile-grid">
+
+<div class="search-empty-state">
+
+<div class="search-empty-icon">
+💞
+</div>
+
+<h3>
+Start Your Search
+</h3>
+
+<p>
+Choose your preferred filters and click Search Profiles.
+</p>
+
+</div>
+
+</section>
+
+</section>
+
+</main>
+
+
+<!-- =====================================
+     FOOTER
+===================================== -->
+
+<div id="commonFooter"></div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="app.js"></script>
+
+
+<script>
+
+// Search page header logout
+
+document
+  .getElementById("searchLogoutBtn")
+  ?.addEventListener("click", async function () {
+
+    const confirmLogout = confirm(
+      "Kya aap logout karna chahte hain?"
+    );
+
+    if (!confirmLogout) return;
+
+    const { error } =
+      await client.auth.signOut();
+
+    if (error) {
+      alert(error.message);
+      return;
+    }
+
+    window.location.replace("login.html");
+
+  });
+
+</script>
+
+<script src="full-page-i18n.js"></script>
+<script src="languages.js"></script>
+<script src="language.js"></script>
+<script src="layout.js"></script>
+
+<script src="user-theme.js"></script>
+<script src="feature-config.js"></script>
+<script src="final-features.js"></script>
+
+<script src="cms-runtime.js"></script>
+</body>
+
+</html>
