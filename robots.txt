@@ -1,0 +1,15 @@
+User-agent: *
+Allow: /
+
+Disallow: /admin.html
+Disallow: /admin-login.html
+Disallow: /admin-cms.html
+Disallow: /admin-page.html
+Disallow: /admin-support.html
+Disallow: /admin-profiles.html
+Disallow: /admin-requests.html
+Disallow: /admin-moderation.html
+Disallow: /admin-memberships.html
+Disallow: /admin-dashboard-cms.html
+
+Sitemap: https://divyangsathi.online/sitemap.xml
