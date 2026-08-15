@@ -7,6 +7,7 @@
 
   const ADMIN_PAGES = [
     "admin-cms.html",
+    "admin-dashboard-cms.html",
     "admin.html",
     "admin-profiles.html",
     "admin-memberships.html",
@@ -23,6 +24,10 @@
   ];
 
 
+  // ======================================
+  // CURRENT PAGE
+  // ======================================
+
   function getCurrentPage() {
 
     return (
@@ -34,6 +39,10 @@
 
   }
 
+
+  // ======================================
+  // PAGE TYPE CHECK
+  // ======================================
 
   function isAdminPage(pageName) {
 
@@ -52,6 +61,10 @@
 
   }
 
+
+  // ======================================
+  // FETCH HTML
+  // ======================================
 
   async function fetchHtml(fileName) {
 
@@ -74,6 +87,10 @@
 
   }
 
+
+  // ======================================
+  // FIND OLD HEADER
+  // ======================================
 
   function findOldHeader(adminPage) {
 
@@ -98,6 +115,10 @@
   }
 
 
+  // ======================================
+  // FIND OLD FOOTER
+  // ======================================
+
   function findOldFooter() {
 
     return document.querySelector(
@@ -112,6 +133,10 @@
 
   }
 
+
+  // ======================================
+  // HEADER CONTAINER
+  // ======================================
 
   function createOrGetHeaderContainer(
     adminPage
@@ -140,6 +165,7 @@
 
     }
 
+
     const oldHeader =
       findOldHeader(adminPage);
 
@@ -148,6 +174,7 @@
 
     container.id =
       "commonHeader";
+
 
     if (oldHeader) {
 
@@ -167,6 +194,10 @@
 
   }
 
+
+  // ======================================
+  // FOOTER CONTAINER
+  // ======================================
 
   function createOrGetFooterContainer() {
 
@@ -194,6 +225,7 @@
 
     }
 
+
     const oldFooter =
       findOldFooter();
 
@@ -202,6 +234,7 @@
 
     container.id =
       "commonFooter";
+
 
     if (oldFooter) {
 
@@ -222,6 +255,121 @@
   }
 
 
+  // ======================================
+  // ADMIN WEBSITE LINK
+  // OPEN WEBSITE IN NEW TAB
+  // ======================================
+
+  function configureAdminWebsiteLinks(
+    adminPage
+  ) {
+
+    if (!adminPage) {
+      return;
+    }
+
+
+    const header =
+      document.getElementById(
+        "commonHeader"
+      );
+
+    if (!header) {
+      return;
+    }
+
+
+    header
+      .querySelectorAll("a[href]")
+      .forEach(function (link) {
+
+        const rawHref =
+          (
+            link.getAttribute("href") ||
+            ""
+          ).trim();
+
+        const linkText =
+          (
+            link.textContent ||
+            ""
+          )
+            .replace(/\s+/g, " ")
+            .trim()
+            .toLowerCase();
+
+
+        let destinationPage =
+          "";
+
+        try {
+
+          const parsedUrl =
+            new URL(
+              rawHref,
+              window.location.href
+            );
+
+          destinationPage =
+            parsedUrl.pathname
+              .split("/")
+              .pop() ||
+            "index.html";
+
+        } catch (error) {
+
+          destinationPage =
+            rawHref
+              .split("#")[0]
+              .split("?")[0]
+              .split("/")
+              .pop();
+
+        }
+
+
+        const isWebsiteLink =
+          destinationPage ===
+            "index.html" &&
+          (
+            linkText.includes(
+              "website"
+            ) ||
+            linkText.includes(
+              "website home"
+            ) ||
+            linkText.includes(
+              "home"
+            )
+          );
+
+
+        if (!isWebsiteLink) {
+          return;
+        }
+
+
+        // Open public website
+        // in a separate browser tab.
+        link.setAttribute(
+          "target",
+          "_blank"
+        );
+
+        link.setAttribute(
+          "rel",
+          "noopener noreferrer"
+        );
+
+      });
+
+  }
+
+
+  // ======================================
+  // ACTIVE NAVIGATION
+  // ======================================
+
   function activateCurrentNavigation() {
 
     const currentPage =
@@ -236,7 +384,11 @@
         const href =
           link
             .getAttribute("href")
-            ?.split("#")[0];
+            ?.split("#")[0]
+            ?.split("?")[0]
+            ?.split("/")
+            ?.pop();
+
 
         if (href === currentPage) {
 
@@ -257,6 +409,10 @@
   }
 
 
+  // ======================================
+  // USER LOGOUT
+  // ======================================
+
   function connectUserLogout() {
 
     const logoutButton =
@@ -268,22 +424,29 @@
       return;
     }
 
+
     logoutButton.onclick =
       async function () {
 
-        logoutButton.disabled = true;
+        logoutButton.disabled =
+          true;
 
         logoutButton.textContent =
           "Logging out...";
 
+
         try {
 
           const { error } =
-            await client.auth.signOut({ scope: "local" });
+            await client.auth.signOut({
+              scope: "local"
+            });
+
 
           if (error) {
             throw error;
           }
+
 
           window.location.replace(
             "login.html"
@@ -296,10 +459,12 @@
             error
           );
 
+
           alert(
             "Logout nahi hua: " +
             error.message
           );
+
 
           logoutButton.disabled =
             false;
@@ -314,6 +479,10 @@
   }
 
 
+  // ======================================
+  // ADMIN TOP HEADER LOGOUT
+  // ======================================
+
   function connectAdminLogout() {
 
     const logoutButton =
@@ -325,6 +494,7 @@
       return;
     }
 
+
     logoutButton.onclick =
       async function () {
 
@@ -333,23 +503,31 @@
             "Kya aap Admin Panel se logout karna chahte hain?"
           );
 
+
         if (!confirmed) {
           return;
         }
 
-        logoutButton.disabled = true;
+
+        logoutButton.disabled =
+          true;
 
         logoutButton.textContent =
           "Logging out...";
 
+
         try {
 
           const { error } =
-            await client.auth.signOut({ scope: "local" });
+            await client.auth.signOut({
+              scope: "local"
+            });
+
 
           if (error) {
             throw error;
           }
+
 
           localStorage.removeItem(
             "adminLoggedIn"
@@ -361,9 +539,10 @@
 
           sessionStorage.clear();
 
+
           window.location.replace(
-  "admin-login.html"
-);
+            "admin-login.html"
+          );
 
         } catch (error) {
 
@@ -372,10 +551,12 @@
             error
           );
 
+
           alert(
             "Logout nahi hua: " +
             error.message
           );
+
 
           logoutButton.disabled =
             false;
@@ -390,6 +571,9 @@
   }
 
 
+  // ======================================
+  // ADMIN SIDEBAR LOGOUT
+  // ======================================
 
   function connectAdminSidebarLogout() {
 
@@ -402,6 +586,7 @@
       return;
     }
 
+
     sidebarLogoutButton.onclick =
       async function () {
 
@@ -410,22 +595,31 @@
             "Kya aap Admin Panel se logout karna chahte hain?"
           );
 
+
         if (!confirmed) {
           return;
         }
 
-        sidebarLogoutButton.disabled = true;
+
+        sidebarLogoutButton.disabled =
+          true;
+
         sidebarLogoutButton.textContent =
           "Logging out...";
+
 
         try {
 
           const { error } =
-            await client.auth.signOut({ scope: "local" });
+            await client.auth.signOut({
+              scope: "local"
+            });
+
 
           if (error) {
             throw error;
           }
+
 
           localStorage.removeItem(
             "adminLoggedIn"
@@ -436,6 +630,7 @@
           );
 
           sessionStorage.clear();
+
 
           window.location.replace(
             "admin-login.html"
@@ -448,10 +643,12 @@
             error
           );
 
+
           alert(
             "Logout nahi hua: " +
             error.message
           );
+
 
           sidebarLogoutButton.disabled =
             false;
@@ -466,6 +663,10 @@
   }
 
 
+  // ======================================
+  // RESTORE SAVED THEME
+  // ======================================
+
   function restoreSavedTheme(
     adminPage
   ) {
@@ -476,6 +677,7 @@
         localStorage.getItem(
           "divyangsathi-admin-theme"
         );
+
 
       if (savedTheme === "dark") {
 
@@ -489,10 +691,12 @@
 
     }
 
+
     const savedTheme =
       localStorage.getItem(
         "divyangsathi-theme"
       );
+
 
     if (savedTheme === "dark") {
 
@@ -504,6 +708,10 @@
 
   }
 
+
+  // ======================================
+  // INITIALIZE LANGUAGE
+  // ======================================
 
   function initializeLanguage() {
 
@@ -518,6 +726,7 @@
           "divyangsathi-language"
         ) || "en";
 
+
       window
         .applyDivyangSathiLanguage(
           savedLanguage
@@ -528,19 +737,30 @@
   }
 
 
+  // ======================================
+  // LOAD COMMON LAYOUT
+  // ======================================
+
   async function loadCommonLayout() {
 
     const currentPage =
       getCurrentPage();
 
+
     if (
-      isExcludedPage(currentPage)
+      isExcludedPage(
+        currentPage
+      )
     ) {
       return;
     }
 
+
     const adminPage =
-      isAdminPage(currentPage);
+      isAdminPage(
+        currentPage
+      );
+
 
     try {
 
@@ -549,41 +769,68 @@
           adminPage
         );
 
+
       const headerFile =
         adminPage
           ? "admin-header.html"
           : "header.html";
 
+
       const headerHtml =
-        await fetchHtml(headerFile);
+        await fetchHtml(
+          headerFile
+        );
+
 
       headerContainer.innerHTML =
         headerHtml;
 
-      // Admin pages already contain their own professional admin footer.
-      // Never replace it with the public/user footer.
+
+      // ======================================
+      // IMPORTANT:
+      // Admin header Website button
+      // opens public website in new tab.
+      // ======================================
+
+      configureAdminWebsiteLinks(
+        adminPage
+      );
+
+
+      // Admin pages already contain their
+      // professional admin footer.
+      // Never replace it with public footer.
+
       if (!adminPage) {
 
         const footerContainer =
           createOrGetFooterContainer();
 
+
         const footerHtml =
-          await fetchHtml("footer.html");
+          await fetchHtml(
+            "footer.html"
+          );
+
 
         footerContainer.innerHTML =
           footerHtml;
 
       }
 
+
       restoreSavedTheme(
         adminPage
       );
 
+
       activateCurrentNavigation();
+
 
       if (adminPage) {
 
         connectAdminLogout();
+
         connectAdminSidebarLogout();
 
       } else {
@@ -592,7 +839,9 @@
 
       }
 
+
       initializeLanguage();
+
 
       document.dispatchEvent(
         new CustomEvent(
@@ -605,6 +854,7 @@
           }
         )
       );
+
 
       console.log(
         "Common layout loaded:",
@@ -622,6 +872,10 @@
 
   }
 
+
+  // ======================================
+  // START COMMON LAYOUT
+  // ======================================
 
   if (
     document.readyState ===
@@ -641,9 +895,10 @@
 
 })();
 
+
 // ==========================================
 // GLOBAL FULL-PAGE LANGUAGE LOADER
-// User + Admin
+// USER + ADMIN
 // ==========================================
 
 (function () {
@@ -658,45 +913,60 @@
       return;
     }
 
+
     const script =
-      document.createElement("script");
+      document.createElement(
+        "script"
+      );
+
 
     script.src =
       "full-page-i18n.js";
 
-    script.defer = true;
 
-    script.onload = function () {
+    script.defer =
+      true;
 
-      const language =
-        localStorage.getItem(
-          "divyangsathi_language"
-        ) ||
-        localStorage.getItem(
-          "adminLanguage"
-        ) ||
-        "en";
 
-      if (
-        typeof window
-          .setDivyangSathiLanguage ===
-        "function"
-      ) {
-        window
-          .setDivyangSathiLanguage(
-            language
-          );
-      }
+    script.onload =
+      function () {
 
-    };
+        const language =
+          localStorage.getItem(
+            "divyangsathi_language"
+          ) ||
+          localStorage.getItem(
+            "adminLanguage"
+          ) ||
+          "en";
+
+
+        if (
+          typeof window
+            .setDivyangSathiLanguage ===
+          "function"
+        ) {
+
+          window
+            .setDivyangSathiLanguage(
+              language
+            );
+
+        }
+
+      };
+
 
     document.body.appendChild(
       script
     );
+
   }
 
+
   if (
-    document.readyState === "loading"
+    document.readyState ===
+    "loading"
   ) {
 
     document.addEventListener(
@@ -709,6 +979,7 @@
     loadFullPageI18n();
 
   }
+
 
   document.addEventListener(
     "divyangsathi:layout-ready",
