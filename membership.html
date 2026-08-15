@@ -13,16 +13,175 @@ content="width=device-width, initial-scale=1.0">
 
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="user-theme.css">
-
 <link rel="stylesheet" href="final-polish.css">
-<link rel="icon" type="image/png" href="icons/icon-192.png">
+
+<link
+rel="icon"
+type="image/png"
+href="icons/icon-192.png">
 
 <style>
-.membership-payu-box{border:1px solid rgba(15,118,110,.18);background:linear-gradient(135deg,rgba(236,253,245,.95),rgba(239,246,255,.96));}
-#payuPayButton{width:100%;min-height:48px;border:0;border-radius:12px;font-weight:800;cursor:pointer;background:#111827;color:#fff;box-shadow:0 10px 24px rgba(17,24,39,.16);}
-#payuPayButton:disabled{opacity:.55;cursor:not-allowed;box-shadow:none;}
-#payuPaymentStatus{margin:10px 0 0;font-weight:700;line-height:1.45;}
+
+/* =====================================
+   DIVYANGSATHI MEMBERSHIP PAYU
+===================================== */
+
+.membership-payment-layout{
+  display:block;
+}
+
+.membership-selected-plan{
+  max-width:560px;
+  margin:0 auto 20px;
+}
+
+.membership-payu-box{
+  max-width:560px;
+  margin:0 auto;
+  padding:32px;
+  border:1px solid rgba(15,118,110,.14);
+  border-radius:22px;
+  background:
+    linear-gradient(
+      145deg,
+      #ffffff,
+      #f8fafc
+    );
+  box-shadow:
+    0 18px 45px
+    rgba(15,23,42,.08);
+  text-align:center;
+}
+
+.membership-payu-lock{
+  width:62px;
+  height:62px;
+  margin:0 auto 16px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  background:#ecfdf5;
+  font-size:29px;
+}
+
+.membership-payu-box h3{
+  margin:0 0 8px;
+  font-size:23px;
+  color:#0f172a;
+}
+
+.membership-payu-description{
+  margin:0 auto 22px;
+  max-width:430px;
+  color:#64748b;
+  line-height:1.65;
+}
+
+.membership-secure-plan{
+  margin:20px 0;
+  padding:16px 18px;
+  border:1px solid #e2e8f0;
+  border-radius:15px;
+  background:#f8fafc;
+}
+
+.membership-secure-plan-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+  padding:7px 0;
+}
+
+.membership-secure-plan-row span{
+  color:#64748b;
+  font-size:14px;
+}
+
+.membership-secure-plan-row strong{
+  color:#0f172a;
+  text-align:right;
+}
+
+#payuPayButton{
+  width:100%;
+  min-height:54px;
+  padding:14px 20px;
+  border:0;
+  border-radius:14px;
+  font-size:16px;
+  font-weight:800;
+  cursor:pointer;
+  background:#111827;
+  color:#ffffff;
+  box-shadow:
+    0 10px 24px
+    rgba(17,24,39,.17);
+  transition:
+    transform .2s ease,
+    box-shadow .2s ease,
+    opacity .2s ease;
+}
+
+#payuPayButton:hover:not(:disabled){
+  transform:translateY(-1px);
+  box-shadow:
+    0 14px 30px
+    rgba(17,24,39,.22);
+}
+
+#payuPayButton:disabled{
+  opacity:.5;
+  cursor:not-allowed;
+  box-shadow:none;
+}
+
+#payuPaymentStatus{
+  margin:12px 0 0;
+  font-weight:700;
+  line-height:1.45;
+}
+
+.membership-payu-trust{
+  margin:16px 0 0;
+  color:#64748b;
+  font-size:13px;
+}
+
+.membership-payment-methods{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:14px;
+}
+
+.membership-payment-methods span{
+  padding:6px 10px;
+  border:1px solid #e2e8f0;
+  border-radius:20px;
+  background:#ffffff;
+  color:#475569;
+  font-size:12px;
+  font-weight:700;
+}
+
+@media(max-width:600px){
+
+  .membership-payu-box{
+    padding:24px 18px;
+    border-radius:18px;
+  }
+
+  .membership-secure-plan-row{
+    gap:10px;
+  }
+
+}
+
 </style>
+
 </head>
 
 
@@ -74,7 +233,7 @@ Secure Membership
 </strong>
 
 <small>
-PayU online payment + manual UPI fallback
+Secure online payments powered by PayU
 </small>
 
 </div>
@@ -93,7 +252,9 @@ PayU online payment + manual UPI fallback
 <main class="membership-premium-main">
 
 
-<!-- CURRENT MEMBERSHIP STATUS -->
+<!-- =====================================
+     CURRENT MEMBERSHIP
+===================================== -->
 
 <section class="membership-current-status">
 
@@ -167,7 +328,7 @@ Choose a plan according to your matrimonial search requirements.
 <div class="membership-plan-grid">
 
 
-<!-- FREE PLAN -->
+<!-- FREE -->
 
 <div
 class="membership-plan-card membership-free-card"
@@ -193,15 +354,10 @@ Basic Account
 <ul>
 
 <li>✅ Login Access</li>
-
 <li>✅ User Dashboard</li>
-
 <li>✅ Complete Your Profile</li>
-
 <li>❌ Search Profile Access</li>
-
 <li>❌ View Profile Access</li>
-
 <li>❌ Chat Access</li>
 
 </ul>
@@ -218,7 +374,7 @@ Select Free
 </div>
 
 
-<!-- SILVER PLAN -->
+<!-- SILVER -->
 
 <div
 class="membership-plan-card membership-silver-card"
@@ -244,15 +400,10 @@ Starter Membership
 <ul>
 
 <li>✅ Dashboard Access</li>
-
 <li>✅ Search Profiles</li>
-
 <li>✅ 25 Profile Views</li>
-
 <li>✅ Send Interests</li>
-
 <li>✅ Chat Access</li>
-
 <li>✅ Silver Member Badge</li>
 
 </ul>
@@ -269,7 +420,7 @@ Choose Silver
 </div>
 
 
-<!-- GOLD PLAN -->
+<!-- GOLD -->
 
 <div
 class="membership-plan-card membership-gold-card membership-popular"
@@ -299,15 +450,10 @@ Premium Membership
 <ul>
 
 <li>✅ Dashboard Access</li>
-
 <li>✅ Advanced Profile Search</li>
-
 <li>✅ 100 Profile Views</li>
-
 <li>✅ Send Interests</li>
-
 <li>✅ Chat Access</li>
-
 <li>✅ Gold Member Badge</li>
 
 </ul>
@@ -324,7 +470,7 @@ Choose Gold
 </div>
 
 
-<!-- PLATINUM PLAN -->
+<!-- PLATINUM -->
 
 <div
 class="membership-plan-card membership-platinum-card"
@@ -350,15 +496,10 @@ Ultimate Membership
 <ul>
 
 <li>✅ Dashboard Access</li>
-
 <li>✅ Advanced Profile Search</li>
-
 <li>✅ Unlimited Profile Views</li>
-
 <li>✅ Send Interests</li>
-
 <li>✅ Chat Access</li>
-
 <li>✅ Platinum Member Badge</li>
 
 </ul>
@@ -380,7 +521,7 @@ Choose Platinum
 
 
 <!-- =====================================
-     PAYMENT SECTION
+     SECURE PAYMENT
 ===================================== -->
 
 <section
@@ -404,7 +545,7 @@ Membership Payment
 </h2>
 
 <p>
-Select a paid plan and pay securely online with PayU. Manual UPI/UTR remains available as a fallback.
+Select a paid membership plan and complete your payment securely online.
 </p>
 
 </div>
@@ -435,6 +576,7 @@ No Plan Selected
 
 </div>
 
+
 <div class="membership-selected-row">
 
 <span>
@@ -461,89 +603,83 @@ value="0">
 </div>
 
 
-<!-- PAYU ONLINE PAYMENT -->
+<!-- PAYU PAYMENT -->
 
 <div class="membership-payment-form membership-payu-box">
 
+<div class="membership-payu-lock">
+🔐
+</div>
+
 <h3>
-Pay Online with PayU
+Secure Online Payment
 </h3>
 
-<p>
-UPI, cards, net banking and other enabled PayU payment methods. Successful verified payment activates membership automatically.
+<p class="membership-payu-description">
+Complete your membership payment securely using PayU. Your membership will be activated automatically after successful payment verification.
 </p>
+
+
+<div class="membership-secure-plan">
+
+<div class="membership-secure-plan-row">
+
+<span>
+Selected Plan
+</span>
+
+<strong id="payuSelectedPlan">
+Not Selected
+</strong>
+
+</div>
+
+
+<div class="membership-secure-plan-row">
+
+<span>
+Amount Payable
+</span>
+
+<strong id="payuSelectedAmount">
+₹0
+</strong>
+
+</div>
+
+</div>
+
 
 <button
 type="button"
 id="payuPayButton"
 disabled>
 
-🔐 Pay Securely with PayU
+🔒 Select a Plan to Continue
 
 </button>
 
-<p id="payuPaymentStatus" aria-live="polite"></p>
 
-</div>
-
-
-<!-- QR CODE -->
-
-<div
-id="qrPaymentArea"
-class="membership-qr-box"
-style="display:none;">
-
-<h3>
-Manual UPI Fallback
-</h3>
-
-<img
-src="images/upi-qr.png"
-alt="DivyangSathi UPI QR Code"
-class="membership-qr-image">
-
-<p>
-Pay the exact selected membership amount using this QR code.
+<p
+id="payuPaymentStatus"
+aria-live="polite">
 </p>
 
-<div class="membership-payment-warning">
 
-⚠️ Payment karne ke baad UTR number zaroor enter karein.
+<div class="membership-payment-methods">
+
+<span>UPI</span>
+
+<span>Cards</span>
+
+<span>Net Banking</span>
 
 </div>
 
-</div>
 
-
-<!-- PAYMENT FORM -->
-
-<div class="membership-payment-form">
-
-<h3>
-Submit Manual Payment Details
-</h3>
-
-<label for="utrNumber">
-UTR / Transaction Number
-</label>
-
-<input
-type="text"
-id="utrNumber"
-placeholder="Enter payment UTR number"
-autocomplete="off">
-
-<button
-type="button"
-id="submitMembership"
-disabled>
-
-✅ Submit Manual Payment Request
-
-</button>
-
-<p id="paymentStatus"></p>
+<p class="membership-payu-trust">
+🔐 Secure payments powered by PayU
+</p>
 
 </div>
 
@@ -553,7 +689,7 @@ disabled>
 
 
 <!-- =====================================
-     MEMBERSHIP RULES
+     MEMBERSHIP INFORMATION
 ===================================== -->
 
 <section class="membership-rules-section">
@@ -561,17 +697,52 @@ disabled>
 <div class="membership-section-heading">
 
 <span class="profile-section-label">
-MEMBERSHIP RULES
+MEMBERSHIP INFORMATION
 </span>
 
 <h2>
-Important Information
+Safe & Simple Membership
 </h2>
 
 </div>
 
 
 <div class="membership-rules-grid">
+
+
+<div class="membership-rule-card">
+
+<span>
+🔐
+</span>
+
+<h3>
+Secure Payment
+</h3>
+
+<p>
+Membership payments are processed securely through PayU.
+</p>
+
+</div>
+
+
+<div class="membership-rule-card">
+
+<span>
+⚡
+</span>
+
+<h3>
+Automatic Activation
+</h3>
+
+<p>
+Successful verified payments automatically activate your selected membership.
+</p>
+
+</div>
+
 
 <div class="membership-rule-card">
 
@@ -580,10 +751,11 @@ Important Information
 </span>
 
 <h3>
-Correct Payment</h3>
+Multiple Payment Options
+</h3>
 
 <p>
-Selected plan ke according exact amount payment karein.
+Pay conveniently using UPI, Debit/Credit Card or Net Banking.
 </p>
 
 </div>
@@ -592,46 +764,15 @@ Selected plan ke according exact amount payment karein.
 <div class="membership-rule-card">
 
 <span>
-🔢
+🛡️
 </span>
 
 <h3>
-Valid UTR Number</h3>
+Verified Payment
+</h3>
 
 <p>
-Galat ya duplicate UTR number accept nahi kiya jayega.
-</p>
-
-</div>
-
-
-<div class="membership-rule-card">
-
-<span>
-✅
-</span>
-
-<h3>
-Admin Approval</h3>
-
-<p>
-Manual UPI payment admin verification ke baad activate hogi. PayU verified payment automatically activate hoti hai.
-</p>
-
-</div>
-
-
-<div class="membership-rule-card">
-
-<span>
-🚫
-</span>
-
-<h3>
-Non-Refundable</h3>
-
-<p>
-Approved membership payment non-refundable rahega.
+Membership is activated only after successful payment verification.
 </p>
 
 </div>
@@ -650,6 +791,10 @@ Approved membership payment non-refundable rahega.
 <div id="commonFooter"></div>
 
 
+<!-- =====================================
+     SCRIPTS
+===================================== -->
+
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 <script src="app.js"></script>
@@ -664,55 +809,90 @@ Approved membership payment non-refundable rahega.
 function selectMembershipPlan(plan, amount) {
 
   const planInput =
-    document.getElementById("membershipPlan");
+    document.getElementById(
+      "membershipPlan"
+    );
 
   const amountInput =
-    document.getElementById("membershipAmount");
+    document.getElementById(
+      "membershipAmount"
+    );
 
   const selectedPlanText =
-    document.getElementById("selectedPlanText");
+    document.getElementById(
+      "selectedPlanText"
+    );
 
   const selectedAmountText =
-    document.getElementById("selectedAmountText");
+    document.getElementById(
+      "selectedAmountText"
+    );
 
-  const qrPaymentArea =
-    document.getElementById("qrPaymentArea");
+  const payuSelectedPlan =
+    document.getElementById(
+      "payuSelectedPlan"
+    );
 
-  const submitButton =
-    document.getElementById("submitMembership");
+  const payuSelectedAmount =
+    document.getElementById(
+      "payuSelectedAmount"
+    );
 
   const payuButton =
-    document.getElementById("payuPayButton");
+    document.getElementById(
+      "payuPayButton"
+    );
 
-  const utrNumber =
-    document.getElementById("utrNumber");
 
+  planInput.value =
+    plan;
 
-  planInput.value = plan;
+  amountInput.value =
+    amount;
 
-  amountInput.value = amount;
-
-  selectedPlanText.textContent = plan;
+  selectedPlanText.textContent =
+    plan;
 
   selectedAmountText.textContent =
     "₹" + amount;
 
 
+  if (payuSelectedPlan) {
+
+    payuSelectedPlan.textContent =
+      plan;
+
+  }
+
+
+  if (payuSelectedAmount) {
+
+    payuSelectedAmount.textContent =
+      "₹" + amount;
+
+  }
+
+
   document
-    .querySelectorAll(".membership-plan-card")
-    .forEach(function (card) {
+    .querySelectorAll(
+      ".membership-plan-card"
+    )
+    .forEach(
+      function(card) {
 
-      card.classList.remove(
-        "membership-plan-selected"
-      );
+        card.classList.remove(
+          "membership-plan-selected"
+        );
 
-    });
+      }
+    );
 
 
   const selectedCard =
     document.querySelector(
       `.membership-plan-card[data-plan="${plan}"]`
     );
+
 
   if (selectedCard) {
 
@@ -725,15 +905,16 @@ function selectMembershipPlan(plan, amount) {
 
   if (plan === "Free") {
 
-    qrPaymentArea.style.display = "none";
+    if (payuButton) {
 
-    utrNumber.value = "";
+      payuButton.disabled =
+        true;
 
-    utrNumber.disabled = true;
+      payuButton.textContent =
+        "🔒 Select a Paid Plan to Continue";
 
-    submitButton.disabled = true;
+    }
 
-    if (payuButton) payuButton.disabled = true;
 
     alert(
       "Free plan automatically available hai. Paid profiles dekhne ke liye Silver, Gold ya Platinum select karein."
@@ -744,17 +925,21 @@ function selectMembershipPlan(plan, amount) {
   }
 
 
-  qrPaymentArea.style.display = "block";
+  if (payuButton) {
 
-  utrNumber.disabled = false;
+    payuButton.disabled =
+      false;
 
-  submitButton.disabled = false;
+    payuButton.textContent =
+      `🔒 Pay ₹${amount} Securely with PayU`;
 
-  if (payuButton) payuButton.disabled = false;
+  }
 
 
   document
-    .getElementById("membershipPaymentSection")
+    .getElementById(
+      "membershipPaymentSection"
+    )
     .scrollIntoView({
       behavior: "smooth"
     });
@@ -767,27 +952,40 @@ function selectMembershipPlan(plan, amount) {
 // ======================================
 
 document
-  .getElementById("membershipLogoutBtn")
+  .getElementById(
+    "membershipLogoutBtn"
+  )
   ?.addEventListener(
     "click",
-    async function () {
+    async function() {
 
-      const confirmLogout = confirm(
-        "Kya aap logout karna chahte hain?"
-      );
+      const confirmLogout =
+        confirm(
+          "Kya aap logout karna chahte hain?"
+        );
 
-      if (!confirmLogout) return;
 
-      const { error } =
-        await client.auth.signOut();
-
-      if (error) {
-
-        alert(error.message);
+      if (!confirmLogout) {
 
         return;
 
       }
+
+
+      const { error } =
+        await client.auth.signOut();
+
+
+      if (error) {
+
+        alert(
+          error.message
+        );
+
+        return;
+
+      }
+
 
       window.location.replace(
         "login.html"
@@ -797,6 +995,7 @@ document
   );
 
 </script>
+
 
 <script src="full-page-i18n.js"></script>
 <script src="languages.js"></script>
@@ -808,6 +1007,7 @@ document
 <script src="final-features.js"></script>
 
 <script src="cms-runtime.js"></script>
+
 </body>
 
 </html>
