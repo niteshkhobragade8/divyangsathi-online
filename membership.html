@@ -23,101 +23,177 @@ href="icons/icon-192.png">
 <style>
 
 /* =====================================
-   DIVYANGSATHI MEMBERSHIP PAYU
+   PREMIUM MEMBERSHIP PAYMENT UI
 ===================================== */
+
+.membership-payment-section{
+  padding-top:20px;
+}
+
+.membership-payment-heading{
+  max-width:760px;
+  margin:0 auto 22px;
+  text-align:center;
+}
+
+.membership-payment-heading .membership-payment-icon{
+  margin:0 auto 10px;
+}
 
 .membership-payment-layout{
   display:block;
 }
 
-.membership-selected-plan{
-  max-width:560px;
-  margin:0 auto 20px;
-}
-
-.membership-payu-box{
-  max-width:560px;
+.membership-checkout-card{
+  max-width:620px;
   margin:0 auto;
-  padding:32px;
-  border:1px solid rgba(15,118,110,.14);
-  border-radius:22px;
+  padding:28px;
+  border:1px solid rgba(15,23,42,.08);
+  border-radius:24px;
   background:
     linear-gradient(
       145deg,
-      #ffffff,
-      #f8fafc
+      #ffffff 0%,
+      #f8fbff 55%,
+      #f8fafc 100%
     );
   box-shadow:
-    0 18px 45px
+    0 20px 50px
     rgba(15,23,42,.08);
-  text-align:center;
 }
 
-.membership-payu-lock{
-  width:62px;
-  height:62px;
-  margin:0 auto 16px;
+.membership-checkout-top{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+  padding-bottom:20px;
+  border-bottom:1px solid #e5e7eb;
+}
+
+.membership-checkout-title{
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
+
+.membership-checkout-icon{
+  width:52px;
+  height:52px;
   display:flex;
   align-items:center;
   justify-content:center;
-  border-radius:50%;
-  background:#ecfdf5;
-  font-size:29px;
+  border-radius:16px;
+  background:#eef2ff;
+  font-size:25px;
+  flex:0 0 auto;
 }
 
-.membership-payu-box h3{
-  margin:0 0 8px;
-  font-size:23px;
+.membership-checkout-title h3{
+  margin:0;
   color:#0f172a;
+  font-size:20px;
 }
 
-.membership-payu-description{
-  margin:0 auto 22px;
-  max-width:430px;
+.membership-checkout-title p{
+  margin:4px 0 0;
   color:#64748b;
-  line-height:1.65;
+  font-size:13px;
 }
 
-.membership-secure-plan{
-  margin:20px 0;
-  padding:16px 18px;
-  border:1px solid #e2e8f0;
-  border-radius:15px;
-  background:#f8fafc;
+.membership-checkout-price{
+  text-align:right;
 }
 
-.membership-secure-plan-row{
+.membership-checkout-price span{
+  display:block;
+  color:#64748b;
+  font-size:12px;
+  margin-bottom:3px;
+}
+
+.membership-checkout-price strong{
+  color:#0f172a;
+  font-size:26px;
+  line-height:1;
+}
+
+.membership-checkout-details{
+  margin:22px 0;
+  padding:18px;
+  border-radius:16px;
+  background:#ffffff;
+  border:1px solid #e5e7eb;
+}
+
+.membership-checkout-row{
   display:flex;
   justify-content:space-between;
   align-items:center;
   gap:20px;
-  padding:7px 0;
+  padding:8px 0;
 }
 
-.membership-secure-plan-row span{
+.membership-checkout-row span{
   color:#64748b;
   font-size:14px;
 }
 
-.membership-secure-plan-row strong{
+.membership-checkout-row strong{
   color:#0f172a;
+  font-size:15px;
   text-align:right;
+}
+
+.membership-secure-box{
+  margin-top:18px;
+  padding:18px;
+  border-radius:16px;
+  background:
+    linear-gradient(
+      135deg,
+      #f0fdf4,
+      #eff6ff
+    );
+  border:1px solid rgba(16,185,129,.15);
+}
+
+.membership-secure-head{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-bottom:8px;
+  color:#0f172a;
+  font-weight:800;
+}
+
+.membership-secure-box p{
+  margin:0;
+  color:#64748b;
+  line-height:1.6;
+  font-size:14px;
 }
 
 #payuPayButton{
   width:100%;
-  min-height:54px;
+  min-height:56px;
+  margin-top:20px;
   padding:14px 20px;
   border:0;
   border-radius:14px;
   font-size:16px;
   font-weight:800;
   cursor:pointer;
-  background:#111827;
+  background:
+    linear-gradient(
+      135deg,
+      #0f172a,
+      #1e293b
+    );
   color:#ffffff;
   box-shadow:
-    0 10px 24px
-    rgba(17,24,39,.17);
+    0 12px 28px
+    rgba(15,23,42,.18);
   transition:
     transform .2s ease,
     box-shadow .2s ease,
@@ -127,26 +203,21 @@ href="icons/icon-192.png">
 #payuPayButton:hover:not(:disabled){
   transform:translateY(-1px);
   box-shadow:
-    0 14px 30px
-    rgba(17,24,39,.22);
+    0 16px 32px
+    rgba(15,23,42,.22);
 }
 
 #payuPayButton:disabled{
-  opacity:.5;
+  opacity:.45;
   cursor:not-allowed;
   box-shadow:none;
 }
 
 #payuPaymentStatus{
   margin:12px 0 0;
+  text-align:center;
   font-weight:700;
   line-height:1.45;
-}
-
-.membership-payu-trust{
-  margin:16px 0 0;
-  color:#64748b;
-  font-size:13px;
 }
 
 .membership-payment-methods{
@@ -154,27 +225,42 @@ href="icons/icon-192.png">
   justify-content:center;
   flex-wrap:wrap;
   gap:8px;
-  margin-top:14px;
+  margin-top:16px;
 }
 
 .membership-payment-methods span{
-  padding:6px 10px;
+  padding:7px 11px;
   border:1px solid #e2e8f0;
-  border-radius:20px;
+  border-radius:999px;
   background:#ffffff;
   color:#475569;
   font-size:12px;
   font-weight:700;
 }
 
-@media(max-width:600px){
+.membership-payu-trust{
+  margin:14px 0 0;
+  text-align:center;
+  color:#64748b;
+  font-size:12px;
+}
 
-  .membership-payu-box{
-    padding:24px 18px;
+@media(max-width:640px){
+
+  .membership-checkout-card{
+    padding:20px 16px;
     border-radius:18px;
   }
 
-  .membership-secure-plan-row{
+  .membership-checkout-top{
+    align-items:flex-start;
+  }
+
+  .membership-checkout-price strong{
+    font-size:22px;
+  }
+
+  .membership-checkout-row{
     gap:10px;
   }
 
@@ -188,15 +274,11 @@ href="icons/icon-192.png">
 <body class="user-dashboard-body membership-premium-body">
 
 
-<!-- =====================================
-     USER DASHBOARD HEADER
-===================================== -->
-
 <div id="commonHeader"></div>
 
 
 <!-- =====================================
-     MEMBERSHIP HERO
+     HERO
 ===================================== -->
 
 <section class="membership-premium-hero">
@@ -244,10 +326,6 @@ Secure online payments powered by PayU
 
 </section>
 
-
-<!-- =====================================
-     MEMBERSHIP MAIN
-===================================== -->
 
 <main class="membership-premium-main">
 
@@ -328,8 +406,6 @@ Choose a plan according to your matrimonial search requirements.
 <div class="membership-plan-grid">
 
 
-<!-- FREE -->
-
 <div
 class="membership-plan-card membership-free-card"
 data-plan="Free"
@@ -374,8 +450,6 @@ Select Free
 </div>
 
 
-<!-- SILVER -->
-
 <div
 class="membership-plan-card membership-silver-card"
 data-plan="Silver"
@@ -419,8 +493,6 @@ Choose Silver
 
 </div>
 
-
-<!-- GOLD -->
 
 <div
 class="membership-plan-card membership-gold-card membership-popular"
@@ -469,8 +541,6 @@ Choose Gold
 
 </div>
 
-
-<!-- PLATINUM -->
 
 <div
 class="membership-plan-card membership-platinum-card"
@@ -521,7 +591,7 @@ Choose Platinum
 
 
 <!-- =====================================
-     SECURE PAYMENT
+     PROFESSIONAL CHECKOUT
 ===================================== -->
 
 <section
@@ -537,15 +607,15 @@ class="membership-payment-section">
 <div>
 
 <span class="profile-section-label">
-SECURE PAYMENT
+SECURE CHECKOUT
 </span>
 
 <h2>
-Membership Payment
+Complete Your Membership
 </h2>
 
 <p>
-Select a paid membership plan and complete your payment securely online.
+Review your selected plan and pay securely through PayU.
 </p>
 
 </div>
@@ -553,21 +623,53 @@ Select a paid membership plan and complete your payment securely online.
 </div>
 
 
-<div class="membership-payment-layout">
+<div class="membership-checkout-card">
 
 
-<!-- SELECTED PLAN -->
+<div class="membership-checkout-top">
 
-<div class="membership-selected-plan">
+<div class="membership-checkout-title">
 
-<h3>
-Selected Membership
+<div class="membership-checkout-icon">
+💎
+</div>
+
+<div>
+
+<h3 id="checkoutPlanTitle">
+No Plan Selected
 </h3>
 
-<div class="membership-selected-row">
+<p>
+DivyangSathi Membership
+</p>
+
+</div>
+
+</div>
+
+
+<div class="membership-checkout-price">
 
 <span>
-Plan
+Total Payable
+</span>
+
+<strong id="checkoutAmountText">
+₹0
+</strong>
+
+</div>
+
+</div>
+
+
+<div class="membership-checkout-details">
+
+<div class="membership-checkout-row">
+
+<span>
+Selected Plan
 </span>
 
 <strong id="selectedPlanText">
@@ -577,15 +679,30 @@ No Plan Selected
 </div>
 
 
-<div class="membership-selected-row">
+<div class="membership-checkout-row">
 
 <span>
-Amount
+Membership Amount
 </span>
 
 <strong id="selectedAmountText">
 ₹0
 </strong>
+
+</div>
+
+
+<div class="membership-checkout-row">
+
+<span>
+Activation
+</span>
+
+<strong>
+Automatic after verification
+</strong>
+
+</div>
 
 </div>
 
@@ -600,52 +717,24 @@ type="hidden"
 id="membershipAmount"
 value="0">
 
-</div>
 
+<div class="membership-secure-box">
 
-<!-- PAYU PAYMENT -->
+<div class="membership-secure-head">
 
-<div class="membership-payment-form membership-payu-box">
-
-<div class="membership-payu-lock">
+<span>
 🔐
-</div>
+</span>
 
-<h3>
+<span>
 Secure Online Payment
-</h3>
+</span>
 
-<p class="membership-payu-description">
-Complete your membership payment securely using PayU. Your membership will be activated automatically after successful payment verification.
+</div>
+
+<p>
+Your payment is processed securely through PayU. Membership activates automatically after successful payment verification.
 </p>
-
-
-<div class="membership-secure-plan">
-
-<div class="membership-secure-plan-row">
-
-<span>
-Selected Plan
-</span>
-
-<strong id="payuSelectedPlan">
-Not Selected
-</strong>
-
-</div>
-
-
-<div class="membership-secure-plan-row">
-
-<span>
-Amount Payable
-</span>
-
-<strong id="payuSelectedAmount">
-₹0
-</strong>
-
-</div>
 
 </div>
 
@@ -655,7 +744,7 @@ type="button"
 id="payuPayButton"
 disabled>
 
-🔒 Select a Plan to Continue
+🔒 Select a Paid Plan to Continue
 
 </button>
 
@@ -670,7 +759,7 @@ aria-live="polite">
 
 <span>UPI</span>
 
-<span>Cards</span>
+<span>Debit / Credit Card</span>
 
 <span>Net Banking</span>
 
@@ -680,8 +769,6 @@ aria-live="polite">
 <p class="membership-payu-trust">
 🔐 Secure payments powered by PayU
 </p>
-
-</div>
 
 </div>
 
@@ -708,7 +795,6 @@ Safe & Simple Membership
 
 
 <div class="membership-rules-grid">
-
 
 <div class="membership-rule-card">
 
@@ -784,16 +870,8 @@ Membership is activated only after successful payment verification.
 </main>
 
 
-<!-- =====================================
-     FOOTER
-===================================== -->
-
 <div id="commonFooter"></div>
 
-
-<!-- =====================================
-     SCRIPTS
-===================================== -->
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
@@ -801,10 +879,6 @@ Membership is activated only after successful payment verification.
 
 
 <script>
-
-// ======================================
-// MEMBERSHIP PLAN SELECTION
-// ======================================
 
 function selectMembershipPlan(plan, amount) {
 
@@ -828,14 +902,14 @@ function selectMembershipPlan(plan, amount) {
       "selectedAmountText"
     );
 
-  const payuSelectedPlan =
+  const checkoutPlanTitle =
     document.getElementById(
-      "payuSelectedPlan"
+      "checkoutPlanTitle"
     );
 
-  const payuSelectedAmount =
+  const checkoutAmountText =
     document.getElementById(
-      "payuSelectedAmount"
+      "checkoutAmountText"
     );
 
   const payuButton =
@@ -856,21 +930,13 @@ function selectMembershipPlan(plan, amount) {
   selectedAmountText.textContent =
     "₹" + amount;
 
+  checkoutPlanTitle.textContent =
+    plan === "Free"
+      ? "Free Membership"
+      : plan + " Membership";
 
-  if (payuSelectedPlan) {
-
-    payuSelectedPlan.textContent =
-      plan;
-
-  }
-
-
-  if (payuSelectedAmount) {
-
-    payuSelectedAmount.textContent =
-      "₹" + amount;
-
-  }
+  checkoutAmountText.textContent =
+    "₹" + amount;
 
 
   document
@@ -941,15 +1007,12 @@ function selectMembershipPlan(plan, amount) {
       "membershipPaymentSection"
     )
     .scrollIntoView({
-      behavior: "smooth"
+      behavior: "smooth",
+      block: "start"
     });
 
 }
 
-
-// ======================================
-// MEMBERSHIP PAGE LOGOUT
-// ======================================
 
 document
   .getElementById(
