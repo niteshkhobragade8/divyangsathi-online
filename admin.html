@@ -13,758 +13,965 @@ Admin Dashboard - DivyangSathi
 <link rel="icon" type="image/png" href="icons/icon-192.png">
 </head>
 <body class="admin-body admin-v3-body">
+
 <div id="commonHeader"></div>
+
 <!-- =====================================
      ADMIN DASHBOARD V3 SHELL
 ===================================== -->
+
 <div class="admin-v3-shell">
+
 <aside aria-label="Admin navigation" class="admin-v3-sidebar" id="adminV3Sidebar">
+
 <div class="admin-v3-sidebar-brand">
+
 <div class="admin-v3-sidebar-logo">DS</div>
+
 <div>
 <h2>DivyangSathi</h2>
 <p>Administrator Panel</p>
 </div>
+
 </div>
+
 <nav class="admin-v3-sidebar-nav">
+
 <a href="admin.html#dashboard">📊 <span>Dashboard</span></a>
+
 <a href="admin-cms.html">🌐 <span>Website CMS</span></a>
+
 <a href="admin-dashboard-cms.html">🛠️ <span>Admin CMS</span></a>
 
-
-
-
 <a class="" href="admin.html#analytics">📈 <span>Analytics</span></a>
+
 <a class="" href="admin.html#analyticsCharts">📉 <span>Charts</span></a>
+
 <a class="" href="admin-profiles.html#profiles">👥 <span>User Profiles</span></a>
+
 <a class="" href="admin-memberships.html#membership">💎 <span>Memberships</span></a>
+
 <a class="" href="admin-requests.html#interests">❤️ <span>Interests</span></a>
+
 <a class="" href="admin-requests.html#voiceRequests">🎙️ <span>Voice Requests</span></a>
+
 <a class="" href="admin-requests.html#aadhaarRequests">🪪 <span>Aadhaar Requests</span></a>
+
 <a class="" href="admin-requests.html#faceVerificationRequests">😊 <span>Face Verification</span></a>
+
 <a class="" href="admin-moderation.html#reports">🚩 <span>User Reports</span></a>
+
 <a class="" href="admin-support.html#messages">📩 <span>Contact Messages</span></a>
+
 <a class="" href="admin-support.html#successStories">💖 <span>Success Stories</span></a>
+
 <a class="" href="admin-support.html#broadcast">📢 <span>Broadcast</span></a>
-<a class="" href="index.html">🏠 <span>Website Home</span></a>
+
+<a class=""
+   href="index.html"
+   target="_blank"
+   rel="noopener noreferrer">
+🏠 <span>Website Home</span>
+</a>
+
 </nav>
+
 <div class="admin-v3-sidebar-footer">
-<button type="button" id="adminSidebarLogoutBtn" class="admin-sidebar-logout">🔓 Admin Logout</button>
+
+<button type="button" id="adminSidebarLogoutBtn" class="admin-sidebar-logout">
+🔓 Admin Logout
+</button>
+
 <small>© 2026 DivyangSathi</small>
+
 </div>
+
 </aside>
-<button aria-label="Close navigation" class="admin-v3-sidebar-backdrop" id="adminV3SidebarBackdrop" type="button"></button>
+
+<button
+aria-label="Close navigation"
+class="admin-v3-sidebar-backdrop"
+id="adminV3SidebarBackdrop"
+type="button">
+</button>
+
 <div class="admin-v3-workspace">
+
+
 <!-- =====================================
      ADMIN HERO
 ===================================== -->
+
 <section class="admin-hero">
+
 <div class="admin-hero-content">
+
 <div>
+
 <p class="admin-welcome-text">
 Welcome Back, Administrator
 </p>
+
 <h1>
 DivyangSathi Admin Dashboard
 </h1>
+
 <p>
 Manage members, profiles, membership payments, interests and support messages from one secure dashboard.
 </p>
+
 </div>
+
 <div class="admin-hero-badge">
+
 <span>
 👑
 </span>
+
 <div>
+
 <strong>
 Super Admin
 </strong>
+
 <small>
 Full Dashboard Access
 </small>
+
 </div>
+
 </div>
+
 </div>
+
 </section>
+
+
 <!-- =====================================
      MAIN ADMIN CONTENT
 ===================================== -->
+
 <main class="admin-main">
+
+
 <!-- =====================================
      DASHBOARD OVERVIEW
 ===================================== -->
+
 <section class="admin-dashboard-section admin-navigation-section" id="dashboard">
+
 <div class="admin-section-heading">
+
 <div>
+
 <span class="admin-section-label">
 OVERVIEW
 </span>
+
 <h2>
 Dashboard Statistics
 </h2>
+
 <p>
 Live summary of your DivyangSathi platform.
 </p>
+
 </div>
+
 <div class="admin-live-status">
+
 <span></span>
 
 System Active
 
 </div>
+
 </div>
+
+
 <div class="admin-stat-grid">
+
+
 <!-- Total Users -->
+
 <div class="admin-stat-card stat-blue">
+
 <div class="admin-stat-top">
+
 <div class="admin-stat-icon">
 👥
 </div>
+
 <span class="admin-stat-badge">
 Users
 </span>
+
 </div>
+
 <h3>
 Total Users
 </h3>
+
 <p class="admin-stat-number" id="totalUsers">
 0
 </p>
+
 <div class="admin-stat-footer">
 Registered members
 </div>
+
 </div>
+
+
 <!-- Total Profiles -->
+
 <div class="admin-stat-card stat-pink">
+
 <div class="admin-stat-top">
+
 <div class="admin-stat-icon">
 💞
 </div>
+
 <span class="admin-stat-badge">
 Profiles
 </span>
+
 </div>
+
 <h3>
 Total Profiles
 </h3>
+
 <p class="admin-stat-number" id="totalProfiles">
 0
 </p>
+
 <div class="admin-stat-footer">
 Created matrimony profiles
 </div>
+
 </div>
+
+
 <!-- Pending Membership -->
+
 <div class="admin-stat-card stat-yellow">
+
 <div class="admin-stat-top">
+
 <div class="admin-stat-icon">
 ⏳
 </div>
+
 <span class="admin-stat-badge">
 Pending
 </span>
+
 </div>
+
 <h3>
 Membership Requests
 </h3>
+
 <p class="admin-stat-number" id="membershipRequests">
 0
 </p>
+
 <div class="admin-stat-footer">
 Waiting for review
 </div>
+
 </div>
+
+
 <!-- Approved Profiles -->
+
 <div class="admin-stat-card stat-green">
+
 <div class="admin-stat-top">
+
 <div class="admin-stat-icon">
 ✅
 </div>
+
 <span class="admin-stat-badge">
 Verified
 </span>
+
 </div>
+
 <h3>
 Approved Profiles
 </h3>
+
 <p class="admin-stat-number" id="approvedProfiles">
 0
 </p>
+
 <div class="admin-stat-footer">
 Verified user profiles
 </div>
+
 </div>
+
+
 <!-- Blocked Profiles -->
+
 <div class="admin-stat-card stat-red">
+
 <div class="admin-stat-top">
+
 <div class="admin-stat-icon">
 🚫
 </div>
+
 <span class="admin-stat-badge">
 Blocked
 </span>
+
 </div>
+
 <h3>
 Blocked Profiles
 </h3>
+
 <p class="admin-stat-number" id="blockedProfiles">
 0
 </p>
+
 <div class="admin-stat-footer">
 Restricted accounts
 </div>
+
 </div>
+
+
 <!-- Total Interests -->
+
 <div class="admin-stat-card stat-purple">
+
 <div class="admin-stat-top">
+
 <div class="admin-stat-icon">
 ❤️
 </div>
+
 <span class="admin-stat-badge">
 Interests
 </span>
+
 </div>
+
 <h3>
 Total Interests
 </h3>
+
 <p class="admin-stat-number" id="totalInterests">
 0
 </p>
+
 <div class="admin-stat-footer">
 All interest requests
 </div>
+
 </div>
+
+
 <!-- Admin Security -->
+
 <div class="admin-stat-card stat-black">
+
 <div class="admin-stat-top">
+
 <div class="admin-stat-icon">
 🛡️
 </div>
+
 <span class="admin-stat-badge">
 Secure
 </span>
+
 </div>
+
 <h3>
 Admin Security
 </h3>
+
 <p class="admin-stat-number admin-security-text">
 Active
 </p>
+
 <div class="admin-stat-footer">
 Protected administration
 </div>
+
 </div>
+
+
 <!-- Pending Reports -->
+
 <div class="admin-stat-card stat-orange">
+
 <div class="admin-stat-top">
+
 <div class="admin-stat-icon">
 🚩
 </div>
+
 <span class="admin-stat-badge">
 Reports
 </span>
+
 </div>
+
 <h3>
 Pending Reports
 </h3>
+
 <p class="admin-stat-number" id="pendingReports">
 0
 </p>
+
 <div class="admin-stat-footer">
 Waiting for admin review
 </div>
+
 </div>
-</div></section>
+
+</div>
+
+</section>
+
+
 <!-- =====================================
      ADMIN ANALYTICS DASHBOARD
 ===================================== -->
+
 <section class="admin-panel admin-navigation-section" id="analytics">
+
 <div class="admin-panel-header">
+
 <div class="admin-panel-title">
+
 <div class="admin-panel-icon panel-icon-purple">
 📊
 </div>
+
 <div>
+
 <h2>
 Analytics Dashboard
 </h2>
+
 <p>
 Live platform users, profiles, membership, moderation and activity summary.
 </p>
+
 </div>
+
 </div>
+
 <div class="admin-panel-status">
 Live Analytics
 </div>
+
 </div>
+
+
 <div class="admin-analytics-grid">
-<!-- Total Users -->
+
+
 <div class="admin-analytics-card">
-<span class="admin-analytics-icon">
-👥
-</span>
+<span class="admin-analytics-icon">👥</span>
 <div>
-<strong id="analyticsTotalUsers">
-0
-</strong>
-<p>
-Total Users
-</p>
+<strong id="analyticsTotalUsers">0</strong>
+<p>Total Users</p>
 </div>
 </div>
-<!-- Total Profiles -->
+
+
 <div class="admin-analytics-card">
-<span class="admin-analytics-icon">
-👤
-</span>
+<span class="admin-analytics-icon">👤</span>
 <div>
-<strong id="analyticsTotalProfiles">
-0
-</strong>
-<p>
-Total Profiles
-</p>
+<strong id="analyticsTotalProfiles">0</strong>
+<p>Total Profiles</p>
 </div>
 </div>
-<!-- Verified Users -->
+
+
 <div class="admin-analytics-card">
-<span class="admin-analytics-icon">
-✅
-</span>
+<span class="admin-analytics-icon">✅</span>
 <div>
-<strong id="analyticsVerifiedUsers">
-0
-</strong>
-<p>
-Verified Users
-</p>
+<strong id="analyticsVerifiedUsers">0</strong>
+<p>Verified Users</p>
 </div>
 </div>
-<!-- Approved Profiles -->
+
+
 <div class="admin-analytics-card">
-<span class="admin-analytics-icon">
-✔️
-</span>
+<span class="admin-analytics-icon">✔️</span>
 <div>
-<strong id="analyticsApprovedProfiles">
-0
-</strong>
-<p>
-Approved Profiles
-</p>
+<strong id="analyticsApprovedProfiles">0</strong>
+<p>Approved Profiles</p>
 </div>
 </div>
-<!-- Premium Members -->
+
+
 <div class="admin-analytics-card">
-<span class="admin-analytics-icon">
-💎
-</span>
+<span class="admin-analytics-icon">💎</span>
 <div>
-<strong id="analyticsPremiumUsers">
-0
-</strong>
-<p>
-Premium Members
-</p>
+<strong id="analyticsPremiumUsers">0</strong>
+<p>Premium Members</p>
 </div>
 </div>
-<!-- Pending Membership -->
+
+
 <div class="admin-analytics-card">
-<span class="admin-analytics-icon">
-⏳
-</span>
+<span class="admin-analytics-icon">⏳</span>
 <div>
-<strong id="analyticsPendingMembership">
-0
-</strong>
-<p>
-Pending Membership
-</p>
+<strong id="analyticsPendingMembership">0</strong>
+<p>Pending Membership</p>
 </div>
 </div>
-<!-- Blocked Users -->
+
+
 <div class="admin-analytics-card">
-<span class="admin-analytics-icon">
-🚫
-</span>
+<span class="admin-analytics-icon">🚫</span>
 <div>
-<strong id="analyticsBlockedUsers">
-0
-</strong>
-<p>
-Blocked Users
-</p>
+<strong id="analyticsBlockedUsers">0</strong>
+<p>Blocked Users</p>
 </div>
 </div>
-<!-- Registered Today -->
+
+
 <div class="admin-analytics-card">
-<span class="admin-analytics-icon">
-📅
-</span>
+<span class="admin-analytics-icon">📅</span>
 <div>
-<strong id="analyticsTodayUsers">
-0
-</strong>
-<p>
-Registered Today
-</p>
+<strong id="analyticsTodayUsers">0</strong>
+<p>Registered Today</p>
 </div>
 </div>
-<!-- This Month -->
+
+
 <div class="admin-analytics-card">
-<span class="admin-analytics-icon">
-📈
-</span>
+<span class="admin-analytics-icon">📈</span>
 <div>
-<strong id="analyticsMonthUsers">
-0
-</strong>
-<p>
-Registered This Month
-</p>
+<strong id="analyticsMonthUsers">0</strong>
+<p>Registered This Month</p>
 </div>
 </div>
-<!-- Total Interests -->
+
+
 <div class="admin-analytics-card">
-<span class="admin-analytics-icon">
-❤️
-</span>
+<span class="admin-analytics-icon">❤️</span>
 <div>
-<strong id="analyticsTotalInterests">
-0
-</strong>
-<p>
-Total Interests
-</p>
+<strong id="analyticsTotalInterests">0</strong>
+<p>Total Interests</p>
 </div>
 </div>
-<!-- Total Messages -->
+
+
 <div class="admin-analytics-card">
-<span class="admin-analytics-icon">
-💬
-</span>
+<span class="admin-analytics-icon">💬</span>
 <div>
-<strong id="analyticsTotalMessages">
-0
-</strong>
-<p>
-Total Messages
-</p>
+<strong id="analyticsTotalMessages">0</strong>
+<p>Total Messages</p>
 </div>
 </div>
-<!-- Pending Voice -->
+
+
 <div class="admin-analytics-card">
-<span class="admin-analytics-icon">
-🎙️
-</span>
+<span class="admin-analytics-icon">🎙️</span>
 <div>
-<strong id="analyticsPendingVoice">
-0
-</strong>
-<p>
-Pending Voice Requests
-</p>
+<strong id="analyticsPendingVoice">0</strong>
+<p>Pending Voice Requests</p>
 </div>
 </div>
-<!-- Pending Video -->
+
+
 <div class="admin-analytics-card">
-<span class="admin-analytics-icon">
-🎥
-</span>
+<span class="admin-analytics-icon">🎥</span>
 <div>
-<strong id="analyticsPendingVideo">
-0
-</strong>
-<p>
-Pending Video Requests
-</p>
+<strong id="analyticsPendingVideo">0</strong>
+<p>Pending Video Requests</p>
 </div>
 </div>
-<!-- Pending Reports -->
+
+
 <div class="admin-analytics-card">
-<span class="admin-analytics-icon">
-🚩
-</span>
+<span class="admin-analytics-icon">🚩</span>
 <div>
-<strong id="analyticsPendingReports">
-0
-</strong>
-<p>
-Pending Reports
-</p>
+<strong id="analyticsPendingReports">0</strong>
+<p>Pending Reports</p>
 </div>
 </div>
-<!-- Total User Reports -->
+
+
 <div class="admin-analytics-card">
-<span class="admin-analytics-icon">
-⚠️
-</span>
+<span class="admin-analytics-icon">⚠️</span>
 <div>
-<strong id="analyticsUserReports">
-0
-</strong>
-<p>
-Total User Reports
-</p>
+<strong id="analyticsUserReports">0</strong>
+<p>Total User Reports</p>
 </div>
 </div>
-<!-- Success Stories -->
+
+
 <div class="admin-analytics-card">
-<span class="admin-analytics-icon">
-💖
-</span>
+<span class="admin-analytics-icon">💖</span>
 <div>
-<strong id="analyticsSuccessStories">
-0
-</strong>
-<p>
-Approved Success Stories
-</p>
+<strong id="analyticsSuccessStories">0</strong>
+<p>Approved Success Stories</p>
 </div>
 </div>
+
 </div>
+
+
 <div class="admin-analytics-refresh-row">
+
 <button id="refreshAdminAnalytics" type="button">
-
 🔄 Refresh Analytics
-
 </button>
+
 </div>
+
 </section>
+
+
 <!-- =====================================
      ADVANCED LIVE ANALYTICS
 ===================================== -->
+
 <section class="admin-panel admin-navigation-section" id="advancedAnalytics">
+
 <div class="admin-panel-header">
+
 <div class="admin-panel-title">
+
 <div class="admin-panel-icon panel-icon-blue">
 📊
 </div>
+
 <div>
+
 <h2>
 Advanced Live Analytics
 </h2>
+
 <p>
 Real-time platform statistics.
 </p>
+
 </div>
+
 </div>
+
 <div class="admin-panel-status">
 Live
 </div>
+
 </div>
+
+
 <div class="admin-analytics-grid">
+
 <div class="admin-analytics-card">
 <h3 id="analyticsLegacyTotalUsers">0</h3>
 <p>👥 Total Users</p>
 </div>
+
 <div class="admin-analytics-card">
 <h3 id="analyticsActiveUsers">0</h3>
 <p>🟢 Active Users</p>
 </div>
+
 <div class="admin-analytics-card">
 <h3 id="analyticsLegacyTodayUsers">0</h3>
 <p>🆕 New Today</p>
 </div>
+
 <div class="admin-analytics-card">
 <h3 id="analyticsLegacyMonthUsers">0</h3>
 <p>📅 This Month</p>
 </div>
+
 <div class="admin-analytics-card">
 <h3 id="analyticsMessages">0</h3>
 <p>💬 Messages</p>
 </div>
+
 <div class="admin-analytics-card">
 <h3 id="analyticsInterests">0</h3>
 <p>❤️ Interests</p>
 </div>
+
 <div class="admin-analytics-card">
 <h3 id="analyticsViews">0</h3>
 <p>👁 Profile Views</p>
 </div>
+
 <div class="admin-analytics-card">
 <h3 id="analyticsFavourites">0</h3>
 <p>⭐ Favourites</p>
 </div>
+
 <div class="admin-analytics-card">
 <h3 id="analyticsMemberships">0</h3>
 <p>💎 Memberships</p>
 </div>
+
 <div class="admin-analytics-card">
 <h3 id="analyticsReports">0</h3>
 <p>🚩 Reports</p>
 </div>
+
 <div class="admin-analytics-card">
 <h3 id="analyticsStories">0</h3>
 <p>💖 Success Stories</p>
 </div>
+
 <div class="admin-analytics-card">
 <h3 id="analyticsContacts">0</h3>
 <p>📩 Contact Messages</p>
 </div>
+
 </div>
+
 </section>
+
+
 <!-- =====================================
      ADMIN ANALYTICS CHARTS
 ===================================== -->
+
 <section class="admin-panel admin-navigation-section" id="analyticsCharts">
+
 <div class="admin-panel-header">
+
 <div class="admin-panel-title">
+
 <div class="admin-panel-icon panel-icon-purple">
 📊
 </div>
+
 <div>
+
 <h2>
 Analytics Charts
 </h2>
+
 <p>
 Platform growth, users and membership distribution.
 </p>
+
 </div>
+
 </div>
+
 <div class="admin-panel-status">
 Live Charts
 </div>
+
 </div>
+
+
 <div class="admin-charts-grid">
+
 <div class="admin-chart-card">
-<h3>
-📈 Monthly Registrations
-</h3>
+<h3>📈 Monthly Registrations</h3>
 <div class="admin-chart-wrapper">
 <canvas id="monthlyRegistrationsChart"></canvas>
 </div>
 </div>
+
+
 <div class="admin-chart-card">
-<h3>
-👥 Gender Distribution
-</h3>
+<h3>👥 Gender Distribution</h3>
 <div class="admin-chart-wrapper">
 <canvas id="genderDistributionChart"></canvas>
 </div>
 </div>
+
+
 <div class="admin-chart-card">
-<h3>
-💎 Membership Distribution
-</h3>
+<h3>💎 Membership Distribution</h3>
 <div class="admin-chart-wrapper">
 <canvas id="membershipDistributionChart"></canvas>
 </div>
 </div>
+
+
 <div class="admin-chart-card">
-<h3>
-✅ Profile Verification Status
-</h3>
+<h3>✅ Profile Verification Status</h3>
 <div class="admin-chart-wrapper">
 <canvas id="verificationStatusChart"></canvas>
 </div>
 </div>
+
 </div>
+
 
 <div class="admin-chart-card">
 <h3>State-wise Users</h3>
-<div class="admin-chart-wrapper"><canvas id="stateWiseUsersChart"></canvas></div>
+<div class="admin-chart-wrapper">
+<canvas id="stateWiseUsersChart"></canvas>
 </div>
+</div>
+
+
 <div class="admin-chart-card">
 <h3>Disability-wise Users</h3>
-<div class="admin-chart-wrapper"><canvas id="disabilityWiseUsersChart"></canvas></div>
+<div class="admin-chart-wrapper">
+<canvas id="disabilityWiseUsersChart"></canvas>
 </div>
+</div>
+
 </section>
+
+
 <!-- =====================================
      MEMBERSHIP MANAGEMENT
 ===================================== -->
+
 
 <!-- =====================================
      MEMBERSHIP REQUESTS
 ===================================== -->
 
+
 <!-- =====================================
      INTEREST MANAGEMENT
 ===================================== -->
+
 
 <!-- =====================================
      ALL USER PROFILES
 ===================================== -->
 
+
 <!-- =====================================
      AADHAAR VERIFICATION REQUESTS
 ===================================== -->
+
 
 <!-- =====================================
      FACE VERIFICATION REQUESTS
 ===================================== -->
 
+
 <!-- =====================================
      CONTACT MANAGEMENT
 ===================================== -->
+
 
 <!-- =====================================
      VOICE INTRO REQUESTS
 ===================================== -->
 
+
 <!-- =====================================
      SUCCESS STORIES
 ===================================== -->
+
 
 <!-- =====================================
      BROADCAST MESSAGE
 ===================================== -->
 
+
 <!-- =====================================
      USER REPORTS MANAGEMENT
 ===================================== -->
 
+
 <!-- =====================================
      ADMIN CONTROLS
 ===================================== -->
+
 <section class="admin-control-panel">
+
 <div class="admin-control-content">
+
 <div class="admin-control-icon">
 🔐
 </div>
+
 <div>
+
 <span class="admin-section-label admin-light-label">
 ADMIN SECURITY
 </span>
+
 <h2>
 Administrator Controls
 </h2>
+
 <p>
 Only authorized administrators should access this dashboard.
 Always log out after completing your work.
 </p>
+
 </div>
+
 </div>
+
+
 <div class="admin-control-actions">
-<a class="admin-home-button" href="index.html">
+
+<a
+class="admin-home-button"
+href="index.html"
+target="_blank"
+rel="noopener noreferrer">
 
 🏠 Website Home
 
 </a>
+
 </div>
+
 </section>
+
 </main>
+
+
 <!-- =====================================
      ADMIN FOOTER
 ===================================== -->
+
 <footer class="admin-footer">
+
 <div>
+
 <strong>
 DivyangSathi Admin Panel
 </strong>
+
 <p>
 Professional Matrimony Platform for Divyang Community
 </p>
+
 </div>
+
 <p>
 © 2026 DivyangSathi. All Rights Reserved.
 </p>
+
 </footer>
+
 </div>
+
 </div>
+
+
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 <script src="app.js"></script>
+
+
 <script>
 
 // ======================================
@@ -822,12 +1029,20 @@ document
   });
 
 </script>
+
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
 <script src="layout.js"></script>
+
 <script src="feature-config.js"></script>
+
 <script src="full-page-i18n.js"></script>
+
 <script src="final-features.js"></script>
 
 <script src="admin-cms-runtime.js"></script>
+
 </body>
+
 </html>
