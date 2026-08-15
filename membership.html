@@ -30,15 +30,76 @@ href="icons/icon-192.png">
   padding-top:20px;
 }
 
+
+/* =====================================
+   PROFESSIONAL CHECKOUT HEADER
+===================================== */
+
 .membership-payment-heading{
-  max-width:760px;
-  margin:0 auto 22px;
-  text-align:center;
+  max-width:620px;
+  margin:0 auto 18px;
+  padding:0;
+  display:flex;
+  align-items:center;
+  justify-content:flex-start;
+  gap:16px;
+  text-align:left;
 }
 
 .membership-payment-heading .membership-payment-icon{
-  margin:0 auto 10px;
+  width:56px;
+  height:56px;
+  min-width:56px;
+  margin:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:16px;
+  background:
+    linear-gradient(
+      135deg,
+      #0f766e,
+      #14b8a6
+    );
+  color:#ffffff;
+  font-size:25px;
+  box-shadow:
+    0 10px 22px
+    rgba(15,118,110,.18);
+  flex:0 0 auto;
 }
+
+.membership-payment-heading > div:last-child{
+  flex:1;
+  min-width:0;
+}
+
+.membership-payment-heading .profile-section-label{
+  display:inline-block;
+  margin:0 0 5px;
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:1.2px;
+}
+
+.membership-payment-heading h2{
+  margin:0;
+  color:#0f172a;
+  font-size:24px;
+  line-height:1.25;
+}
+
+.membership-payment-heading p{
+  margin:6px 0 0;
+  color:#64748b;
+  font-size:14px;
+  line-height:1.5;
+}
+
+
+/* =====================================
+   CHECKOUT CARD
+===================================== */
 
 .membership-payment-layout{
   display:block;
@@ -118,6 +179,11 @@ href="icons/icon-192.png">
   line-height:1;
 }
 
+
+/* =====================================
+   CHECKOUT DETAILS
+===================================== */
+
 .membership-checkout-details{
   margin:22px 0;
   padding:18px;
@@ -144,6 +210,11 @@ href="icons/icon-192.png">
   font-size:15px;
   text-align:right;
 }
+
+
+/* =====================================
+   SECURE PAYMENT BOX
+===================================== */
 
 .membership-secure-box{
   margin-top:18px;
@@ -173,6 +244,11 @@ href="icons/icon-192.png">
   line-height:1.6;
   font-size:14px;
 }
+
+
+/* =====================================
+   PAYU BUTTON
+===================================== */
 
 #payuPayButton{
   width:100%;
@@ -220,6 +296,11 @@ href="icons/icon-192.png">
   line-height:1.45;
 }
 
+
+/* =====================================
+   PAYMENT METHODS
+===================================== */
+
 .membership-payment-methods{
   display:flex;
   justify-content:center;
@@ -245,7 +326,34 @@ href="icons/icon-192.png">
   font-size:12px;
 }
 
+
+/* =====================================
+   MOBILE
+===================================== */
+
 @media(max-width:640px){
+
+  .membership-payment-heading{
+    max-width:100%;
+    gap:12px;
+    align-items:flex-start;
+  }
+
+  .membership-payment-heading .membership-payment-icon{
+    width:48px;
+    height:48px;
+    min-width:48px;
+    border-radius:14px;
+    font-size:21px;
+  }
+
+  .membership-payment-heading h2{
+    font-size:20px;
+  }
+
+  .membership-payment-heading p{
+    font-size:13px;
+  }
 
   .membership-checkout-card{
     padding:20px 16px;
@@ -406,6 +514,8 @@ Choose a plan according to your matrimonial search requirements.
 <div class="membership-plan-grid">
 
 
+<!-- FREE -->
+
 <div
 class="membership-plan-card membership-free-card"
 data-plan="Free"
@@ -428,27 +538,25 @@ Basic Account
 </p>
 
 <ul>
-
 <li>✅ Login Access</li>
 <li>✅ User Dashboard</li>
 <li>✅ Complete Your Profile</li>
 <li>❌ Search Profile Access</li>
 <li>❌ View Profile Access</li>
 <li>❌ Chat Access</li>
-
 </ul>
 
 <button
 type="button"
 class="membership-select-button"
 onclick="selectMembershipPlan('Free', 0)">
-
 Select Free
-
 </button>
 
 </div>
 
+
+<!-- SILVER -->
 
 <div
 class="membership-plan-card membership-silver-card"
@@ -472,27 +580,25 @@ Starter Membership
 </p>
 
 <ul>
-
 <li>✅ Dashboard Access</li>
 <li>✅ Search Profiles</li>
 <li>✅ 25 Profile Views</li>
 <li>✅ Send Interests</li>
 <li>✅ Chat Access</li>
 <li>✅ Silver Member Badge</li>
-
 </ul>
 
 <button
 type="button"
 class="membership-select-button"
 onclick="selectMembershipPlan('Silver', 49)">
-
 Choose Silver
-
 </button>
 
 </div>
 
+
+<!-- GOLD -->
 
 <div
 class="membership-plan-card membership-gold-card membership-popular"
@@ -520,27 +626,25 @@ Premium Membership
 </p>
 
 <ul>
-
 <li>✅ Dashboard Access</li>
 <li>✅ Advanced Profile Search</li>
 <li>✅ 100 Profile Views</li>
 <li>✅ Send Interests</li>
 <li>✅ Chat Access</li>
 <li>✅ Gold Member Badge</li>
-
 </ul>
 
 <button
 type="button"
 class="membership-select-button"
 onclick="selectMembershipPlan('Gold', 99)">
-
 Choose Gold
-
 </button>
 
 </div>
 
+
+<!-- PLATINUM -->
 
 <div
 class="membership-plan-card membership-platinum-card"
@@ -564,23 +668,19 @@ Ultimate Membership
 </p>
 
 <ul>
-
 <li>✅ Dashboard Access</li>
 <li>✅ Advanced Profile Search</li>
 <li>✅ Unlimited Profile Views</li>
 <li>✅ Send Interests</li>
 <li>✅ Chat Access</li>
 <li>✅ Platinum Member Badge</li>
-
 </ul>
 
 <button
 type="button"
 class="membership-select-button"
 onclick="selectMembershipPlan('Platinum', 199)">
-
 Choose Platinum
-
 </button>
 
 </div>
@@ -597,6 +697,9 @@ Choose Platinum
 <section
 id="membershipPaymentSection"
 class="membership-payment-section">
+
+
+<!-- CHECKOUT HEADER -->
 
 <div class="membership-payment-heading">
 
@@ -623,10 +726,13 @@ Review your selected plan and pay securely through PayU.
 </div>
 
 
+<!-- CHECKOUT CARD -->
+
 <div class="membership-checkout-card">
 
 
 <div class="membership-checkout-top">
+
 
 <div class="membership-checkout-title">
 
@@ -665,6 +771,7 @@ Total Payable
 
 
 <div class="membership-checkout-details">
+
 
 <div class="membership-checkout-row">
 
@@ -733,7 +840,8 @@ Secure Online Payment
 </div>
 
 <p>
-Your payment is processed securely through PayU. Membership activates automatically after successful payment verification.
+Your payment is processed securely through PayU.
+Membership activates automatically after successful payment verification.
 </p>
 
 </div>
@@ -743,9 +851,7 @@ Your payment is processed securely through PayU. Membership activates automatica
 type="button"
 id="payuPayButton"
 disabled>
-
 🔒 Select a Paid Plan to Continue
-
 </button>
 
 
@@ -758,9 +864,7 @@ aria-live="polite">
 <div class="membership-payment-methods">
 
 <span>UPI</span>
-
 <span>Debit / Credit Card</span>
-
 <span>Net Banking</span>
 
 </div>
@@ -769,6 +873,7 @@ aria-live="polite">
 <p class="membership-payu-trust">
 🔐 Secure payments powered by PayU
 </p>
+
 
 </div>
 
@@ -795,6 +900,7 @@ Safe & Simple Membership
 
 
 <div class="membership-rules-grid">
+
 
 <div class="membership-rule-card">
 
@@ -863,9 +969,11 @@ Membership is activated only after successful payment verification.
 
 </div>
 
+
 </div>
 
 </section>
+
 
 </main>
 
@@ -879,6 +987,10 @@ Membership is activated only after successful payment verification.
 
 
 <script>
+
+/* =====================================
+   MEMBERSHIP PLAN SELECTION
+===================================== */
 
 function selectMembershipPlan(plan, amount) {
 
@@ -1014,6 +1126,10 @@ function selectMembershipPlan(plan, amount) {
 }
 
 
+/* =====================================
+   MEMBERSHIP LOGOUT
+===================================== */
+
 document
   .getElementById(
     "membershipLogoutBtn"
@@ -1070,6 +1186,7 @@ document
 <script src="final-features.js"></script>
 
 <script src="cms-runtime.js"></script>
+
 
 </body>
 
