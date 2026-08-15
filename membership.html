@@ -16,6 +16,13 @@ content="width=device-width, initial-scale=1.0">
 
 <link rel="stylesheet" href="final-polish.css">
 <link rel="icon" type="image/png" href="icons/icon-192.png">
+
+<style>
+.membership-payu-box{border:1px solid rgba(15,118,110,.18);background:linear-gradient(135deg,rgba(236,253,245,.95),rgba(239,246,255,.96));}
+#payuPayButton{width:100%;min-height:48px;border:0;border-radius:12px;font-weight:800;cursor:pointer;background:#111827;color:#fff;box-shadow:0 10px 24px rgba(17,24,39,.16);}
+#payuPayButton:disabled{opacity:.55;cursor:not-allowed;box-shadow:none;}
+#payuPaymentStatus{margin:10px 0 0;font-weight:700;line-height:1.45;}
+</style>
 </head>
 
 
@@ -67,7 +74,7 @@ Secure Membership
 </strong>
 
 <small>
-Payment approval by DivyangSathi Admin
+PayU online payment + manual UPI fallback
 </small>
 
 </div>
@@ -397,7 +404,7 @@ Membership Payment
 </h2>
 
 <p>
-Select a paid plan, scan the QR code and submit your UTR number.
+Select a paid plan and pay securely online with PayU. Manual UPI/UTR remains available as a fallback.
 </p>
 
 </div>
@@ -454,6 +461,32 @@ value="0">
 </div>
 
 
+<!-- PAYU ONLINE PAYMENT -->
+
+<div class="membership-payment-form membership-payu-box">
+
+<h3>
+Pay Online with PayU
+</h3>
+
+<p>
+UPI, cards, net banking and other enabled PayU payment methods. Successful verified payment activates membership automatically.
+</p>
+
+<button
+type="button"
+id="payuPayButton"
+disabled>
+
+🔐 Pay Securely with PayU
+
+</button>
+
+<p id="payuPaymentStatus" aria-live="polite"></p>
+
+</div>
+
+
 <!-- QR CODE -->
 
 <div
@@ -462,7 +495,7 @@ class="membership-qr-box"
 style="display:none;">
 
 <h3>
-Scan and Pay
+Manual UPI Fallback
 </h3>
 
 <img
@@ -488,7 +521,7 @@ Pay the exact selected membership amount using this QR code.
 <div class="membership-payment-form">
 
 <h3>
-Submit Payment Details
+Submit Manual Payment Details
 </h3>
 
 <label for="utrNumber">
@@ -506,7 +539,7 @@ type="button"
 id="submitMembership"
 disabled>
 
-✅ Submit Membership Request
+✅ Submit Manual Payment Request
 
 </button>
 
@@ -582,7 +615,7 @@ Galat ya duplicate UTR number accept nahi kiya jayega.
 Admin Approval</h3>
 
 <p>
-Membership admin verification ke baad activate hogi.
+Manual UPI payment admin verification ke baad activate hogi. PayU verified payment automatically activate hoti hai.
 </p>
 
 </div>
@@ -648,6 +681,9 @@ function selectMembershipPlan(plan, amount) {
   const submitButton =
     document.getElementById("submitMembership");
 
+  const payuButton =
+    document.getElementById("payuPayButton");
+
   const utrNumber =
     document.getElementById("utrNumber");
 
@@ -697,6 +733,8 @@ function selectMembershipPlan(plan, amount) {
 
     submitButton.disabled = true;
 
+    if (payuButton) payuButton.disabled = true;
+
     alert(
       "Free plan automatically available hai. Paid profiles dekhne ke liye Silver, Gold ya Platinum select karein."
     );
@@ -711,6 +749,8 @@ function selectMembershipPlan(plan, amount) {
   utrNumber.disabled = false;
 
   submitButton.disabled = false;
+
+  if (payuButton) payuButton.disabled = false;
 
 
   document

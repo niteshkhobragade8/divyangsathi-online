@@ -2927,6 +2927,127 @@ async function loadChat() {
 }
 
 // ======================================
+// PAYU ONLINE MEMBERSHIP PAYMENT
+// Server creates the signed PayU request. Salt never reaches GitHub/frontend.
+// ======================================
+
+const payuPayButton =
+  document.getElementById("payuPayButton");
+
+if (payuPayButton) {
+  payuPayButton.addEventListener("click", async function (event) {
+    event.preventDefault();
+
+    const plan =
+      document.getElementById("membershipPlan")?.value?.trim();
+
+    const statusElement =
+      document.getElementById("payuPaymentStatus");
+
+    const validPlans = ["Silver", "Gold", "Platinum"];
+
+    if (!validPlans.includes(plan)) {
+      alert("Please select Silver, Gold or Platinum plan.");
+      return;
+    }
+
+    const { data: { user }, error: userError } =
+      await client.auth.getUser();
+
+    if (userError || !user) {
+      alert("Please Login First");
+      window.location.href = "login.html";
+      return;
+    }
+
+    payuPayButton.disabled = true;
+    payuPayButton.textContent = "Opening Secure PayU Checkout...";
+
+    if (statusElement) {
+      statusElement.textContent =
+        "Secure payment request ban rahi hai...";
+      statusElement.style.color = "#047857";
+    }
+
+    try {
+      const { data, error } = await client.functions.invoke(
+        "create-payu-payment",
+        { body: { plan } }
+      );
+
+      if (error) throw error;
+      if (!data?.paymentUrl || !data?.fields) {
+        throw new Error(data?.error || "PayU payment request create nahi hui.");
+      }
+
+      const form = document.createElement("form");
+      form.method = "POST";
+      form.action = data.paymentUrl;
+      form.style.display = "none";
+
+      Object.entries(data.fields).forEach(([name, value]) => {
+        const input = document.createElement("input");
+        input.type = "hidden";
+        input.name = name;
+        input.value = value == null ? "" : String(value);
+        form.appendChild(input);
+      });
+
+      document.body.appendChild(form);
+      form.submit();
+    } catch (paymentError) {
+      console.error("PayU payment start error:", paymentError);
+
+      if (statusElement) {
+        statusElement.textContent =
+          "PayU checkout open nahi hua. Please retry karein.";
+        statusElement.style.color = "#dc2626";
+      }
+
+      alert(paymentError?.message || "PayU payment start nahi ho paya.");
+      payuPayButton.disabled = false;
+      payuPayButton.textContent = "🔐 Pay Securely with PayU";
+    }
+  });
+}
+
+// PayU callback user ko isi page par result ke saath laata hai.
+(function showPayuReturnStatus() {
+  if (!document.getElementById("membershipPaymentSection")) return;
+
+  const params = new URLSearchParams(window.location.search);
+  const payuResult = params.get("payu");
+  if (!payuResult) return;
+
+  const statusElement = document.getElementById("payuPaymentStatus");
+
+  if (payuResult === "success") {
+    if (statusElement) {
+      statusElement.textContent =
+        "✅ Payment verified. Membership automatically activate ho gayi hai.";
+      statusElement.style.color = "#15803d";
+    }
+    setTimeout(() => loadCurrentMembershipStatus?.(), 250);
+  } else if (payuResult === "pending") {
+    if (statusElement) {
+      statusElement.textContent =
+        "⏳ Payment pending hai. Confirmation aate hi membership update hogi.";
+      statusElement.style.color = "#d97706";
+    }
+  } else {
+    if (statusElement) {
+      statusElement.textContent =
+        "❌ Payment successful verify nahi hui. Aap retry kar sakte hain.";
+      statusElement.style.color = "#dc2626";
+    }
+  }
+
+  if (history.replaceState) {
+    history.replaceState({}, document.title, window.location.pathname);
+  }
+})();
+
+// ======================================
 // MEMBERSHIP PAYMENT
 // ======================================
 
@@ -3033,7 +3154,7 @@ if (submitMembership) {
       if (existingError) {
         submitMembership.disabled = false;
         submitMembership.textContent =
-          "✅ Submit Membership Request";
+          "✅ Submit Manual Payment Request";
 
         alert(existingError.message);
         return;
@@ -3042,7 +3163,7 @@ if (submitMembership) {
       if (existingRequest) {
         submitMembership.disabled = false;
         submitMembership.textContent =
-          "✅ Submit Membership Request";
+          "✅ Submit Manual Payment Request";
 
         if (paymentStatus) {
           paymentStatus.textContent =
@@ -3070,7 +3191,7 @@ if (submitMembership) {
 
       submitMembership.disabled = false;
       submitMembership.textContent =
-        "✅ Submit Membership Request";
+        "✅ Submit Manual Payment Request";
 
       if (error) {
         if (paymentStatus) {
@@ -3184,7 +3305,7 @@ Pending
 
 <p><b>💰 Amount:</b> ₹${item.amount}</p>
 
-<p><b>🧾 UTR Number:</b> ${item.utr_number}</p>
+<p><b>🧾 Payment Ref:</b> ${item.utr_number || item.gateway_payment_id || item.gateway_transaction_id || "PayU"}</p>
 
 <p><b>📌 Status:</b> ${item.payment_status}</p>
 
