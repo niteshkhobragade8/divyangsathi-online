@@ -15,10 +15,32 @@ function pageOptions(extra=true){return (extra?['all',...pages]:pages).map(p=>`<
 function fillPages(){['#pageSlug','#seoPage','#seoCanonicalPage','#menuUrl','#notificationPage','#notificationButtonPage'].forEach(id=>{const el=$(id);if(!el)return;const allowAll=['#notificationPage'].includes(id);const allowBlank=['#notificationButtonPage'].includes(id);el.innerHTML=(allowBlank?'<option value="">No Button</option>':'')+(allowAll?pageOptions(true):pageOptions(false))})}
 
 async function adminCheck(){
-  const {data:{user}}=await client.auth.getUser();
-  if(!user){location.replace('admin-login.html');return false}
-  const {data:a,error}=await client.from('admins').select('id,active').eq('id',user.id).maybeSingle();
-  if(error||!a||a.active!==true){const w=$('#cmsSetupWarning');w.style.display='block';w.textContent='Access Denied: active administrator account required.';return false}
+  const {data:{user},error:userError}=await client.auth.getUser();
+  if(userError||!user){location.replace('admin-login.html');return false}
+
+  // Preferred check: SECURITY DEFINER RPC avoids false Access Denied when
+  // the admins table is protected by RLS.
+  try{
+    const {data:ok,error:rpcError}=await client.rpc('is_active_admin');
+    if(!rpcError && ok===true)return true;
+  }catch(_){}
+
+  // Backward-compatible fallback for projects where the RPC has not yet
+  // been installed.
+  const {data:a,error}=await client
+    .from('admins')
+    .select('id,active')
+    .eq('id',user.id)
+    .maybeSingle();
+
+  if(error||!a||a.active!==true){
+    const w=$('#cmsSetupWarning');
+    if(w){
+      w.style.display='block';
+      w.textContent='Access Denied: active administrator account required. Run CMS_ADMIN_RECOVERY.sql once if the admin row was deleted.';
+    }
+    return false;
+  }
   return true;
 }
 function tabs(){$$('#cmsTabs .cms-tab').forEach(b=>b.onclick=()=>{$$('.cms-tab').forEach(x=>x.classList.remove('active'));$$('.cms-panel').forEach(x=>x.classList.remove('active'));b.classList.add('active');$(`[data-panel="${b.dataset.tab}"]`)?.classList.add('active');if(b.dataset.tab==='analytics')analytics();if(b.dataset.tab==='trash')trash();if(b.dataset.tab==='revisions')revisions();})}

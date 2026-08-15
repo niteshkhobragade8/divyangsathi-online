@@ -76,45 +76,40 @@ ADMIN ACCESS
 async function check(){
 
 const {
-data:{user}
-} =
+data:{user},
+error:userError
+}=
 await client.auth.getUser();
 
-
-if(!user){
-
-location.replace(
-'admin-login.html'
-);
-
+if(userError || !user){
+location.replace('admin-login.html');
 return false;
-
 }
 
+// Preferred check through the SECURITY DEFINER helper. This keeps
+// Admin CMS working even when admins-table RLS blocks direct SELECT.
+try{
+const {data:ok,error:rpcError}=
+await client.rpc('is_active_admin');
+if(!rpcError && ok === true){
+return true;
+}
+}catch(_){}
 
-const {
-data
-} =
+// Backward-compatible fallback.
+const {data,error}=
 await client
 .from('admins')
 .select('active')
 .eq('id',user.id)
 .maybeSingle();
 
-
-if(!data?.active){
-
-location.replace(
-'admin-login.html'
-);
-
+if(error || !data?.active){
+location.replace('admin-login.html');
 return false;
-
 }
 
-
 return true;
-
 }
 
 
